@@ -145,5 +145,77 @@ Immediately following that we write a script which asks jQuery until the DOM of 
     * Example: $('h2, h3') will return all headline elements of size h2 or h3.
       
 * `'*'` __selects all elements.__
+  
 
 ***WARNINGS:***
+
+* You need quotation marks around the selectors.
+    * If, however, you create a variable `var thisClass = ".hot"` or pass in an element with id of someID and create a                variable `var thisElement = "#” + someID`
+      then you can use `$(thisClass)`  or `$(thisElement)`.
+       
+* Whether you use single quotes or double quotes, be sure they are straight ones, not leaning left or right.
+    * This is easy in a text editor, but doesn’t happen in Word (unless the options were reset to use straight quotes) --- so         beware of copying text from a Word document. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### Review 
+
+jQuery is a library of functions which is useful for manipulating the appearance and functionality of web pages.  
+
+The first thing you must do is make that library accessible to your web page – either by downloading jquery.js. saving it  and linking to it right after your title tag, or by linking to it in a CDN such as Google’s or Microsoft’s.  
+
+$( ) is a shorthand for accessing the jQuery functions. 
+
+
+If you are going to use jQuery to manipulate the DOM or bind event handlers to elements then you must wait for the DOM to be loaded.  You do this by coding:
+    
+    $(document).ready(function() {   //We’ll put our specific instructions here.
+    });
+    
+Typically jQuery acts by selecting a collection of element(s) and then applying a method to them. The code looks like:     
+
+    $(some CSS selector).someMethod();  
+
+Sometimes we chain methods and then the code looks like: 
+
+    $(some CSS selector).someMethod1().someMethod2();  
+    
+Four very popular jQuery methods are:
+`hide()` </br>
+`show()`  </br> 
+`addClass(“someClass”)` </br> 
+`removeClass(“someClass”)`
+    
+When we write code using jQuery it is important to put a semi-colon `;` at the end of each statement.  
+
+### Owning it 
+
+Design a page which has a paragraph and a set of buttons – two to turn the paragraph red or blue and two to make the text bold face or normal.
