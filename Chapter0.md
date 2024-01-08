@@ -130,7 +130,7 @@ Immediately following that we write a script which asks jQuery until the DOM of 
         $(some selectorN).someMethodN();
         });
 
-**Short review of very basic selectors**
+***Short review of very basic selectors***
 
 * `#thisThing` selector for element with ID thisThing (There may be only one element with a given ID.)
     * Example: If you have an element with ID homepage, then $("#homePage") will return that element.
@@ -157,11 +157,73 @@ Immediately following that we write a script which asks jQuery until the DOM of 
     * This is easy in a text editor, but doesn’t happen in Word (unless the options were reset to use straight quotes) --- so         beware of copying text from a Word document. 
 
 
+***Changing the appearance with addClass() and removeClass()*** 
+
+One of the easiest and most common ways to change the appearance of an element on a page is by adding and removing classes.  
+
+Example: In your style sheet suppose that you have classes </br>
+`.redText   {color: red; }`    </br>
+`.blueText  {color: blue;}`  </br>
+
+(Recall that the attribute color sets the color of the text.)  
+
+Then you can change everything which has blue text to red text by coding:
+
+    $(".blueText").removeClass("blueText").addClass("redText");  
+    
+Please notice what happened here:  
+
+* $(".blueText") returned a collection of all elements with the class blueText, then 
+* removeClass("blueText") removed that class and returned those elements and then 
+* addClass("redText") added the redText class to those elements.
+  
+This is called _chaining_ (the methods) and we will see much more of this in Chapter 1. 
+
+We can refine this example so that when our user clicks a button only one specific element will change from blue to red.  To do this, the onclick handler for that button will need to pass the ID of the element to be changed to a turnBlue() function.
+
+In this example we will make the changes in appearance happen when the user clicks a button – so we won’t need to wait for the DOM to load but we will use jQuery to add and remove classes. (Look at lines 9 – 15.)   
+
+Please notice the semi-colons at the end of the lines of JavaScript. While semi-colons are often casually omitted in writing JS, it is dangerous to do so in jQuery --- your code may not get parsed in the way you hoped.
+
+Here is a complete example:  
+
+![image](https://github.com/menzin/About_jQuery/assets/144168274/5827f418-1a0f-4703-97fa-17455ac37c71)
 
 
+As noted above, the code is written in such a way that you could use turnRed and turnBlue for many different elements, so long as the onclick event handler sends the correct ID to the functions. 
 
+In black and white the code is:
 
+demo_0_1_colors.html
 
+    <<!doctype html>
+    <html lang='en'>
+    	    <head>
+      	        <meta charset="utf-8">
+    	        <title>Demo 0_1 Colors</title>
+         	    <script src="jquery.js" > </script>     <!-- the jQuery library -->
+    	        <script type="text/javascript">
+    	            function turnBlue(someID){
+    				thisID = "#"+someID;
+    				$(thisID).removeClass("redText").addClass("blueText");}  
+    	            function turnRed(someID){
+    				thisID = "#"+someID;
+    				$(thisID).removeClass("blueText").addClass("redText");}
+    	        </script>
+               <style>
+    		      .blueText {color:blue; }
+    			  .redText  {color:red; }
+    			</style>  
+          </head>
+          </body>
+                <p class =  blueText id = "someP">This text starts in blue.</p>
+    			<button onclick = 'turnRed("someP");'>Click me to turn the paragraph red</button>
+    			<button onclick = 'turnBlue("someP");'>Click me to turn the paragraph blue</button>
+    	        </body>
+    	</html>
+            
+
+In this example we have changed the color of the text, but you could use the same approach to change the font size, bold or unbold it, etc.
 
 
 
@@ -208,7 +270,7 @@ Sometimes we chain methods and then the code looks like: 
 
     $(some CSS selector).someMethod1().someMethod2();  
     
-Four very popular jQuery methods are:
+Four very popular jQuery methods are: </br>
 `hide()` </br>
 `show()`  </br> 
 `addClass(“someClass”)` </br> 
