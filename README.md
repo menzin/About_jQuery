@@ -12,5 +12,5 @@
 * [Chapter 6: Events](Chapter6.md)
 * [Chapter 7: AJAX](Chapter7.md)
 * [Chapter 8: Making Page Changes ARIA Compliant](Chapter8.md)
-* [Chapter 9: Where you can go from here](Chapter9.md)
+* [Chapter 9: Where You Can Go From Here](Chapter9.md)
 * [References](References.md)
