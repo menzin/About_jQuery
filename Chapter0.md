@@ -47,7 +47,7 @@ Either way, you have now made the jQuery library available to your web page and 
 
 
 **The jQuery script should be the very first script your page executes – so put it in the head or at the top of the body.**
-- (Aside: Some people put all scripts at the very end of the body, but the jQuery official site uses the head for jQuery and then the <script .. .> which make use of jQuery.)
+- (Aside: Some people put all scripts at the very end of the body, but the jQuery official site uses the head for jQuery and then the <script ...> which makes use of jQuery.)
 
 To summarize, in Notepad++ the template looks like:
 
