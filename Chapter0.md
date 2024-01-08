@@ -64,9 +64,17 @@ Lines 1-5 and 12-17 are just your typical html, line 6 brings in the jQuery libr
 
           $(document).ready(function() {//We’ll put our specific instructions here.});
 
-And then inside the {   ..  } we will tell jQuery what to do once the DOM has loaded.
- So we next need to see what to put inside the {     }.  As an aside,  please notice  that jQuery does not need to wait for all the images to load – it just needs to know the structure of the DOM. This can help speed things up. 
-Use $() again - Put a selector inside the parentheses of $( )  $(document).ready(function() {                $(some CSS selector)        });  This asks jQuery to return a collection of all the elements which match that selector. jQuery uses the same selectors as CSS (Basic ones are reviewed below.)  For example,    $(".smallText")   will return all the elements in the class smallText.                            $("#terms") will return the (one) element whose ID is terms.   
+    * And then inside the { ... } we will tell jQuery what to do once the DOM has loaded.
+    * So we next need to see what to put inside the { }.
+    * As an aside,  please notice that jQuery does not need to wait for all the images to load – it just needs to know the structure of the DOM. This        can help speed things up.
+      
+* Use $() again - Put a selector inside the parentheses of $( )
+
+      $(document).ready(function() {                $(some CSS selector)        });
+
+    * This asks jQuery to return a collection of all the elements which match that selector.
+    * jQuery uses the same selectors as CSS (Basic ones are reviewed below.)
+    * For example, `$(".smallText")` will return all the elements in the class smallText. `$("#terms")` will return the (one) element whose ID is             terms.   
 
 
 
