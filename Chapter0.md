@@ -146,4 +146,4 @@ Immediately following that we write a script which asks jQuery until the DOM of 
       
 * `'*'` __selects all elements.__
 
-**_ WARNINGS:_**
+***WARNINGS:***
