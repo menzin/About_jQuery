@@ -9,3 +9,5 @@ The other decision you need to make is whether you want to always access the mos
 To keep things simple, we will download the current version (3.4.1 as of this writing)  and store it in the same folder as our webpages.  That also means that we have decided to stick to a specific version. 
 
 All downloads may be found at https://jquery.com/download/ and we will download the compressed or minified version  at https://code.jquery.com/jquery-3.4.1.min.js   (You can see the ‘min’ for minified in its URL.   It is missing comments, etc.  and, at another time, you may find it interesting to look at the uncompressed, development version.) 
+
+You can save the file as **jquery.js** (as I have done) or as **jquery_3_4_1_min.js**  in the same folder where you will store your scripts. 
