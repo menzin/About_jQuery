@@ -55,10 +55,10 @@ To summarize, in Notepad++ the template looks like:
 
 Lines 1-5 and 12-17 are just your typical html, line 6 brings in the jQuery library of functions, and lines 7-11 are where you will make use of those functions. That’s it. Now you’re ready to find out how to use those jQuery functions. 
 
-* $( ) calls that library
+* **$( ) calls that library**
    * That is, $ is a shortcut for calling  all the functions in the jQuery library.
   
-* Tell jQuery to wait until the DOM is loaded and then we’ll use the library of functions
+* **Tell jQuery to wait until the DOM is loaded and then we’ll use the library of functions**
     * Often jQuery is used to manipulate the DOM, so we tell jQuery to wait for the DOM to load.
     * We do this by typing:
 
@@ -68,7 +68,7 @@ Lines 1-5 and 12-17 are just your typical html, line 6 brings in the jQuery libr
     * So we next need to see what to put inside the { }.
     * As an aside,  please notice that jQuery does not need to wait for all the images to load – it just needs to know the structure of the DOM. This        can help speed things up.
       
-* Use $() again - Put a selector inside the parentheses of $( )
+* **Use $() again - Put a selector inside the parentheses of $( )**
 
       $(document).ready(function() {                $(some CSS selector)        });
 
@@ -76,5 +76,42 @@ Lines 1-5 and 12-17 are just your typical html, line 6 brings in the jQuery libr
     * jQuery uses the same selectors as CSS (Basic ones are reviewed below.)
     * For example, `$(".smallText")` will return all the elements in the class smallText. `$("#terms")` will return the (one) element whose ID is             terms.   
 
+* **Add a method – or do something to the elements in that collection.**
+    * Once you have all the elements in the collection, you add a method which does something to them.
+    * For example, $(".smallText").hide() will find all the elements in the class smallText and then hide them.
+      
+* **Putting this all together:**
 
+   demo_0_0_hiding.html
+  
+      <!doctype html>
+        <html lang='en'>
+        <html>
+            <head>
+                <meta charset="utf-8">
+                <title>Demo</title>
+                 <script src="jquery.js" > </script>       <!-- the jQuery library 
+        
+                 <script type="text/javascript”>
+                        $(document).ready( function() {
+        
+        
+                               $(".smallText").hide();
+                       });
+                   </script>
+                   <!--links to style sheets go here- but for this example the CSS is here  
+               <style>
+                     .smallText {font-size: 5px; }               //the smallText class
+               </style>
+         
+              </head>
+              </body>
+                    Lots of sales verbiage
+                   <span class = smallText>The terms are onerous.</span>
+                </body>
+           </html>
+     
+The smallText class will get hidden as soon as the DOM is loaded – too fast for you to see it before it hides – but you can still see that it’s there in the source code.
+
+**Warning – you must either grab the code from the Chapter 0 folder  or paste the code above into a text editor and save it as demo_0_0.html before trying to run it.** 
 
