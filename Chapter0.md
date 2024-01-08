@@ -390,7 +390,7 @@ Then your code can say:
 While these examples validate one element, givenName, we could easily pass the ID of the element to validate to a function, as we did in the previous example, and have a more general function for validating text boxes – see Chapter One.
 
 
-### Review 
+## Review 
 
 jQuery is a library of functions which is useful for manipulating the appearance and functionality of web pages.  
 
@@ -420,6 +420,6 @@ Four very popular jQuery methods are: </br>
     
 When we write code using jQuery it is important to put a semi-colon `;` at the end of each statement.  
 
-### Owning it 
+## Owning it 
 
 Design a page which has a paragraph and a set of buttons – two to turn the paragraph red or blue and two to make the text bold face or normal.
