@@ -144,6 +144,6 @@ Immediately following that we write a script which asks jQuery until the DOM of 
 * Multiple selections: `selector1`, `selector2` will selector all elements that meet either selector.
     * Example: $('h2, h3') will return all headline elements of size h2 or h3.
       
-* __'*' selects all elements.__
+* `'*'` __selects all elements.__
 
-** _ WARNINGS:_ **
+**_ WARNINGS:_**
