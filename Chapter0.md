@@ -146,7 +146,6 @@ Immediately following that we write a script which asks jQuery until the DOM of 
       
 * `'*'` __selects all elements.__
   
-
 ***WARNINGS:***
 
 * You need quotation marks around the selectors.
