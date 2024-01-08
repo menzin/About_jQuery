@@ -298,8 +298,7 @@ Then your code for validating this text box might include:
 
 Here it is in a complete program:
 
-
-                           demo_0_2_feedback_with_label_change 
+demo_0_2_feedback_with_label_change 
 
 	<!doctype html>
 	<html lang='en'>
@@ -313,47 +312,72 @@ Here it is in a complete program:
      	    <script src="jquery.js" > </script>      <!-- the jQuery library -->
 	        <script type="text/javascript">
 	            function validate(someTextID){
-					thisElement = "#"+someTextID;         //the text element
-					thisLabel = thisElement + "Label"; //the label for the text element
-					thisValue = $(thisElement).val() ; //The value stored in the text element
-					
+				thisElement = "#"+someTextID;         //the text element
+				thisLabel = thisElement + "Label"; //the label for the text element
+				thisValue = $(thisElement).val() ; //The value stored in the text element
 				
-					if (thisValue.length == 0)    //if statement works
-					   {//empty element; change label to red					    
-					    $(thisLabel).removeClass("blueText").addClass("redText");						
-					   return;
-					   } else {
-					   //change label to blue in case there was a previous error					   
-                       $(thisLabel).removeClass("redText").addClass("blueText"); 
-					   return;}
-					   }	            
+				if (thisValue.length == 0)    //if statement works
+				   {//empty element; change label to red					    
+				    $(thisLabel).removeClass("blueText").addClass("redText");						
+				   return;
+				   } else {
+				   //change label to blue in case there was a previous error					   
+	       			   $(thisLabel).removeClass("redText").addClass("blueText"); 
+				   return;}
+				   }	            
 	        </script>
              
       </head>
       <body>
            <form name="demoForm" id="demoForm">
-		        <label id='givenNameLabel' class ='blueText'>
-                    Please enter your given name:
-                   <input type = "text" name = "givenName" id= "givenName"  value ="">
-                </label>
-				<button type="button" onclick = 'validate("givenName");'>Validate this entry</button>
-			</form> 
-		</body>
-
+		<label id='givenNameLabel' class ='blueText'>
+	    	Please enter your given name:
+	   	<input type = "text" name = "givenName" id= "givenName"  value ="">
+		</label>
+		<button type="button" onclick = 'validate("givenName");'>Validate this entry</button>
+	  </form> 
+	</body>
 	</html>
 
-  Changing the visibility /display of an error message with hide() and show():    This approach uses error messages – and  the fact that a form element may   have more than one  label. 
 
-Before we start, please recall that there are two different ways to make an element disappear – through either the display property or the visibility property:       display: none will hide the element without taking up any space.      visibility: hidden will hide the element but still allocate space to it. 
- The hide() and show() methods work on the display property.  That is, when you hide () elements the space they used to take up disappears (temporarily – until you show() the elements again), but with the added benefit that when you  hide() them, the original display value (inline or block) is remembered and used when you again show() them.           The possible values for visibility as hidden and visible.           The possible values or display are none, block, inline.
+***Changing the visibility /display of an error message with hide() and show():*** 
 
-In this code, we will display the error messages inline, but hide them immediately, as soon as the DOM has loaded.  We will do it this way in case you had a fancy layout you wanted to maintain.
+This approach uses error messages – and the fact that a form element may have more than one label. 
 
-Also, since there maybe several error messages, we will give them all an ErrorMsg class, so that we can hide() them all when the DOM loads.  In other words, our script in the head (right after linking to jQuery.js) would be:         <script>              $(document).ready(function () {                     $('.errorMsg').hide();              }); 
-We extend our pattern of making the id for the first label (as just above) the id for the input element with “Label” appended to it:  the id for the error message will be the id for the input element with “ErrorMsg” appended to it.  We can then use exactly the same approach as in our demo_0_0_hiding.html  Specifically, suppose your code contains:   
-      <label for="givenName"> Please enter your given name:</label>       <input type = "text" name = "givenName" id= "givenName" >       <label for="givenName" id="givenNameErrorMsg" class = "errorMsg">                           You must fill in this  box. </label>
+Before we start, please recall that there are two different ways to make an element disappear – through either the display property or the visibility property:       
 
-Then your code can say:            gName = $("#givenName").val()      //Value in the givenName field          if (gName.length == 0) {                 //empty text box; make the Error message visible                 $("#givenNameErrorMsg").show();           }  else {               //make sure the Error message is not visible               $("#givenNameErrorMsg").hide();           };   While these examples validate one element, givenName, we could easily pass the ID of the element to validate to a function, as we did in the previous example, and have a more general function for validating text boxes – see Chapter One.
+- `display`: **none** will hide the element without taking up any space.
+- `visibility`: **hidden** will hide the element but still allocate space to it.
+  
+ The hide() and show() methods work on the **display** property. That is, when you hide () elements the space they used to take up disappears (temporarily – until you show() the elements again), but with the added benefit that when you  hide() them, the original display value (inline or block) is remembered and used when you again show() them.           
+ 
+	The possible values for _visibility_ as _hidden_ and _visible_.
+ 	The possible values or _display_ are _none_, _block_, _inline_.
+
+In this code, we will display the error messages inline, but hide them immediately, as soon as the DOM has loaded. We will do it this way in case you had a fancy layout you wanted to maintain.
+
+Also, since there maybe several error messages, we will give them all an ErrorMsg class, so that we can hide() them all when the DOM loads.  In other words, our script in the head (right after linking to jQuery.js) would be:
+
+	<script>
+ 		$(document).ready(function () {
+   			$('.errorMsg').hide();
+      	}); 
+       
+We extend our pattern of making the id for the first label (as just above) the id for the input element with “Label” appended to it:  the id for the error message will be the id for the input element with “ErrorMsg” appended to it. 
+
+We can then use exactly the same approach as in our demo_0_0_hiding.html.
+
+Specifically, suppose your code contains:   
+
+      <label for="givenName"> Please enter your given name:</label> 
+      <input type = "text" name = "givenName" id= "givenName" > 
+      <label for="givenName" id="givenNameErrorMsg" class = "errorMsg"> 
+      		You must fill in this  box. </label>
+
+Then your code can say: 
+	
+ 	gName = $("#givenName").val()      //Value in the givenName field 
+  	if (gName.length == 0) {                 //empty text box; make the Error message visible                 $("#givenNameErrorMsg").show();           }  else {               //make sure the Error message is not visible               $("#givenNameErrorMsg").hide();           };   While these examples validate one element, givenName, we could easily pass the ID of the element to validate to a function, as we did in the previous example, and have a more general function for validating text boxes – see Chapter One.
 
 
 
