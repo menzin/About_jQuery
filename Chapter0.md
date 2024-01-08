@@ -56,7 +56,7 @@ To summarize, in Notepad++ the template looks like:
 Lines 1-5 and 12-17 are just your typical html, line 6 brings in the jQuery library of functions, and lines 7-11 are where you will make use of those functions. That’s it. Now you’re ready to find out how to use those jQuery functions. 
 
 * **$( ) calls that library**
-   * That is, $ is a shortcut for calling  all the functions in the jQuery library.
+   * That is, $ is a shortcut for calling all the functions in the jQuery library.
   
 * **Tell jQuery to wait until the DOM is loaded and then we’ll use the library of functions**
     * Often jQuery is used to manipulate the DOM, so we tell jQuery to wait for the DOM to load.
@@ -66,11 +66,13 @@ Lines 1-5 and 12-17 are just your typical html, line 6 brings in the jQuery libr
 
     * And then inside the { ... } we will tell jQuery what to do once the DOM has loaded.
     * So we next need to see what to put inside the { }.
-    * As an aside,  please notice that jQuery does not need to wait for all the images to load – it just needs to know the structure of the DOM. This can help speed things up.
+    * As an aside, please notice that jQuery does not need to wait for all the images to load – it just needs to know the structure of the DOM. This can help speed things up.
       
 * **Use $() again - Put a selector inside the parentheses of $( )**
 
-      $(document).ready(function() {                $(some CSS selector)        });
+      $(document).ready(function() {
+  		$(some CSS selector)
+       });
 
     * This asks jQuery to return a collection of all the elements which match that selector.
     * jQuery uses the same selectors as CSS (Basic ones are reviewed below.)
@@ -82,7 +84,7 @@ Lines 1-5 and 12-17 are just your typical html, line 6 brings in the jQuery libr
       
 * **Putting this all together:**
 
-   demo_0_0_hiding.html
+   [demo_0_0_hiding.html](http://web.simmons.edu/~menzin/CS321/Unit_5_jQuery_and_Ajax/About_jQuery/Chapter00/demo_0_0_hiding.html)
   
       <!doctype html>
         <html lang='en'>
@@ -101,7 +103,7 @@ Lines 1-5 and 12-17 are just your typical html, line 6 brings in the jQuery libr
                    </script>
                    <!--links to style sheets go here- but for this example the CSS is here  
                <style>
-                     .smallText {font-size: 5px; }               //the smallText class
+                     .smallText {font-size: 5px; }        //the smallText class
                </style>
          
               </head>
@@ -113,18 +115,18 @@ Lines 1-5 and 12-17 are just your typical html, line 6 brings in the jQuery libr
      
 The smallText class will get hidden as soon as the DOM is loaded – too fast for you to see it before it hides – but you can still see that it’s there in the source code.
 
-**Warning – you must either grab the code from the Chapter 0 folder  or paste the code above into a text editor and save it as demo_0_0.html before trying to run it.** 
+**Warning – you must either grab the code from the Chapter 0 folder or paste the code above into a text editor and save it as demo_0_0.html before trying to run it.** 
 
 
 ### Summary So Far 
 
-The first thing we need to do is to get a copy of the jQuery library, either by downloading jQuery and linking to that copy, or by linking to a copy of jQuery in a CDN.  We do that as the very first script in our head.  If you download a copy of jQuery and store it with your web page files you will link to it with: 
+The first thing we need to do is to get a copy of the jQuery library, either by downloading jQuery and linking to that copy, or by linking to a copy of jQuery in a CDN. We do that as the very first script in our head. If you download a copy of jQuery and store it with your web page files you will link to it with: 
 
     <script src="jquery.js" > </script>  
 
-Immediately following that we write a script which asks jQuery until the DOM of our page has downloaded and then execute a script.  The script for this (inside script tags) looks like: 
+Immediately following that we write a script which asks jQuery until the DOM of our page has downloaded and then execute a script. The script for this (inside script tags) looks like: 
 
-    $(document).ready(function() {            //wait for the DOM to download & then... 
+    $(document).ready(function() {         //wait for the DOM to download & then... 
         $(some selector1).someMethod1();     //do stuff
         :                       
         $(some selectorN).someMethodN();
@@ -150,10 +152,10 @@ Immediately following that we write a script which asks jQuery until the DOM of 
 
 * You need quotation marks around the selectors.
     * If, however, you create a variable `var thisClass = ".hot"` or pass in an element with id of someID and create a                variable `var thisElement = "#” + someID`
-      then you can use `$(thisClass)`  or `$(thisElement)`.
+      then you can use `$(thisClass)` or `$(thisElement)`.
        
 * Whether you use single quotes or double quotes, be sure they are straight ones, not leaning left or right.
-    * This is easy in a text editor, but doesn’t happen in Word (unless the options were reset to use straight quotes) --- so         beware of copying text from a Word document. 
+    * This is easy in a text editor, but doesn’t happen in Word (unless the options were reset to use straight quotes) --- so beware of copying text from a Word document. 
 
 
 ***Changing the appearance with addClass() and removeClass()***
@@ -178,7 +180,7 @@ Please notice what happened here:
   
 This is called _chaining_ (the methods) and we will see much more of this in Chapter 1. 
 
-We can refine this example so that when our user clicks a button only one specific element will change from blue to red.  To do this, the onclick handler for that button will need to pass the ID of the element to be changed to a turnBlue() function.
+We can refine this example so that when our user clicks a button only one specific element will change from blue to red. To do this, the onclick handler for that button will need to pass the ID of the element to be changed to a turnBlue() function.
 
 In this example we will make the changes in appearance happen when the user clicks a button – so we won’t need to wait for the DOM to load but we will use jQuery to add and remove classes. (Look at lines 9 – 15.)   
 
@@ -271,7 +273,7 @@ Giving feedback to users (e.g. after filling in a form) is a very common task. T
 
 The point of this example is to provide useful feedback. 
 
-Even though our demo script has only one element, we will write the code so that our function is useful for many different text elements.  
+Even though our demo script has only one element, we will write the code so that our function is useful for many different text elements. 
 
 To do this we will follow a pattern of labeling each element and making the id for the label be the id for the input element, concatenated with “Label”. For example, we have an input element with the id “givenName” and its label has the id “givenNameLabel”.  
 
@@ -349,21 +351,21 @@ Before we start, please recall that there are two different ways to make an elem
 - `display`: **none** will hide the element without taking up any space.
 - `visibility`: **hidden** will hide the element but still allocate space to it.
   
- The hide() and show() methods work on the **display** property. That is, when you hide () elements the space they used to take up disappears (temporarily – until you show() the elements again), but with the added benefit that when you  hide() them, the original display value (inline or block) is remembered and used when you again show() them.           
+ The hide() and show() methods work on the **display** property. That is, when you hide () elements the space they used to take up disappears (temporarily – until you show() the elements again), but with the added benefit that when you hide() them, the original display value (inline or block) is remembered and used when you again show() them. 
  
 	The possible values for _visibility_ as _hidden_ and _visible_.
  	The possible values or _display_ are _none_, _block_, _inline_.
 
 In this code, we will display the error messages inline, but hide them immediately, as soon as the DOM has loaded. We will do it this way in case you had a fancy layout you wanted to maintain.
 
-Also, since there maybe several error messages, we will give them all an ErrorMsg class, so that we can hide() them all when the DOM loads.  In other words, our script in the head (right after linking to jQuery.js) would be:
+Also, since there maybe several error messages, we will give them all an ErrorMsg class, so that we can hide() them all when the DOM loads. In other words, our script in the head (right after linking to jQuery.js) would be:
 
 	<script>
  		$(document).ready(function () {
    			$('.errorMsg').hide();
       	}); 
        
-We extend our pattern of making the id for the first label (as just above) the id for the input element with “Label” appended to it:  the id for the error message will be the id for the input element with “ErrorMsg” appended to it. 
+We extend our pattern of making the id for the first label (as just above) the id for the input element with “Label” appended to it: the id for the error message will be the id for the input element with “ErrorMsg” appended to it. 
 
 We can then use exactly the same approach as in our demo_0_0_hiding.html.
 
@@ -372,28 +374,20 @@ Specifically, suppose your code contains:   
       <label for="givenName"> Please enter your given name:</label> 
       <input type = "text" name = "givenName" id= "givenName" > 
       <label for="givenName" id="givenNameErrorMsg" class = "errorMsg"> 
-      		You must fill in this  box. </label>
+      		You must fill in this box. </label>
 
 Then your code can say: 
 	
- 	gName = $("#givenName").val()      //Value in the givenName field 
-  	if (gName.length == 0) {                 //empty text box; make the Error message visible                 $("#givenNameErrorMsg").show();           }  else {               //make sure the Error message is not visible               $("#givenNameErrorMsg").hide();           };   While these examples validate one element, givenName, we could easily pass the ID of the element to validate to a function, as we did in the previous example, and have a more general function for validating text boxes – see Chapter One.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ 	gName = $("#givenName").val()    //Value in the givenName field 
+  	if (gName.length == 0) {                 
+   		//empty text box; make the Error message visible 
+     		$("#givenNameErrorMsg").show();
+       	}  else {   
+	//make sure the Error message is not visible 
+ 	   $("#givenNameErrorMsg").hide();
+     	};   
+      
+While these examples validate one element, givenName, we could easily pass the ID of the element to validate to a function, as we did in the previous example, and have a more general function for validating text boxes – see Chapter One.
 
 
 ### Review 
@@ -405,7 +399,7 @@ The first thing you must do is make that library accessible to your web page –
 $( ) is a shorthand for accessing the jQuery functions. 
 
 
-If you are going to use jQuery to manipulate the DOM or bind event handlers to elements then you must wait for the DOM to be loaded.  You do this by coding:
+If you are going to use jQuery to manipulate the DOM or bind event handlers to elements then you must wait for the DOM to be loaded. You do this by coding:
     
     $(document).ready(function() {   //We’ll put our specific instructions here.
     });
