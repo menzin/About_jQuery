@@ -225,8 +225,40 @@ demo_0_1_colors.html
 
 In this example we have changed the color of the text, but you could use the same approach to change the font size, bold or unbold it, etc.
 
+Warning: When you wish to change classes _ which are in conflict_ with each other, _it is good practice to remove the class you don't want_, and not to just add the new class. Failure to do this may give unpredictable result. 
 
+For example, with classes redText and blueText as above, if you simply addClass one of them to an element with the other class you might produce code like:
 
+    <p class = "redText blueText">Blue comes after red</p>
+    <p class = "blueText redText">Blue comes before red</p>
+    
+And, oddly enough, both paragraphs will appear in blue! (You can verify this by looking in the Elements panel of the console.)  
+If your classes include both properties which are may conflict with other classes and properties which won't (e.g. color and margin where you change only color) then you might want to use multiple classes for those two types of properties. 
+
+To see this, examine:
+
+demo_0_3_classConflict.html 
+
+    <!doctype html>
+    <html lang = 'en'>
+
+    <meta charset="utf-8">
+    <head>	
+       <title>class conflictdemo</title>
+       <script src="jquery.js"></script>
+	   
+	   <style>
+	      .redText {color:red;}
+		  .blueText {color:blue;}  
+		  
+		</style>  
+		
+	  </head>
+	<body>
+	   <p class = 'redText blueText'>red first</p>
+       <p class = 'blueText redText'>blue first</p>
+	 </body>
+    </html>	 
 
 
 
