@@ -22,8 +22,8 @@ You can save the file as **jquery.js** (as I have done) or as **jquery_3_4_1_min
     	    <title>jQuery template</title>
          	<script src="jquery.js"> </script>  <!-- the jQuery library  -->
     	<script>
-    			        //This entire script could be in an external file
-    			        //Your code which uses jQuery will go here	
+		//This entire script could be in an external file
+		//Your code which uses jQuery will go here	
     	 </script>
          <!--  links to style sheets go here  -->
         </head> 
@@ -195,7 +195,7 @@ As noted above, the code is written in such a way that you could use turnRed and
 
 In black and white the code is:
 
-demo_0_1_colors.html
+[demo_0_1_colors.html](http://web.simmons.edu/~menzin/CS321/Unit_5_jQuery_and_Ajax/About_jQuery/Chapter00/demo_0_1_colors.html)
 
     <<!doctype html>
     <html lang='en'>
@@ -238,7 +238,7 @@ If your classes include both properties which are may conflict with other classe
 
 To see this, examine:
 
-demo_0_3_classConflict.html 
+[demo_0_3_classConflict.html](http://web.simmons.edu/~menzin/CS321/Unit_5_jQuery_and_Ajax/About_jQuery/Chapter00/demo_0_3_classConflict.html) 
 
     <!doctype html>
     <html lang = 'en'>
@@ -300,7 +300,7 @@ Then your code for validating this text box might include:
 
 Here it is in a complete program:
 
-demo_0_2_feedback_with_label_change 
+[demo_0_2_feedback_with_label_change](http://web.simmons.edu/~menzin/CS321/Unit_5_jQuery_and_Ajax/About_jQuery/Chapter00/demo_0_2_feedback_with_label_change.html) 
 
 	<!doctype html>
 	<html lang='en'>
