@@ -2,15 +2,15 @@
 
 **jQuery is a library of functions & you need a copy.** </br>
 There are two ways to get a copy of jQuery – you can link to an online copy in a CDN (Content Delivery Network) or you can download a copy and link to your own copy inside your script. 
-I will show you both ways.  Both ways work; you decide!  
+I will show you both ways. Both ways work; you decide!  
 
 The other decision you need to make is whether you want to always access the most recent version of jQuery (via a CDN), or whether you want to stick to a specific version, so that your code won’t be effected by future updates. 
 
-To keep things simple, we will download the current version (3.4.1 as of this writing)  and store it in the same folder as our webpages.  That also means that we have decided to stick to a specific version. 
+To keep things simple, we will download the current version (3.4.1 as of this writing) and store it in the same folder as our webpages. That also means that we have decided to stick to a specific version. 
 
-All downloads may be found at https://jquery.com/download/ and we will download the compressed or minified version  at https://code.jquery.com/jquery-3.4.1.min.js   (You can see the ‘min’ for minified in its URL.   It is missing comments, etc.  and, at another time, you may find it interesting to look at the uncompressed, development version.) 
+All downloads may be found at https://jquery.com/download/ and we will download the compressed or minified version at https://code.jquery.com/jquery-3.4.1.min.js (You can see the ‘min’ for minified in its URL. It is missing comments, etc. and, at another time, you may find it interesting to look at the uncompressed, development version.) 
 
-You can save the file as **jquery.js** (as I have done) or as **jquery_3_4_1_min.js**  in the same folder where you will store your scripts. 
+You can save the file as **jquery.js** (as I have done) or as **jquery_3_4_1_min.js** in the same folder where you will store your scripts. 
 
 
 ### Template For Your Webpage:
@@ -66,7 +66,7 @@ Lines 1-5 and 12-17 are just your typical html, line 6 brings in the jQuery libr
 
     * And then inside the { ... } we will tell jQuery what to do once the DOM has loaded.
     * So we next need to see what to put inside the { }.
-    * As an aside,  please notice that jQuery does not need to wait for all the images to load – it just needs to know the structure of the DOM. This        can help speed things up.
+    * As an aside,  please notice that jQuery does not need to wait for all the images to load – it just needs to know the structure of the DOM. This can help speed things up.
       
 * **Use $() again - Put a selector inside the parentheses of $( )**
 
@@ -74,7 +74,7 @@ Lines 1-5 and 12-17 are just your typical html, line 6 brings in the jQuery libr
 
     * This asks jQuery to return a collection of all the elements which match that selector.
     * jQuery uses the same selectors as CSS (Basic ones are reviewed below.)
-    * For example, `$(".smallText")` will return all the elements in the class smallText. `$("#terms")` will return the (one) element whose ID is             terms.   
+    * For example, `$(".smallText")` will return all the elements in the class smallText. `$("#terms")` will return the (one) element whose ID is terms. 
 
 * **Add a method – or do something to the elements in that collection.**
     * Once you have all the elements in the collection, you add a method which does something to them.
@@ -115,3 +115,35 @@ The smallText class will get hidden as soon as the DOM is loaded – too fast fo
 
 **Warning – you must either grab the code from the Chapter 0 folder  or paste the code above into a text editor and save it as demo_0_0.html before trying to run it.** 
 
+
+### Summary So Far 
+
+The first thing we need to do is to get a copy of the jQuery library, either by downloading jQuery and linking to that copy, or by linking to a copy of jQuery in a CDN.  We do that as the very first script in our head.  If you download a copy of jQuery and store it with your web page files you will link to it with: 
+
+    <script src="jquery.js" > </script>  
+
+Immediately following that we write a script which asks jQuery until the DOM of our page has downloaded and then execute a script.  The script for this (inside script tags) looks like: 
+
+    $(document).ready(function() {            //wait for the DOM to download & then... 
+        $(some selector1).someMethod1();     //do stuff
+        :                       
+        $(some selectorN).someMethodN();
+        });
+
+**Short review of very basic selectors**
+
+* `#thisThing` selector for element with ID thisThing (There may be only one element with a given ID.)
+    * Example: If you have an element with ID homepage, then $("#homePage") will return that element.
+      
+* `.thisClass` selector for all elements with class thisClass.
+    * Example: If some of your elements (paragraphs, spans, etc.) have the class hot then $(".hot") will return all of them (even if they are different types of elements.)
+      
+* `"thisTag"` selector for all elements with tag <thisTag>.
+    * Example: $("h3") will return all headline elements of size h3.
+      
+* Multiple selections: `selector1`, `selector2` will selector all elements that meet either selector.
+    * Example: $('h2, h3') will return all headline elements of size h2 or h3.
+      
+* __'*' selects all elements.__
+
+** _ WARNINGS:_ **
