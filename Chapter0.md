@@ -156,7 +156,7 @@ Immediately following that we write a script which asks jQuery until the DOM of 
     * This is easy in a text editor, but doesn’t happen in Word (unless the options were reset to use straight quotes) --- so         beware of copying text from a Word document. 
 
 
-***Changing the appearance with addClass() and removeClass()*** 
+***Changing the appearance with addClass() and removeClass()***
 
 One of the easiest and most common ways to change the appearance of an element on a page is by adding and removing classes.  
 
