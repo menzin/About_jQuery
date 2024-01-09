@@ -148,14 +148,13 @@ Immediately following that we write a script which asks jQuery until the DOM of 
     * Example: $('h2, h3') will return all headline elements of size h2 or h3.
       
 * `'*'` __selects all elements.__
-  
-***WARNINGS:***
 
-* You need quotation marks around the selectors.
-    * If, however, you create a variable `var thisClass = ".hot"` or pass in an element with id of someID and create a                variable `var thisElement = "#” + someID`
-      then you can use `$(thisClass)` or `$(thisElement)`.
+  
+>[!WARNING]
+> * You need quotation marks around the selectors.
+    * If, however, you create a variable `var thisClass = ".hot"` or pass in an element with id of someID and create a variable `var thisElement = "#” + someID` then you can use `$(thisClass)` or `$(thisElement)`.
        
-* Whether you use single quotes or double quotes, be sure they are straight ones, not leaning left or right.
+> * Whether you use single quotes or double quotes, be sure they are straight ones, not leaning left or right.
     * This is easy in a text editor, but doesn’t happen in Word (unless the options were reset to use straight quotes) --- so beware of copying text from a Word document. 
 
 
