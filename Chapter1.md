@@ -81,16 +81,34 @@ When would I bother with the extra step? Imagine that I had a complicated form t
 
 So far we have seen how to get a collection by selecting for a class or an ID or a tag.  Later on we will describe how we can get collections with more specific criteria, and how to manage collections. But first, we turn to what all that implicit iteration can do for us. 
 
+### Chaining
 
+**Chaining – what it is **
 
+The idea behind chaining is fairly simple and very powerful. As we saw in the previous section, the jQuery operator $() returns a set of elements on which you can operate with various jQuery methods. 
 
+When you operate on those elements you get a new set of elements – and you can again operate on them with a new method. 
 
+It’s worth saying this again: A  jQuery method returns a set of elements ready to be operated on;  each method returns another set of elements ready to be operated on with another method. 
 
+For example, in Chapter 0 we looked at the code:  
+       
+        $(".blueText").removeClass("blueText").addClass("redText"); 
+        
+- The first step is $(".blueText") which returns the set of all the elements with the class blueText.  
+- We then apply the method removeClass("blueText"). That method removes the class blueText and returns the same set of elements (now missing their blueText class).
+- Finally we apply the method  addClass("redText"). That method adds the class redText  to the set of elements which were passed to it (i.e. the elements which used to have the class blueText) and adds the class redText to those elements – and, you guessed it, returns the set of those elements.
 
+  
+**What methods can you chain?**
+- Any method which returns a jQuery set may be chained.
+- 
+Fortunately, jQuery has wonderful documentation at https://api.jquery.com/
+When you look at the documentation for a particular method, say for addClass(), in the upper right corner you will see that this method returns a jQuery (object) and so you may chain other methods after it. 
 
+<img width="566" alt="addClass()" src="https://github.com/menzin/About_jQuery/assets/144168274/2d0ae008-f0d5-4c3a-a0b9-0f93a254e7d8">
 
-
-
+We have already seen that addClass(), removeClass(), show() and hide() all return jQuery sets, as does the jQuery operator $() used to return a jQuery set. 
 
 
 
