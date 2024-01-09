@@ -303,11 +303,96 @@ jQuery provides many ways to use the DOM to find elements.  Let’s start with t
         	</div>
             
         	</body>
-        </html>
+        </html> 
 
     And the result looks like:
     ![image](https://github.com/menzin/About_jQuery/assets/144168274/f3e55e7b-4f2b-45cf-9053-60109fd4684b)
 
-    > [!NOTE]
-    > demo_2_1A_child_vs_descendants_w_lengths_con.html is the same demo, but using console.log instead of alert 
 
+ > [!NOTE]
+ > demo_2_1A_child_vs_descendants_w_lengths_con.html is the same demo, but using console.log instead of alert
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Review
+
+The DOM is a tree, and we can find collections of elements on it using the same selectors we used in CSS. 
+
+We can also chain such methods as children(), find(someSelector), parent(), parents() and siblings() to obtain collections of elements. 
+
+We can use end() to back up one step. T
+
+here are also a variety of filters to find particular types of input elements, (see https://api.jquery.com/category/selectors/form-selectors/ ),  first child, (see https://api.jquery.com/category/selectors/child-filter-selectors/) etc. but you must exercise care as some of them have been deprecated.
+
+## Owning it
+
+Look at the code at http://web.simmons.edu/~menzin/CS321/CS321_TOC.html and make sure you know how it works.
+
+Create a page with 3 divisions. Each division should have some content (for example some jpeg's). Start with the divisions hidden, but add a clickable element to the headline for each division which allows you to show/hide its content.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+   
