@@ -115,7 +115,8 @@ Lines 1-5 and 12-17 are just your typical html, line 6 brings in the jQuery libr
      
 The smallText class will get hidden as soon as the DOM is loaded – too fast for you to see it before it hides – but you can still see that it’s there in the source code.
 
-**Warning – you must either grab the code from the Chapter 0 folder or paste the code above into a text editor and save it as demo_0_0.html before trying to run it.** 
+>[!WARNING]
+> you must either grab the code from the Chapter 0 folder or paste the code above into a text editor and save it as demo_0_0.html before trying to run it.** 
 
 
 ### Summary So Far 
