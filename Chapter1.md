@@ -111,7 +111,6 @@ When you look at the documentation for a particular method, say for addClass(), 
 
 We have already seen that addClass(), removeClass(), show() and hide() all return jQuery sets, as does the jQuery operator $() used to return a jQuery set. 
 
-
 - **You can chain methods – but not properties**
 
 Obviously, then, when a method returns a string, number or array, then you can not chain it. 
