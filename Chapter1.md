@@ -168,27 +168,48 @@ In the documentation you can see that here our method returns a jQuery set.
 <img width="559" alt="css(propertyName, value)" src="https://github.com/menzin/About_jQuery/assets/144168274/13fc5b53-9ba9-42e6-9cf7-378b54506681">
 
 
+Another method which may return different types of things is the val() method. When used with no arguments passed to it, .val() returns the value of a form element. (There are subtleties, which we'll get to later, for checkboxes, radio buttons and select lists; for now think about textarea and input elements.) 
 
+If our form has an element
 
+    <input type = "text" id = "givenName">  
 
+then     
 
+    $("#givenName").val(); 
 
+should return whatever was entered in that text area, and here val() returns a string, number or array. So it may _not_ be chained.
 
+On the other hand
 
+    $("#givenName").val("This field is required"); 
+    
+Should make _This field is required_ appear in that text element and now it returns whatever matched the selector (in this case just the element with id givenName), and it may be chained.    
 
+For example, the **length property** is the number of elements in the jQuery collection. It is not a method, and so it can not be chained.
 
+> [!NOTE]
+> If you query $('#someID') then the collection has only one element and its length is 1.
 
+We will discuss the length property when we review the DOM in Chapter 2.
 
+           
+**EXAMPLES**
 
+Ideas: <br>
+Ask a user to input a color and change the span to that color. Or use a random # generator to choose from an array of colors upon clicking a button.
 
+As we saw in Chapter 0, we can use jQuery to change the attributes of an element – e. g. its style (color) or visibility. 
 
+For example, if we have many items described on a page, we can make the name or picture of that item clickable and show/hide a longer description of that item, or change the size of the image.
 
+What kinds of jQuery methods can we use in our chaining? So far we have seen addClass( ), removeClass( ), show( ), and hide( ). Of course, there are many more methods which will be introduced in chapters 2 and 3.
 
+In Chapters 2 and 3 we will learn about fancier selectors, how to traverse the DOM and how to change the CSS and other attributes of elements.  
 
+In Chapter 4-6   we will see how to bind( ) and unbind( ) event handlers to events, how to manipulate the DOM and how to implement AJAX. 
 
-
-
-
+So far we have blithely introduced changes on our pages (changed color, had error messages appear and disappear) without regard to how screen readers handle such changes (They don't). We have done this in order to focus on simple examples and understand how jQuery acts.  But, of course, we need to also write pages which are ARIA compliant.  With the understanding we have gained from the earlier chapters, in Chapter 8 we learn how to make our pages ARIA compliant. 
 
 
 ## Summary
