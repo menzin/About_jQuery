@@ -81,22 +81,23 @@ Placing the cursor over an element in the upper right panel (highlighted in ligh
 More examples of this sort may be found at https://stackoverflow.com/questions/10601345/an-ul-element-can-never-be-a-child-of-a-p-element
 
   
-- **A reminder about buttons** <br>
-  We will be using a lot of buttons to trigger events, so it's good to have a reminder about some of their properties before we start. <br>
-  In HTML5 there are two ways to code for a button -  with a <button>  tag or with an <input type = 'button'> tag.
+### A reminder about buttons
+We will be using a lot of buttons to trigger events, so it's good to have a reminder about some of their properties before we start. <br>
+In HTML5 there are two ways to code for a button -  with a `<button>` tag or with an `<input type = 'button'>` tag.
 
-  There are a few important differences between these two methods:
-  - Button tags need to be closed, while the input tag (like the <br> tag ) is empty.
-  - The clickable text in the input tag is given by the value attribute inside the tag `<input type = 'button' value = 'Click here'>` while the clickable part of the button tag is given between the opening and closing tags <button>Click here</button>
-  - Because everything between the opening and closing button tags is clickable, you may include images, etc. It is also easier to style the button.
-  - **The <Input type='button' > is always inside a form, while the <button> may be either inside or outside a form.**
-  - **The default type for a button tag is a submit button.** If you want a button which is inside a form and not a submit button, you must specify its type:
+There are a few important differences between these two methods:
+- Button tags need to be closed, while the input tag (like the  `<br>` tag ) is empty.
+- The clickable text in the input tag is given by the value attribute inside the tag `<input type = 'button' value = 'Click here'>` while the clickable part of the button tag is given between the opening and closing tags `<button>Click here</button>`
+- Because everything between the opening and closing button tags is clickable, you may include images, etc. It is also easier to style the button.
+- **The `<Input type='button' >` is always inside a form, while the `<button>` may be either inside or outside a form.**
+- **The default type for a button tag is a submit button.** If you want a button which is inside a form and not a submit button, you must specify its type:
+
+      <button type = 'button'>Click here</button>
   
-        <button type = 'button'>Click here</button>
-  (When you use the input type = ... Method you are already specifying the type as a button.)
+(When you use the input type = ... Method you are already specifying the type as a button.)
   
-  - If you want a <button> inside a form and which causes a change in the page appearance, then you must either specify type = 'button' or the onclick event handler must return false. <br>
-  If you don't do this, the handler will fire twice. (There are a lot of other explanations for this – as you can see by googling jQuery _toggle()twice_. The clearest of these explanations is at https://stackoverflow.com/questions/3070400/jquery-button-click-event-is-triggered-twice but the explanations will make more sense after we discuss events in Chapter 6). The code below illustrates this:
+- If you want a <button> inside a form and which causes a change in the page appearance, then you must either specify type = 'button' or the onclick event handler must return false. <br>
+If you don't do this, the handler will fire twice. (There are a lot of other explanations for this – as you can see by googling jQuery _toggle()twice_. The clearest of these explanations is at https://stackoverflow.com/questions/3070400/jquery-button-click-event-is-triggered-twice but the explanations will make more sense after we discuss events in Chapter 6). The code below illustrates this:
 
 > [!NOTE]
 > In this code I have included the parameter for the number of milliseconds; this makes the hide/show happen slowly so that you can see what is happening.
