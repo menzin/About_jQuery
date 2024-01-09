@@ -200,3 +200,10 @@ jQuery provides many ways to use the DOM to find elements.  Let’s start with t
       - Nested item 2
       - Nested item 3
     - Item 3
+
+     In the upper list (with id topList), we draw red lines around each `<li>` which is an immediate child of topList. In the lower list (with id botList) we draw blue lines around each <li> which is any descendent of botList. 
+
+    The result and code are:
+
+    ![image](https://github.com/menzin/About_jQuery/assets/144168274/2107393a-615f-4ff4-bc19-74386e354923)
+
