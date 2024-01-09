@@ -97,15 +97,18 @@ Finally, we have used the methods  <br>
 `css("propertyToGet")`  `css("propertyToSet", "newValue")`  <br>
 `val()` `val("newValue")` <br>
 
-And seen how to chain them. We have also seen how to use 
-           .val()         .text()         .length 
+And seen how to chain them. We have also seen how to use <br>
+`.val()` <br>
+`.text()` <br>
+`.length` <br>
 to find the relevant  properties.
 
-Owning it
-What properties are changed by show() and hide()?
-Explain why you can not chain after $('#myID').val() or $('#myID').css("color")
-Explain why you can chain $('div').css('color', 'red')
-Create a page with a list of 3 clickable images.  When the image is clicked show a description of the image.  Add a "hide all descriptions" button which performs as advertised.  
+## Owning it
+
+- What properties are changed by show() and hide()?
+- Explain why you can not chain after `$('#myID').val()` or `$('#myID').css("color")`
+- Explain why you can chain `$('div').css('color', 'red')`
+- Create a page with a list of 3 clickable images. When the image is clicked show a description of the image. Add a "hide all descriptions" button which performs as advertised.  
 
 
 
