@@ -91,7 +91,7 @@ All expect the class, ID or tag to be inside quotation marks, or be a variable w
     var myClass = ".blueText"; 
     $(myClass)
     
-Finally, we have used the methods  
+Finally, we have used the methods  <br>
 `addClass("classToAdd")`  `removeClass("classToDrop")` <br>
 `show()`  `hide()` <br>
 `css("propertyToGet")`  `css("propertyToSet", "newValue")`  <br>
