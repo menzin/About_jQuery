@@ -308,6 +308,6 @@ jQuery provides many ways to use the DOM to find elements.  Let’s start with t
     And the result looks like:
     ![image](https://github.com/menzin/About_jQuery/assets/144168274/f3e55e7b-4f2b-45cf-9053-60109fd4684b)
 
-    >[!NOTE]:
+    > [!NOTE]
     > demo_2_1A_child_vs_descendants_w_lengths_con.html is the same demo, but using console.log instead of alert 
 
