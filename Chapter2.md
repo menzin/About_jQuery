@@ -96,14 +96,107 @@ There are a few important differences between these two methods:
   
 (When you use the input type = ... Method you are already specifying the type as a button.)
   
-- If you want a <button> inside a form and which causes a change in the page appearance, then you must either specify type = 'button' or the onclick event handler must return false. <br>
+- If you want a `<button>` inside a form and which causes a change in the page appearance, then you must either specify type = 'button' or the onclick event handler must return false. <br>
 If you don't do this, the handler will fire twice. (There are a lot of other explanations for this – as you can see by googling jQuery _toggle()twice_. The clearest of these explanations is at https://stackoverflow.com/questions/3070400/jquery-button-click-event-is-triggered-twice but the explanations will make more sense after we discuss events in Chapter 6). The code below illustrates this:
 
 > [!NOTE]
 > In this code I have included the parameter for the number of milliseconds; this makes the hide/show happen slowly so that you can see what is happening.
 
 Summary:
-The more modern method for coding buttons is to use the button tags. If your <button> is outside a form, things will go smoothly. If your <button> is inside a form and you do not want to submit the form, you must either specify type='button' inside the opening <button > tag or you must have the onclick event handler return false. 
-Example – and introducing the toggle() and toggleClass() methods. The toggle() function will swap the display state.  That is, if the display is block or inline, then it will make the display state none, and if the display state is none, then toggle() will return it to its original (block or inline) state. You can change the speed at which this toggling happens by adding a parameter: either the number of milliseconds for the toggle or 'slow' or 'fast'.  For example, in the code below 
+
+The more modern method for coding buttons is to use the button tags. If your `<button>` is outside a form, things will go smoothly. If your `<button>` is inside a form and you do not want to submit the form, you must either specify type='button' inside the opening `<button>` tag or you must have the onclick event handler return false. 
+
+Example – and introducing the toggle() and toggleClass() methods. 
+
+The toggle() function will swap the display state. That is, if the display is block or inline, then it will make the display state none, and if the display state is none, then toggle() will return it to its original (block or inline) state. You can change the speed at which this toggling happens by adding a parameter: either the number of milliseconds for the toggle or 'slow' or 'fast'. For example, the code below 
+          
            $(someSelector).toggle(1200) 
-will take 1.2 seconds to hide/show the selected elements.  The toggleClass(some list of classes)  will swap the named classes.  For example,           $(someSelector).toggleClass('redText')  will add/remove the class redText to the selected elements.  This code demos the behavior of buttons we have discussed above.  I suggest that you try to predict the behavior of each button, based on the discussion above, and then run the demo to verify your predictions. 
+           
+will take 1.2 seconds to hide/show the selected elements.  
+
+The toggleClass(some list of classes)  will swap the named classes. For example, 
+
+    $(someSelector).toggleClass('redText')  
+
+will add/remove the class redText to the selected elements. This code demos the behavior of buttons we have discussed above. I suggest that you try to predict the behavior of each button, based on the discussion above, and then run the demo to verify your predictions. 
+
+[demo_2_0_toggling_and_buttons.html](http://web.simmons.edu/~menzin/CS321/Unit_5_jQuery_and_Ajax/About_jQuery/Chapter02/demo_2_0_toggling_and_buttons.html)
+
+    <!doctype html>
+    <html lang = 'en'>
+    
+        <meta charset="utf-8">
+        <head>	
+           <title>toggle and toggleClass demo</title>
+           <script src="jquery.js"></script>
+    	   
+    	   <style>
+    	      .redText {color:red;}
+    		  .embolden {font-weight:bold;}
+    		</style>  
+    	  </head>
+        <body>	  
+    	<p>This paragraph has a <span id= "disp" class = "redText" >mysterious</span> word.</p>
+    	<p>The following buttons are inside a form:</p>
+    	<form>
+    	   <!-- 3rd and 4th button don't work b/c button inside a form and 
+    	        neither button type is given nor false is returned -->
+    	    <button type='button' onclick="$('#disp').toggle(1200);">(Button type given)Make mysterious appear or disappear</button> <br />		
+    		<button  onclick="$('#disp').toggle(1200);return false;">(Button type NOT given, but return false)Make mysterious appear or disappear</button> <br />
+    		<button  onclick="$('#disp').toggle(1200);return true;">(Button type NOT given, but return true)Make mysterious appear or disappear</button> <br />
+    		<button  onclick="$('#disp').toggle(1200);">(Button type NOT given, but no return)Make mysterious appear or disappear</button> <br />
+    		<button type='button' onclick="$('#disp').toggleClass('redText');">Make mysterious red or black</button>
+    	</form><br />
+    	<p>The following buttons are outside a form:</p>
+    	<!-- All buttons work b/c they are outside a form- i.e. nothing to submit -->
+    	<button type='button' onclick="$('#disp').toggle(1200);">(Button type given)Make mysterious appear or disappear</button> <br />		
+    		<button  onclick="$('#disp').toggle(1200);return false;">(Button type NOT given, but return false)Make mysterious appear or disappear</button> <br />
+    		<button  onclick="$('#disp').toggle(1200);return true;">(Button type NOT given, but return true)Make mysterious appear or disappear</button> <br />
+    		<button  onclick="$('#disp').toggle(1200);">(Button type NOT given, but no return)Make mysterious appear or disappear</button> <br />
+    		<button type='button' onclick="$('#disp').toggleClass('redText');">Make mysterious red or black</button>
+    	 </body>
+    </html>  
+
+
+### Fancier selectors and filters 
+
+- **Using hierarchies**  
+jQuery provides many ways to use the DOM to find elements.  Let’s start with the simplest ones, _all of which follow the same syntax as in CSS:_
+  - **Immediate child** <br>
+    `$('selector1 > selector2')` will find all elements that match selector2 and whose immediate parent matches             selector1. Example:  Suppose that your HTML includes the following:
+    
+        <div id= "info”>General Information -Please select your model:
+          <ul>Model
+            <li>Model1</li>
+            <li>Model2</li>
+            <li>Older Models
+                <ul>These are no longer supported:
+                    <li>Model A</li>
+                    <li>Model T</li>
+                </ul>
+                </li>
+          </ul>
+        </div>
+  
+    Then `$("#info > ul ")` will select the ul which begins Model, but _not_ the ul which begins _These are no longer supported:_                            
+    
+    Notice that in the query above we were able to mix the types of selectors -i.e. a tag selector which is a child of an ID selector.
+    
+    We could also have a longer chain of selectors.      
+                                                                                
+  - **Descendants** <br>
+  Just as `$("selector1 > selector2")` gives you the elements which satisfy selector2 and are immediate descendants (children) of the elements which match selector1, `$("selector1 selector2")` gives you the elements which satisfy selector2 and are any descendants (children, grandchildren, etc.) of elements which match selector1.
+  
+     In the example above `$("#info ul")` will produce the ul which begins Model, and also the ul which begins _These are no longer supported._
+  
+    The difference between descendants and children is illustrated in the following script
+  
+    Examine the code just below the next screen shot. In this script there are two identical lists, each with three items; and the second list element has a nested list with 3 items.   
+  
+    So the lists look like:
+    - Item 1
+    - Item 2
+      - Nested item 1
+      - Nested item 2
+      - Nested item 3
+    - Item 3
