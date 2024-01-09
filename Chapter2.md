@@ -312,15 +312,22 @@ jQuery provides many ways to use the DOM to find elements.  Let’s start with t
  > [!NOTE]
  > demo_2_1A_child_vs_descendants_w_lengths_con.html is the same demo, but using console.log instead of alert
 
+  - **Siblings** <br>
+    jQuery also allows us to find either the next sibling of an element or all following siblings of an element.   
 
+    We will  use these when we manipulate the DOM in Chapter 5.
 
+    I urge you to load the code and play with the various buttons in the examples below.
 
+    
+   **Immediate next sibling:** The syntax is as follows:        
+   
+     $('selector1 + selector2') 
 
-
-
-
-
-
+  will return all those elements matching selector2 which are immediate next siblings of an element matching selector1.
+      
+  All following siblings:
+              
 
 
 
