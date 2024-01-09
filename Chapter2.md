@@ -58,9 +58,10 @@ Placing the cursor over an element in the upper right panel (highlighted in ligh
       <ul> …</ul> 
     </p>
     
-  as (interpretation bolded) <br>
-     <p>Verbiage ** </p>  ** <br>
-        <ul> …</ul> 
+  as 
+  
+    <p>Verbiage </p> 
+      <ul> …</ul> 
        
   And the ul will no longer be a child of the p. You can see this by looking at the  elements in the code below in the Chrome or Firefox developer tool, and changing the div's to p's.      
   
