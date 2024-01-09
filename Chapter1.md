@@ -100,9 +100,10 @@ For example, in Chapter 0 we looked at the code: 
 - Finally we apply the method  addClass("redText"). That method adds the class redText  to the set of elements which were passed to it (i.e. the elements which used to have the class blueText) and adds the class redText to those elements – and, you guessed it, returns the set of those elements.
 
   
-**What methods can you chain?**
-- Any method which returns a jQuery set may be chained.
-- 
+_**What methods can you chain?**_
+
+**- Any method which returns a jQuery set may be chained.**
+  
 Fortunately, jQuery has wonderful documentation at https://api.jquery.com/
 When you look at the documentation for a particular method, say for addClass(), in the upper right corner you will see that this method returns a jQuery (object) and so you may chain other methods after it. 
 
@@ -111,24 +112,61 @@ When you look at the documentation for a particular method, say for addClass(), 
 We have already seen that addClass(), removeClass(), show() and hide() all return jQuery sets, as does the jQuery operator $() used to return a jQuery set. 
 
 
+- **You can chain methods – but not properties**
+
+Obviously, then, when a method returns a string, number or array, then you can not chain it. 
+
+The most frequently returned properties are length, and the result of val() and text().: 
+
+`length` <br>  
+The length property is the number of elements in the jQuery collection .  It is not a method, and so it can not be chained. Note:  If you query $('#someID') then the collection has only one element and its length is 1. 
+
+`val()`<br> 
+The val() method returns the value of the first element in a jQuery set.  It is used typically for form elements. <br>
+Example: if we have an element <input type = 'text' id = 'givenName' >  then $('#givenName').val() will give us whatever has been entered in that text box.  
+
+`text()` <br>
+This will return a string of the text content of all the matched elements. <br>
+Example: $('h3').text()  will give all the h3 headlines "strung together." 
 
 
+- **Some methods can return either a jQuery set or a property, depending on the parameters **
+
+The .val() method has two variants - $(someSelector).val() will return the value of the _first_ element matched, while $(someSelector).val(newValue) will set the value of _all_ the matched elements to newValue.  
+
+Similarly, the **css()** method has two variants, depending on how many arguments you supply. If you supply only the name of a style property you will get the value of that property.
+
+For example, if our HTML includes
+
+    <p id = "intro" class = "blueText">  …. </p> 
+    
+then
+    
+    $("#intro").css("color"); 
+    
+will return whatever color was set for the class blueText (presumably "blue").
 
 
+<img width="561" alt="css(propertyName)" src="https://github.com/menzin/About_jQuery/assets/144168274/31463242-af2a-4b89-8294-42d01fec205e">
 
 
+You can see from the documentation that this returns a string ("blue") and so it can _not_ be chained.  
 
+The other way we can use the css method is to set a property. 
 
+For example,  if our HTML includes
 
+    <p id = "intro" class = "blueText">  …. </p> 
+    
+then
 
+    $("#intro").css("color", "red"); 
 
+will set the color in the selected elements (here just the element with id "intro") to be red and will return those selected elements. So this method may be chained. 
 
+In the documentation you can see that here our method returns a jQuery set.
 
-
-
-
-
-
+<img width="559" alt="css(propertyName, value)" src="https://github.com/menzin/About_jQuery/assets/144168274/13fc5b53-9ba9-42e6-9cf7-378b54506681">
 
 
 
