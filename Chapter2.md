@@ -55,13 +55,13 @@ Placing the cursor over an element in the upper right panel (highlighted in ligh
   if we change the div to a p, then the browser will interpret 
     
     <p>Verbiage 
-      <ul> …</ul> 
+      <ul>…</ul> 
     </p>
     
   as 
   
     <p>Verbiage </p> 
-      <ul> …</ul> 
+      <ul>…</ul> 
        
   And the ul will no longer be a child of the p. You can see this by looking at the  elements in the code below in the Chrome or Firefox developer tool, and changing the div's to p's.      
   
@@ -80,6 +80,29 @@ Placing the cursor over an element in the upper right panel (highlighted in ligh
     
 More examples of this sort may be found at https://stackoverflow.com/questions/10601345/an-ul-element-can-never-be-a-child-of-a-p-element
 
-
-
   
+- ** A reminder about buttons** <br>
+  We will be using a lot of buttons to trigger events, so it's good to have a reminder about some of their properties before we start. <br>
+  In HTML5 there are two ways to code for a button -  with a <button>  tag or with an <input type = 'button'> tag.
+
+  There are a few important differences between these two methods:
+  - Button tags need to be closed, while the input tag (like the <br> tag ) is empty.
+  - The clickable text in the input tag is given by the value attribute inside the tag  <input type = 'button' value = 'Click here'> while the clickable part of the button tag is given between the opening and closing tags <button>Click here</button>
+  - Because everything between the opening and closing button tags is clickable, you may include images, etc. It is also easier to style the button.
+  - **The <Input type='button' > is always inside a form, while the <button> may be either inside or outside a form.**
+  - **The default type for a button tag is a submit button.** If you want a button which is inside a form and not a submit button, you must specify its type:
+  
+        <button type = 'button'>Click here</button>
+  (When you use the input type = ... Method you are already specifying the type as a button.)
+  
+  - If you want a <button> inside a form and which causes a change in the page appearance, then you must either specify type = 'button' or the onclick event handler must return false. <br>
+  If you don't do this, the handler will fire twice. (There are a lot of other explanations for this – as you can see by googling jQuery _toggle()twice_. The clearest of these explanations is at https://stackoverflow.com/questions/3070400/jquery-button-click-event-is-triggered-twice but the explanations will make more sense after we discuss events in Chapter 6). The code below illustrates this:
+
+> [!NOTE]
+> In this code I have included the parameter for the number of milliseconds; this makes the hide/show happen slowly so that you can see what is happening.
+
+Summary:
+The more modern method for coding buttons is to use the button tags. If your <button> is outside a form, things will go smoothly. If your <button> is inside a form and you do not want to submit the form, you must either specify type='button' inside the opening <button > tag or you must have the onclick event handler return false. 
+Example – and introducing the toggle() and toggleClass() methods. The toggle() function will swap the display state.  That is, if the display is block or inline, then it will make the display state none, and if the display state is none, then toggle() will return it to its original (block or inline) state. You can change the speed at which this toggling happens by adding a parameter: either the number of milliseconds for the toggle or 'slow' or 'fast'.  For example, in the code below 
+           $(someSelector).toggle(1200) 
+will take 1.2 seconds to hide/show the selected elements.  The toggleClass(some list of classes)  will swap the named classes.  For example,           $(someSelector).toggleClass('redText')  will add/remove the class redText to the selected elements.  This code demos the behavior of buttons we have discussed above.  I suggest that you try to predict the behavior of each button, based on the discussion above, and then run the demo to verify your predictions. 
