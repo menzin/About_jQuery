@@ -102,7 +102,7 @@ For example, in Chapter 0 we looked at the code: 
   
 _**What methods can you chain?**_
 
-**- Any method which returns a jQuery set may be chained.**
+- **Any method which returns a jQuery set may be chained.**
   
 Fortunately, jQuery has wonderful documentation at https://api.jquery.com/
 When you look at the documentation for a particular method, say for addClass(), in the upper right corner you will see that this method returns a jQuery (object) and so you may chain other methods after it. 
