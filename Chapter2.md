@@ -207,3 +207,107 @@ jQuery provides many ways to use the DOM to find elements.  Let’s start with t
 
     ![image](https://github.com/menzin/About_jQuery/assets/144168274/2107393a-615f-4ff4-bc19-74386e354923)
 
+    [demo_2_1_child_vs_desc.html](http://web.simmons.edu/~menzin/CS321/Unit_5_jQuery_and_Ajax/About_jQuery/Chapter02/demo_2_1_child_vs_desc.html)
+    
+        <!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <title>child vs all descendants demo</title>
+          <!-- from https://api.jquery.com/child-selector/ -->
+          <style>
+          body {
+            font-size: 14px;
+          }
+          	</style>
+          <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+          <script>
+        		$(document).ready(function() {
+        		$( ".topList > li" ).css( "border", "4px solid red" );
+        		//Note that don't need ul.topList in selector as topList class appears only once
+        		$( ".botList  li" ).css( "border", "4px double blue" );
+        		})
+        	</script>
+        </head>
+        <body>
+         <h4>Immediate children are outlined in red with $("topList > li") </h4>
+        <ul class="topList">topList
+          <li>Item 1</li>
+          <li>Item 2
+            <ul>
+            <li>Nested item 1</li>
+            <li>Nested item 2</li>
+            <li>Nested item 3</li>
+            </ul>
+          </li>
+          <li>Item 3</li>
+         </ul> 
+         <h4>All descendants are outlined in blue with $("botList  li") </h4>
+         <ul class="botList">botList
+          <li>Item 1</li>
+          <li>Item 2
+            <ul>
+            <li>Nested item 1</li>
+            <li>Nested item 2</li>
+            <li>Nested item 3</li>
+            </ul>
+          </li>
+          <li>Item 3</li> 
+        </ul>
+         
+
+        </body>
+        </html>
+
+    We can also see this distinction between children and descendents in the code below which adds the use of the length property to see how many elements are returned in set:
+ 
+    [demo_2_1A_child_vs_descendants_w_lengths.html](http://web.simmons.edu/~menzin/CS321/Unit_5_jQuery_and_Ajax/About_jQuery/Chapter02/demo_2_1A__child_v_descendants_w_lengths.html)
+    
+        <!doctype html>
+        <html lang = 'en'>
+        
+            <meta charset="utf-8">
+            <head>	
+               <title>child vs descendant selector w lengths demo</title>
+               <script src="jquery.js"></script>
+        	   <script>
+        	      $(document).ready(function(){
+        		          
+        				  $( "div" ).css( "border", "3px double red" );  
+        				  $( "ul" ).css( "border", "3px double blue" );  	
+        				  
+        				  $infoChild = $("#info > ul");  
+        				  $infoDesc = $("#info ul"); 
+                           				  
+           				  var mesg1 = "#info is outlined in red ; it  has " + $infoChild.length + " <ul> child(ren)";
+        				  var mesg2 = " and it has " + $infoDesc.length + " , each outlined in blue, <ul> descendant(s).";	  		   			  
+        				  alert(mesg1 + mesg2);
+        				  
+        				  });
+               </script>
+               
+            </head>			  
+        			  
+        	<body>			 
+        	<div id= "info">General Information (with ID "info")-Please select your model:
+        		<ul id = "outerUL">Model
+        			   <li>Model 1</li>
+        			   <li>Model 2</li>
+        			   <li>Older Models 
+        					 <ul id="innerUl">These are no longer supported:
+        							<li>Model A</li>
+        							<li>Model T</li>
+        					 </ul>
+        				</li>            
+        		</ul>
+        	</div>
+            
+        	</body>
+        </html>
+
+    And the result looks like:
+    ![image](https://github.com/menzin/About_jQuery/assets/144168274/f3e55e7b-4f2b-45cf-9053-60109fd4684b)
+
+    >[!NOTE]:
+    > demo_2_1A_child_vs_descendants_w_lengths_con.html is the same demo, but using console.log instead of alert 
+
