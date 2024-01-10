@@ -320,14 +320,71 @@ jQuery provides many ways to use the DOM to find elements.  Let’s start with t
     I urge you to load the code and play with the various buttons in the examples below.
 
     
-   **Immediate next sibling:** The syntax is as follows:        
-   
-     $('selector1 + selector2') 
+     **Immediate next sibling:** The syntax is as follows:        
+     
+         $('selector1 + selector2') 
+  
+    will return all those elements matching selector2 which are immediate next siblings of an element matching selector1.
+        
+    **All following siblings**:
 
-  will return all those elements matching selector2 which are immediate next siblings of an element matching selector1.
-      
-  All following siblings:
-              
+         $('selector1 ~ selector2')
+
+    will return all those elements matching selector2 which are any later siblings of an element matching selector1.
+
+    Some examples will clarify this.
+
+    [demo_2_2_siblings.html](http://web.simmons.edu/~menzin/CS321/Unit_5_jQuery_and_Ajax/About_jQuery/Chapter02/demo_2_2_siblings.html)
+
+        <!doctype html>
+        <html lang='en'>
+        	<head>
+        		<meta charset="utf-8">
+        		<title>demo_0_1</title>
+        		<style>
+        			.blueText {color:blue; }
+        			.redText  {color:red; }
+        			.greenText  {color:green; }
+        		</style>	  
+        		<script src="jquery.js" > </script>        //the jQuery library
+        		<script type="text/javascript">
+        			function turnBlue(someSet){			
+        			$(someSet).removeClass("redText").removeClass("greenText").addClass("blueText");}  
+        			
+        			function turnRed(someSet){			
+        			$(someSet).removeClass("blueText").removeClass("greenText").addClass("redText");}
+        			
+        			function turnGreen(someSet){
+        			$(someSet).removeClass("redText").removeClass("blueText").addClass("greenText");} 	
+        			
+        			
+        		</script>
+        	   
+          </head>
+          </body>
+        		<form id="form1" class ="blueText">
+        		  <p> This is form1 </p>
+        		  <input type ="button" value ="Make next sibling red" onclick = "turnRed($('#form1 + form'));">		  
+        		  <input type ="button" value ="Make all siblings green" onclick = "turnGreen($('#form1 ~ form'));">
+        		  <input type ="button" value ="Turn me red!" onclick = "turnRed($('#form1'));">
+        		  <br /><br />
+        		</form>  
+        		
+        		<form id = "form2" class ="blueText">
+        		  <p> This is form2, the immediate (next) sibling of form1. </p>
+        		  <br />
+        		 </form> 
+        		
+        
+        		<form id = "form3" class ="blueText">
+        		<p> This is form3,  a following sibling of form1. </p>
+        		<br />
+        		</form>
+          </body>
+        </html>
+        
+        
+        
 
 
 
@@ -375,9 +432,9 @@ The DOM is a tree, and we can find collections of elements on it using the same 
 
 We can also chain such methods as children(), find(someSelector), parent(), parents() and siblings() to obtain collections of elements. 
 
-We can use end() to back up one step. T
+We can use end() to back up one step. 
 
-here are also a variety of filters to find particular types of input elements, (see https://api.jquery.com/category/selectors/form-selectors/ ),  first child, (see https://api.jquery.com/category/selectors/child-filter-selectors/) etc. but you must exercise care as some of them have been deprecated.
+There are also a variety of filters to find particular types of input elements, (see https://api.jquery.com/category/selectors/form-selectors/ ),  first child, (see https://api.jquery.com/category/selectors/child-filter-selectors/) etc. but you must exercise care as some of them have been deprecated.
 
 ## Owning it
 
