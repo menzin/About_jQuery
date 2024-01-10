@@ -122,6 +122,7 @@ will add/remove the class redText to the selected elements. This code demos th
 
 [demo_2_0_toggling_and_buttons.html](http://web.simmons.edu/~menzin/CS321/Unit_5_jQuery_and_Ajax/About_jQuery/Chapter02/demo_2_0_toggling_and_buttons.html)
 
+  ``` html
     <!doctype html>
     <html lang = 'en'>
     
@@ -156,7 +157,7 @@ will add/remove the class redText to the selected elements. This code demos th
     		<button type='button' onclick="$('#disp').toggleClass('redText');">Make mysterious red or black</button>
     	 </body>
     </html>  
-
+```
 
 ### Fancier selectors and filters 
 
@@ -179,7 +180,6 @@ jQuery provides many ways to use the DOM to find elements.  Let’s start with t
         </div>
   
     Then `$("#info > ul ")` will select the ul which begins Model, but _not_ the ul which begins _These are no longer supported:_                            
-    
     Notice that in the query above we were able to mix the types of selectors -i.e. a tag selector which is a child of an ID selector.
     
     We could also have a longer chain of selectors.      
@@ -208,7 +208,8 @@ jQuery provides many ways to use the DOM to find elements.  Let’s start with t
     ![image](https://github.com/menzin/About_jQuery/assets/144168274/2107393a-615f-4ff4-bc19-74386e354923)
 
     [demo_2_1_child_vs_desc.html](http://web.simmons.edu/~menzin/CS321/Unit_5_jQuery_and_Ajax/About_jQuery/Chapter02/demo_2_1_child_vs_desc.html)
-    
+ 
+    ``` html
         <!doctype html>
         <html lang="en">
         <head>
@@ -259,10 +260,13 @@ jQuery provides many ways to use the DOM to find elements.  Let’s start with t
         </body>
         </html>
 
+     ```
+  
     We can also see this distinction between children and descendents in the code below which adds the use of the length property to see how many elements are returned in set:
  
     [demo_2_1A_child_vs_descendants_w_lengths.html](http://web.simmons.edu/~menzin/CS321/Unit_5_jQuery_and_Ajax/About_jQuery/Chapter02/demo_2_1A__child_v_descendants_w_lengths.html)
     
+       ``` html
         <!doctype html>
         <html lang = 'en'>
         
@@ -308,6 +312,7 @@ jQuery provides many ways to use the DOM to find elements.  Let’s start with t
     And the result looks like:
     ![image](https://github.com/menzin/About_jQuery/assets/144168274/f3e55e7b-4f2b-45cf-9053-60109fd4684b)
 
+  ```
 
  > [!NOTE]
  > demo_2_1A_child_vs_descendants_w_lengths_con.html is the same demo, but using console.log instead of alert
