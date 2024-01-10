@@ -466,7 +466,7 @@ Similarly
 
 will collect all buttons (whether declared with an input tag or a button tag), which may be useful for adding event handlers.
 
-⚠️ WARNING:  If you use <button>, you must say <button type = 'button'> unless you want a submit button.  Otherwise you get double bind!!!
+⚠️ WARNING:  If you use `<button>`, you must say `<button type = 'button'> `unless you want a submit button. Otherwise you get double bind!!!
 
 There are analogous filters for all radio buttons, passwords, etc.  but as we shall see in the next section, we can also do this by using attributes (rather than learning a host of filters.)
 
