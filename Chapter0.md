@@ -88,34 +88,33 @@ Lines 1-5 and 12-17 are just your typical html, line 6 brings in the jQuery libr
 
    [demo_0_0_hiding.html](http://web.simmons.edu/~menzin/CS321/Unit_5_jQuery_and_Ajax/About_jQuery/Chapter00/demo_0_0_hiding.html)
 
-  ``` html 
-      <!doctype html>
-        <html lang='en'>
-        <html>
-            <head>
-                <meta charset="utf-8">
-                <title>Demo</title>
-                 <script src="jquery.js" > </script>       <!-- the jQuery library 
-        
-                 <script type="text/javascript”>
-                        $(document).ready( function() {
-        
-        
-                               $(".smallText").hide();
-                       });
-                   </script>
-                   <!--links to style sheets go here- but for this example the CSS is here  
-               <style>
-                     .smallText {font-size: 5px; }        //the smallText class
-               </style>
-         
-              </head>
-              </body>
-                    Lots of sales verbiage
-                   <span class = smallText>The terms are onerous.</span>
-                </body>
-           </html>
-      ```
+``` html      
+	<!doctype html>
+	<html lang='en'>
+	<html>
+	    <head>
+	        <meta charset="utf-8">
+	        <title>Demo_0_0_hiding</title>
+	         <script src="jquery.js" > </script>       <!-- the jQuery library -->
+	
+	         <script>
+	                $(document).ready( function() {
+	                       $(".smallText").hide();
+	               });
+	         </script>
+	           <!--links to style sheets go here- but for this example the CSS is here -->
+	       <style>
+	             .smallText {font-size: 5px; }               //the smallText class
+	       </style>
+	 
+	      </head>
+	      </body>
+	           Lots of sales verbiage.
+	           <span class = "smallText">The terms are onerous.</span>
+			 
+	        </body>
+	   </html>
+```
 The smallText class will get hidden as soon as the DOM is loaded – too fast for you to see it before it hides – but you can still see that it’s there in the source code.
 
 >[!WARNING]
