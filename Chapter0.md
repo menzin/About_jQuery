@@ -15,6 +15,7 @@ You can save the file as **jquery.js** (as I have done) or as **jquery_3_4_1_min
 
 ### Template For Your Webpage:
 
+``` html 
     <!doctype html>
     <html lang='en'>
     	<head>
@@ -31,6 +32,7 @@ You can save the file as **jquery.js** (as I have done) or as **jquery_3_4_1_min
                <!-- Your HTML and any links to other scripts  go here. -->
          </body>
     </html> 
+```
 
 **If you would rather link to a CDN:**  
 The advantage of doing this is that if your user’s device already has a copy of jQuery from the same CDN, then it won’t be downloaded again. The disadvantage is that it can require an additional http request.
@@ -85,7 +87,8 @@ Lines 1-5 and 12-17 are just your typical html, line 6 brings in the jQuery libr
 * **Putting this all together:**
 
    [demo_0_0_hiding.html](http://web.simmons.edu/~menzin/CS321/Unit_5_jQuery_and_Ajax/About_jQuery/Chapter00/demo_0_0_hiding.html)
-  
+
+  ``` html 
       <!doctype html>
         <html lang='en'>
         <html>
@@ -112,7 +115,7 @@ Lines 1-5 and 12-17 are just your typical html, line 6 brings in the jQuery libr
                    <span class = smallText>The terms are onerous.</span>
                 </body>
            </html>
-     
+      ```
 The smallText class will get hidden as soon as the DOM is loaded – too fast for you to see it before it hides – but you can still see that it’s there in the source code.
 
 >[!WARNING]
@@ -198,6 +201,7 @@ In black and white the code is:
 
 [demo_0_1_colors.html](http://web.simmons.edu/~menzin/CS321/Unit_5_jQuery_and_Ajax/About_jQuery/Chapter00/demo_0_1_colors.html)
 
+   ``` html 
     <<!doctype html>
     <html lang='en'>
     	    <head>
@@ -223,7 +227,7 @@ In black and white the code is:
     			<button onclick = 'turnBlue("someP");'>Click me to turn the paragraph blue</button>
     	        </body>
     	</html>
-            
+   ```       
 
 In this example we have changed the color of the text, but you could use the same approach to change the font size, bold or unbold it, etc.
 
@@ -242,6 +246,7 @@ To see this, examine:
 
 [demo_0_3_classConflict.html](http://web.simmons.edu/~menzin/CS321/Unit_5_jQuery_and_Ajax/About_jQuery/Chapter00/demo_0_3_classConflict.html) 
 
+  ``` html
     <!doctype html>
     <html lang = 'en'>
 
@@ -262,7 +267,7 @@ To see this, examine:
        <p class = 'blueText redText'>blue first</p>
 	 </body>
     </html>	 
-
+```
 
 
 ***Changing a form when you validate the entries – with colors or with error messages***
@@ -304,6 +309,7 @@ Here it is in a complete program:
 
 [demo_0_2_feedback_with_label_change](http://web.simmons.edu/~menzin/CS321/Unit_5_jQuery_and_Ajax/About_jQuery/Chapter00/demo_0_2_feedback_with_label_change.html) 
 
+``` html
 	<!doctype html>
 	<html lang='en'>
 	    <head>
@@ -342,7 +348,7 @@ Here it is in a complete program:
 	  </form> 
 	</body>
 	</html>
-
+```
 
 ***Changing the visibility /display of an error message with hide() and show():*** 
 
