@@ -335,7 +335,8 @@ jQuery provides many ways to use the DOM to find elements.  Let’s start with t
       Some examples will clarify this.
 
     [demo_2_2_siblings.html](http://web.simmons.edu/~menzin/CS321/Unit_5_jQuery_and_Ajax/About_jQuery/Chapter02/demo_2_2_siblings.html)
-
+  
+  ``` html
         <!doctype html>
         <html lang='en'>
         	<head>
@@ -382,10 +383,147 @@ jQuery provides many ways to use the DOM to find elements.  Let’s start with t
         		</form>
           </body>
         </html>
-        
-        
-        
+   ```     
 
+⚠️ Some warnings about relatives: <br>
+
+The first thing to remember is that (just as with humans) siblings must share a parent.  
+
+The second thing is more subtle, so be warned. If you ask for 
+
+            $('selector1 + selector2').someMethod()
+            
+Then the immediate sibling after selector1 must match selector2 ... Or nothing happens.
+
+To see this, we modify the code above slightly ---- namely we add two paragraphs between form1 and form2 and two new buttons (code is bold).   The first of these paragraphs is the immediate successor of form1.   (See if you can predict what will happen, and then read the explanation after the code.)
+
+[demo_2_3_siblings_playing.html](http://web.simmons.edu/~menzin/CS321/Unit_5_jQuery_and_Ajax/About_jQuery/Chapter02/demo_2_3_siblings_playing.html)
+
+``` html
+    <!doctype html>
+    <html lang='en'>
+    	<head>
+    		<meta charset="utf-8">
+    		<title>demo_0_1</title>
+    		<style>
+    			.blueText {color:blue; }
+    			.redText  {color:red; }
+    			.greenText  {color:green; }
+    		</style>	  
+    		<script src="jquery.js" > </script>        
+    		<script type="text/javascript">
+    			function turnBlue(someSet){			
+    			$(someSet).removeClass("redText").removeClass("greenText").addClass("blueText");}  
+    			
+    			function turnRed(someSet){			
+    			$(someSet).removeClass("blueText").removeClass("greenText").addClass("redText");}
+    			
+    			function turnGreen(someSet){
+    			$(someSet).removeClass("redText").removeClass("blueText").addClass("greenText");} 	
+    			
+    			
+    		</script>
+    	   
+      </head>
+      </body>
+    		<form id="form1" class ="blueText">
+    		  <p> This is form1 </p>
+    		  <input type ="button" value ="Make next sibling red, if it is a form" 
+    		        onclick = "turnRed($('#form1 + form'));">	
+    		  <input type ="button" value ="Make next sibling red, if it is a p" 
+    		        onclick = "turnRed($('#form1 + p'));">			  
+    		  <input type ="button" value ="Make all siblings which are forms green" 
+    		        onclick = "turnGreen($('#form1 ~ form'));">
+    		<br />		
+    		  <button type = 'button' onclick = "turnRed($('#form1'));">Turn form1 red</button>
+    		  <input type ="button" value = "Make paragraph1 red" onclick ="turnRed($('#form1 + p'));">
+    		  <input type ="button" value = "Make paragraphs 1 and 2 green"  
+    		            onclick= "turnGreen($('#form1 ~ p'));">
+    		  <br /><br />
+    		</form>  
+    		
+    		<p>This is the first paragraph after form1 and the next (immediate) sibling of form1</p>
+    		<p>This is the second paragraph after form1 and also a sibling of form1.</p>
+    		
+    		<form id = "form2" class ="blueText">
+    		  <p> This is form2, the immediate (next) form sibling of form1. </p>
+    		</form> 
+    		
+    
+    		<form id = "form3" class ="blueText">
+    		<p> This is form3,  a following form sibling of form1. </p>
+    		<br />
+    		</form>
+      </body>
+    </html>
+```
+
+ The new buttons work just fine, but look what happened the first button (code in italics; it has the value "Make next sibling red"  ) ...  It looks for `$('#form1 + form')` That is, it looks for a form which is the immediate sibling of form1  ---- and there isn't such an element.  The immediate sibling of form1 is a paragraph!  The button right after the italicized one does work – because it looks for forms which are any siblings of form1.  
+Finally, as you should expect, if there are multiple occurrences of paragraphs right after forms, we can handle all of them at once. The code is below. In addition to adding the two paragraphs after form2 we have modified the last two buttons.
+
+[demo_2_4_siblings_playing_more.html](http://web.simmons.edu/~menzin/CS321/Unit_5_jQuery_and_Ajax/About_jQuery/Chapter02/demo_2_4_siblings_playing_more.html)
+
+  ``` html
+    <!doctype html>
+    <html lang='en'>
+    	<head>
+    		<meta charset="utf-8">
+    		<title>demo_0_1</title>
+    		<style>
+    			.blueText {color:blue; }
+    			.redText  {color:red; }
+    			.greenText  {color:green; }
+    		</style>	  
+    		<script src="jquery.js" > </script>        
+    		<script type="text/javascript">
+    			function turnBlue(someSet){			
+    			$(someSet).removeClass("redText").removeClass("greenText").addClass("blueText");}  
+    			
+    			function turnRed(someSet){			
+    			$(someSet).removeClass("blueText").removeClass("greenText").addClass("redText");}
+    			
+    			function turnGreen(someSet){
+    			$(someSet).removeClass("redText").removeClass("blueText").addClass("greenText");} 	
+    			
+    			
+    		</script>
+    	   
+      </head>
+      </body>
+    		<form id="form1" class ="blueText">
+    		  <p> This is form1 </p>
+    		  <button type = 'button' onclick = "turnRed($('#form1 + p'));">
+    		     Make next sibling, which is a p,  red</button>  
+    		  <button type = 'button' onclick = "turnGreen($('#form1 ~ form'));">
+    		     Make all form siblings green</button>
+    			 
+    		  <button type = 'button' onclick = "turnRed($('#form1'));">
+    		     Turn form1 red!</button>
+    		  <button type = 'button' onclick ="turnRed($('form + p'));">
+    		     Make paragraphs 1 red"</button>
+    		  <button type = 'button' onclick= "turnGreen($('form ~ p'));">
+    		     Make paragraphs 1 and 2 green</button>
+    		  <br /><br />
+    		  
+    		</form>  
+    		
+    		<p>This is the first paragraph after form1.</p>
+    		<p>This is the second paragraph after form1.</p>
+    		
+    		<form id = "form2" class ="blueText">
+    		  <p> This is form2, the immediate (next) sibling of form1. </p>
+    		  <br />
+    		 </form> 
+    		
+            <p>This is the first paragraph after form2.</p>
+    		<p>This is the second paragraph after form2.</p>
+    		<form id = "form3" class ="blueText">
+    		<p> This is form3,  a following sibling of form1. </p>
+    		<br />
+    		</form>
+      </body>
+    </html>
+  ```  
 
 
 
