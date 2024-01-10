@@ -416,14 +416,67 @@ jQuery provides many ways to use the DOM to find elements.  Let’s start with t
 
 
 
+### Backing up with end() 
+We have made extensive use of the way most jQuery methods return a set. Sometimes we want to back up to the previous set, and the end() method will do just that. 
 
+Suppose that I have code such as   
 
+    $('.reviewClass').addClass('redText' 'embolden').children().addClass('blueText')
 
+We have first gotten the set of all elements with class reviewClass. Then we have added two classes to those elements (which, recall,  doesn't change the jQuery set!). Then we went on to all the children of elements in our set and added a class to them.  Suppose now that we want to go back to those reviewClass elements to do some more stuff with them or find their next sibling etc. Then end() will do exactly that. 
 
+Another way to think of this is imagine that as we use jQuery we produce a stack (most recent at the top of the stack) of the jQuery sets that we have gotten. We are operating on the top jQuery set in that stack.  What end() does is to pop the top set off the stack, so we are operating on the next set down.   
 
+⚠️ Warning: some jQuery methods return the same set that they operated on. Examples of these methods  would be  addClass(), removeClass(), and several such as  css() which we consider in the next chapter.   
+ 
+### Using filters and .eq() 
 
+- **Finding specific elements in the order found with .eq()**
 
+At this point we have seen enough selectors for most uses, but you should know that you can filter the results to get the first, last, nth or nth from last child. 
 
+All of these are documented at https://api.jquery.com/category/selectors/ with examples. Some of these have been deprecated, so the recommended way to do so is to use the index in the returned set. Of course, the set starts counting from 0.
+
+For example,   
+  `$('div').eq(0)`  will return the first div and 
+
+  `$('div').eq(1)` will return the second div.  
+
+You may also count from the end by using negative numbers.  
+  `$('div').eq(-1)` will return the last div.  (There is no -0.)  
+
+And, should you need it, the length property of a jQuery set will tell you the number of elements returned.         
+
+    var numDivs = $('div').length;
+
+- **Finding all inputs in a form or forms – the :input and :button filters**
+
+Instead of asking for all `<input>`, `<select>`, `<textarea>` and `<button>`  elements, we can collect them all at once using the :input filter.
+
+`$('#myForm  :input')`  for one form 
+`$('form :input')`  for all forms 
+
+`$('#myForm  :input')` will  return the form elements where our user has input some information, which may be useful for form validation or processing. 
+
+Please notice that this includes not only all `<input...>`elements, but also drop-down lists and buttons (whether declared with an input tag or a button tag.) 
+
+Similarly   
+
+          $('#myForm  :button')
+
+will collect all buttons (whether declared with an input tag or a button tag), which may be useful for adding event handlers.
+
+⚠️ WARNING:  If you use <button>, you must say <button type = 'button'> unless you want a submit button.  Otherwise you get double bind!!!
+
+There are analogous filters for all radio buttons, passwords, etc.  but as we shall see in the next section, we can also do this by using attributes (rather than learning a host of filters.)
+
+- **Other filters**
+  
+jQuery supports all the CSS pseudo-classes (such as :first-child) and a few more of its own (such as :button and :input ). You can filter on them.   
+
+I find that I rarely use most of them, And so am not discussing them here. But you can see the list of them at https://api.jquery.com/category/selectors/. If you are already a great user of CSS pseudo-classes , then you can find a list of just the jQuery extensions at https://api.jquery.com/category/selectors/jquery-selector-extensions/  
+
+Do be careful, because quite a few of the filters have been deprecated in favor of newer methods.  (For example the .eq() method replaces the :eq() filter.)  The documentation notes when a filter or method has been deprecated and suggests alternatives.
 
 
 ## Review
