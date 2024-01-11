@@ -530,9 +530,16 @@ Finally, as you should expect, if there are multiple occurrences of paragraphs r
     </html>
   ```  
 
+**Summary**
 
 
-
+| Syntaxx        | Meaning      | Example  |
+| ------------- |:-------------:| -------:|
+| 'Sel1, Sel2'   | either  |'span, div' returns all `<span>s` and all `<div>s`|
+| 'Sel1 > Sel2'  | Immediate child | 'div > p' returns the all the <p>s inside a <div> which are children of the < div> (not grandchildren, etc.). |
+| 'Sel1 Sel2'     | Descendant  | div p' returns any <p> which is a descendant of a div. |
+| 'Sel1 + Sel2'   | Next sibling |'p + **p**' returns any `<p>` whose immediate previous sibling is a `<p>` (Bolding to show correspondence.) |
+| 'Sel1 ~ Sel2'   | All following siblings  |'p ~ **p**' returns all `<p>s` which are siblings of a previous p. (Bolding to show correspondence.) |
 
 
 
@@ -605,7 +612,7 @@ Please notice that this includes not only all `<input...>`elements, but also dro
 
 Similarly   
 
-          $('#myForm  :button')
+    $('#myForm  :button')
 
 will collect all buttons (whether declared with an input tag or a button tag), which may be useful for adding event handlers.
 
