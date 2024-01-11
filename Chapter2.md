@@ -65,7 +65,8 @@ Placing the cursor over an element in the upper right panel (highlighted in ligh
        
   And the ul will no longer be a child of the p. You can see this by looking at the  elements in the code below in the Chrome or Firefox developer tool, and changing the div's to p's.      
   
-    <div id= "info”>General Information -Please select your model:
+  ```html
+  <div id= "info”>General Information -Please select your model:
       <ul>Model
         <li>Model1</li> 
         <li>Model2</li>
@@ -77,7 +78,7 @@ Placing the cursor over an element in the upper right panel (highlighted in ligh
         </li> 
       </ul> 
     </div>
-    
+  ```  
 More examples of this sort may be found at https://stackoverflow.com/questions/10601345/an-ul-element-can-never-be-a-child-of-a-p-element
 
   
@@ -164,8 +165,11 @@ will add/remove the class redText to the selected elements. This code demos th
 - **Using hierarchies**  
 jQuery provides many ways to use the DOM to find elements.  Let’s start with the simplest ones, _all of which follow the same syntax as in CSS:_
   - **Immediate child** <br>
-    `$('selector1 > selector2')` will find all elements that match selector2 and whose immediate parent matches             selector1. Example:  Suppose that your HTML includes the following:
+    `$('selector1 > selector2')` will find all elements that match selector2 and whose immediate parent matches selector1.
+
+    Example: Suppose that your HTML includes the following:
     
+       ``` html
         <div id= "info”>General Information -Please select your model:
           <ul>Model
             <li>Model1</li>
@@ -178,7 +182,7 @@ jQuery provides many ways to use the DOM to find elements.  Let’s start with t
                 </li>
           </ul>
         </div>
-  
+ 	 ```
     Then `$("#info > ul ")` will select the ul which begins Model, but _not_ the ul which begins _These are no longer supported:_                            
     Notice that in the query above we were able to mix the types of selectors -i.e. a tag selector which is a child of an ID selector.
     
