@@ -729,6 +729,12 @@ And accordingly (on the principle of memorize less) I don't use it. I mention fi
 > [!NOTE]
 > The find() method is atypical of jQuery methods in that find() always requires a parameter. If you want all the descendents of someSelector1 then you should ask for $(someSelector1).find('*');
 
+The jquery api says  https://api.jquery.com/find/#find-selector – & I think it's backwards
+
+[Selector context](https://api.jquery.com/jquery/#selector-context) is implemented with the .find() method; therefore, `$( "li.item-ii" ).find( "li" )` is equivalent to `$( "li", "li.item-ii" )`.
+I think that `$( "li.item-ii" ).find( "li" )`  is equivalent to 
+`$( "li.item-ii li" )`. 
+
 ### Backing up with end() 
 We have made extensive use of the way most jQuery methods return a set. Sometimes we want to back up to the previous set, and the end() method will do just that. 
 
