@@ -532,39 +532,202 @@ Finally, as you should expect, if there are multiple occurrences of paragraphs r
 
 **Summary**
 
+-  where Sel1 and Sel2 are any two selectors
 
-| Syntaxx        | Meaning      | Example  |
-| ------------- |:-------------:| -------:|
-| 'Sel1, Sel2'   | either  |'span, div' returns all `<span>s` and all `<div>s`|
-| 'Sel1 > Sel2'  | Immediate child | 'div > p' returns the all the <p>s inside a <div> which are children of the < div> (not grandchildren, etc.). |
-| 'Sel1 Sel2'     | Descendant  | div p' returns any <p> which is a descendant of a div. |
-| 'Sel1 + Sel2'   | Next sibling |'p + **p**' returns any `<p>` whose immediate previous sibling is a `<p>` (Bolding to show correspondence.) |
-| 'Sel1 ~ Sel2'   | All following siblings  |'p ~ **p**' returns all `<p>s` which are siblings of a previous p. (Bolding to show correspondence.) |
+<img width="374" alt="Screenshot 2024-01-10 at 7 57 25 PM" src="https://github.com/menzin/About_jQuery/assets/144168274/55c0495e-614d-451d-b96e-610180eda7c7">
 
+Again, these are all standard CSS usage, except that, as always in jQuery, we put quotation marks around the selector(s).    
 
+**Owning It **
 
+Look at the page at http://web.simmons.edu/~menzin/CS321/CS321_TOC.html (It is easy to see its code and copy the code.) There is one (top level) list, with each unit as an <li> and there are nested lists in each unit for the chapters.  Add a button which will toggle the unit headings to have blue text. Add a second button which toggles the first item in each unit have green text and all subsequent items to have red text.  
 
 
+**More relatives**
+
+jQuery also has methods siblings(), parent(), and parents() (which gives all ancestors). So, for example,
+
+    $("div .hot").siblings()   
+    
+will return all elements which are siblings of : a div with the class hot. 
+
+These methods all return jQuery sets and so may be chained.
+
+These methods, in addition to being useful for selecting elements, are also useful for traversing the DOM tree.
 
 
+⚠️ WARNINGS: Be careful:  
+- parent() returns the immediate parent, while parents() returns all ancestors.
+- When you use parent() or parents() you get the whole sub-tree hanging off the selected node.
 
+Consider the following:
 
+[demo_2_7_family.html](http://web.simmons.edu/~menzin/CS321/Unit_5_jQuery_and_Ajax/About_jQuery/Chapter02/demo_2_7_family.html) 
+ which is about siblings(), parent() and parents().   
 
+``` html
+  <!doctype html>
+  <html lang = 'en'>
+  
+      <meta charset="utf-8">
+      <head>	
+         <title>toggle and toggleClass demo</title>
+         <script src="jquery.js"></script>
+  	   
+  	   <style>
+  	      .redText {color:red;}
+  		  .embolden {font-weight:bold;}
+  		  .plain {font-weight:normal;}
+  		</style>  
+  	  </head>
+  	<body>
+  	<h3>div1 starts in next line</h3>
+  	<div id = 'div1'><h4>This is an h4 element inside div1</h4>
+  	<p id ='p1'>First paragraph</p>  
+  	<p id ='p2'>Second paragraph</p>  
+  	<p id ='p3'>Third paragraph</p>  
+  	<p id ='p4'>Fourth paragraph and last element in div1</p> 
+   	</div>
+  	
+  	<div id = 'div2'><h3>This is div2</h3>
+  	<ul id = 'outerUl' class = 'embolden'>OuterUl<br />
+  	    <li class = 'plain'>OuterUl first item</li>
+  		<li class = 'plain'>OuterUl second item <br />
+  		    <ul id = 'midUl' class = 'embolden'>MidUl<br />
+  			   <li class = 'plain'>midUl first item</li>
+  			   <li class = 'plain'>midUl second item <br />
+  			       <ul id = 'innerUl' class = 'embolden'>InnerUl <br />
+  				      <li class = 'plain'>innerUl first item</li>
+  					  <li class = 'plain'>innerUl second item</li>
+  					</ul>
+  				</li>
+  			</ul>
+  		</li>
+  		<li class = 'plain'>OuterUl third item</li>
+  	</ul>
+      </div>	
+  		
+      <script>	  
+  	   var $div1Children  = $('#div1').children()
+  	   var $div2Children  = $('#div2').children()
+  	</script>  
+  	<b>The first set of buttons operate on div1, using chilren(), parent(), parents() and siblings().</b><br />
+  	<button onclick = "$div1Children.toggleClass('redText');">Toggle color on div1 children</button>&nbsp;&nbsp;&nbsp;
+  	<button onclick = "$('#div1').parent().toggleClass('redText');">Toggle color on div1 parent</button>&nbsp;&nbsp;&nbsp;
+  	<button onclick = "$('#div1').parents().toggleClass('redText');">Toggle color on div1 parents</button>&nbsp;&nbsp;&nbsp;
+  	<button onclick = "$('#div1').siblings().toggleClass('redText');">Toggle color on div1 siblings</button>&nbsp;&nbsp;&nbsp;
+  	<br /><br />
+  	<b>The next set of buttons operate on div2 and its InnerUl.<br />
+  	Notice how parents() includes the body and html tags and therefore all their subtrees.</b><br />
+  	<button onclick = "$('#innerUl').toggleClass('redText');">Toggle color on InnerUl</button>&nbsp;&nbsp;&nbsp;
+  	<button onclick = "$('#innerUl').parent().toggleClass('redText');">Toggle color on InnerUl parent</button>&nbsp;&nbsp;&nbsp;
+  	<button onclick = "$('#innerUl').parents().toggleClass('redText');">Toggle color on InnerUl parents, all ancestors</button>&nbsp;&nbsp;&nbsp;
+  	<button onclick = "$('#div2').parents().toggleClass('redText');">Toggle color on div2 parents, all ancestors</button><br />
+  	<!-- Note: The last button toggles div1 because parents() gets you the whole tree -->
+  	<!-- DEMO siblings() and also find() and end() and use of * for all children -->
+  	
+  	</body>
+  </html>	
+```
 
+In addition to the methods just discussed, jQuery provides two other 'gather them all in' methods which return jQuery sets : children() and find().   
 
+     $(someSelector1).children() 
+     
+Returns all the children matched by $(someSelector1) – i.e. all the nodes which are one level down in the DOM. _This is sometimes unreliable – see demo_2_8X.html._
 
+On the other hand, $(someSelector).find('*') will return all descendents of someSelector2. (Please notice the use of * as a parameter to find.)
 
+[demo_2_9_family_too.html](http://web.simmons.edu/~menzin/CS321/Unit_5_jQuery_and_Ajax/About_jQuery/Chapter02/demo_2_9_family_too.html)
 
+``` html
+<!doctype html>
+<html lang = 'en'>
 
+    <meta charset="utf-8">
+    <head>	
+       <title>Family tree, find(),children(),parent() and parents()demo</title>
+       <script src="jquery.js"></script>
+	   <!-- HTML recognizes the following 16 color names: 
+	   aqua, black, blue, fuchsia , gray, green, lime, maroon, 
+	   navy, olive, purple, red, silver, teal, white, and yellow. 
+	   Some of these do not show up when they over-write other colors
+	   -->
+	   
+	   <style>
+	      .redText {color:red;}
+		  .blueText {color:blue;}
+		  .greenText {color:green;}
+		  .blackText {color:black;}
+		  .magentaText {color:magenta;}
+		  .tealText {color:teal'}
+		  .yellowText {color:yellow;}
+		  .aquaText {color:aqua;}
+		  
+		  .highLight {background-color:yellow;}
+		  .silverText{color:silver;}
+		  .embolden {font-weight:bold;}		 
+		  .plain {font-weight:normal;}
+		</style>  
+		<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+	  </head>
+	<body>
+	This page shows how find(), children(), parent() and parents() work.<br />
+	Please notice that find() and children() may be replaced by using selectors.<br/><br />
+	<div id='topdiv' class='blueText'> Top div <br />
+	   <div id ='middlediv'class = 'greenText'>Middle div <br />
+	        <div id='innerdiv' class = 'redText'>Inner div</div>
+		</div>   <!--	end middle div -->
+	</div>	
+	<br><br>	
+	First we use the children function to toggle blackText on the children of the Top div.<br/>
+    There is only one child, namely the Middle div and children() goes down only one level.	<br>
+    <button id = 'targetTop' onclick = "$('#topdiv').children().toggleClass('blackText');">
+        Toggle blackText on the children of the top level with children() method</button>	<br />
+	We can accomplish the same thing using the selector '#topdiv > *'<br>
+    <button id = 'targetTop' onclick = "$('#topdiv').children().toggleClass('blackText');">
+        Toggle blackText on the children of the top level with a selector for children</button>	<br /><br>
+		
+	Next we work on all descendants with the find() method.	<br>
+	Notice that the parameter for find() is '*' in order to get all the descendants.<br />
+	<button id = 'targetTop' onclick = "$('#topdiv').find('*').toggleClass('blackText');">
+        Toggle blackText on all descendants with the find() method </button>	<br />
+	We can accomplish the same thing using the selector '#topdiv *'<br>	
+	<button id = 'targetTop' onclick = "$('#topdiv *').toggleClass('blackText');">
+        Toggle blackText on all descendants with the selector for all descendants</button>	<br /><br />
+	Finally, using the Inner div, we demonstrate the difference between parent(), which goes up one level<br />
+    and parents(), which go all the way up the DOM.<br />
+	<button id = 'targetTop' onclick = "$('#innerdiv').parent().toggleClass('blackText');">
+        Toggle blackText on the parent of the inner level</button>	<br />
+	<button id = 'targetTop' onclick = "$('#innerdiv').parents().toggleClass('blackText');">
+        Toggle blackText on the ancestors of the inner level</button>	<br />	
+	
+	</body>
+</html>	
+```
+`$(someSelector1 > *)` should produce all immediate descendents of someSelector1, as should `$(someSelector1.children())`. Unfortunately, once in a while the children() method will also return further descendents. I don't know why, but it is certainly worth testing your code.
+ 
 
+     $(someSelector1).children(someSelector2)  
 
+will return all elements which are children (again, one level down in the Dom tree) of someSelector1 which match someSelector2.  So this is equivalent to 
 
+    $(someSelector1 > someSelector2) 
 
+and so I admit to not using it very often.  
 
+Similarly `$(someSelector1).find(someSelector2)` works like children(), but instead of going down only one level (i.e. returning nodes matching someSelector2 which are one level down from nodes matching someSelector1), find() will return any descendants of someSelector1 which match someSelector2. In other words,
 
+       $(someSelector1).find(someSelector2)  
+       
+is equivalent to 
 
+     $(someSelector1 someSelector2)  
+     
+And accordingly (on the principle of memorize less) I don't use it. I mention find() and children() here only in case you come across them in someone else's code.  
 
-
+> [!NOTE]
+> The find() method is atypical of jQuery methods in that find() always requires a parameter. If you want all the descendents of someSelector1 then you should ask for $(someSelector1).find('*');
 
 ### Backing up with end() 
 We have made extensive use of the way most jQuery methods return a set. Sometimes we want to back up to the previous set, and the end() method will do just that. 
