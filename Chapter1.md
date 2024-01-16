@@ -25,7 +25,7 @@ Again, ready(some call back function) will execute that callback function as soo
 
 Now it would work perfectly well to define gettingGoing() in our script and then use it as the callback function for ready( ), but JavaScript also has something called _**anonymous functions**_.  
 
-Sometimes you have a function which you will use in only one place – and gettingGoing() is a perfect example of that.  (Many callback functions fit this pattern).  
+Sometimes you have a function which you will use in only one place – and gettingGoing() is a perfect example of that. (Many callback functions fit this pattern). 
 
 So rather than litter the namespace with the names of functions which are used only once, JavaScript allows you to simply place the code there. 
 
@@ -48,7 +48,7 @@ So, to summarize, in the line above:
 - The callback function will be executed as soon as ready() finishes – i.e. the DOM has been loaded
 - Here we use an anonymous callback function – that is, we define the callback function inside the parentheses of ready()
   
-If you have never seen callbacks or anonymous functions before, they may take some getting used to.  You can find some more examples at JSNote2A on Functions and Closures at http://web.simmons.edu/~menzin/CS321/Unit_2_JavaScript_and_HTML_Forms/Chapter_3_Basic_Java_Script/  
+If you have never seen callbacks or anonymous functions before, they may take some getting used to. You can find some more examples at JSNote2A on Functions and Closures at http://web.simmons.edu/~menzin/CS321/Unit_2_JavaScript_and_HTML_Forms/Chapter_3_Basic_Java_Script/  
 
 
 ### Collections or Sets or Objects 
@@ -60,7 +60,7 @@ Depending on whom you read, that set may be referred to using any of the followi
 
 It doesn’t matter what term you use, what matters is that you get a set/collection/bunch of elements, and with that set come a bunch of jQuery methods which you can use to operate on the set.
 
-Fundamental to jQuery is the ability to operate on them all, without explicitly writing a loop.  This is referred to as _**implicit iteration**_.
+Fundamental to jQuery is the ability to operate on them all, without explicitly writing a loop. This is referred to as _**implicit iteration**_.
 
 jQuery also provides explicit loops and even a function which will turn your set of elements into an array of elements – and sometimes you may need to do that – but at this stage we should focus on the implicit iteration, which is at the heart of jQuery.  
 
@@ -79,7 +79,7 @@ So, depending on your other needs, you could code:
     
 When would I bother with the extra step? Imagine that I had a complicated form to validate. It might be useful to get the collection of all the text box IDs – and to have a name for that collection since I expect more than one pass will be needed for all of them to be filled in appropriately. 
 
-So far we have seen how to get a collection by selecting for a class or an ID or a tag.  Later on we will describe how we can get collections with more specific criteria, and how to manage collections. But first, we turn to what all that implicit iteration can do for us. 
+So far we have seen how to get a collection by selecting for a class or an ID or a tag. Later on we will describe how we can get collections with more specific criteria, and how to manage collections. But first, we turn to what all that implicit iteration can do for us. 
 
 ### Chaining
 
@@ -89,7 +89,7 @@ The idea behind chaining is fairly simple and very powerful. As we saw in the pr
 
 When you operate on those elements you get a new set of elements – and you can again operate on them with a new method. 
 
-It’s worth saying this again: A  jQuery method returns a set of elements ready to be operated on;  each method returns another set of elements ready to be operated on with another method. 
+It’s worth saying this again: A jQuery method returns a set of elements ready to be operated on; each method returns another set of elements ready to be operated on with another method. 
 
 For example, in Chapter 0 we looked at the code:  
        
@@ -97,7 +97,7 @@ For example, in Chapter 0 we looked at the code: 
         
 - The first step is $(".blueText") which returns the set of all the elements with the class blueText.  
 - We then apply the method removeClass("blueText"). That method removes the class blueText and returns the same set of elements (now missing their blueText class).
-- Finally we apply the method  addClass("redText"). That method adds the class redText  to the set of elements which were passed to it (i.e. the elements which used to have the class blueText) and adds the class redText to those elements – and, you guessed it, returns the set of those elements.
+- Finally we apply the method addClass("redText"). That method adds the class redText to the set of elements which were passed to it (i.e. the elements which used to have the class blueText) and adds the class redText to those elements – and, you guessed it, returns the set of those elements.
 
   
 _**What methods can you chain?**_
@@ -118,15 +118,15 @@ Obviously, then, when a method returns a string, number or array, then you can n
 The most frequently returned properties are length, and the result of val() and text().: 
 
 `length` <br>  
-The length property is the number of elements in the jQuery collection .  It is not a method, and so it can not be chained. Note:  If you query $('#someID') then the collection has only one element and its length is 1. 
+The length property is the number of elements in the jQuery collection. It is not a method, and so it can not be chained. Note: If you query $('#someID') then the collection has only one element and its length is 1. 
 
 `val()`<br> 
-The val() method returns the value of the first element in a jQuery set.  It is used typically for form elements. <br>
-Example: if we have an element <input type = 'text' id = 'givenName' >  then $('#givenName').val() will give us whatever has been entered in that text box.  
+The val() method returns the value of the first element in a jQuery set. It is used typically for form elements. <br>
+Example: if we have an element <input type = 'text' id = 'givenName' > then $('#givenName').val() will give us whatever has been entered in that text box.  
 
 `text()` <br>
 This will return a string of the text content of all the matched elements. <br>
-Example: $('h3').text()  will give all the h3 headlines "strung together." 
+Example: $('h3').text() will give all the h3 headlines "strung together." 
 
 
 - **Some methods can return either a jQuery set or a property, depending on the parameters **
@@ -153,9 +153,9 @@ You can see from the documentation that this returns a string ("blue") and so it
 
 The other way we can use the css method is to set a property. 
 
-For example,  if our HTML includes
+For example, if our HTML includes
 
-    <p id = "intro" class = "blueText">  …. </p> 
+    <p id = "intro" class = "blueText"> ... </p> 
     
 then
 
@@ -205,11 +205,11 @@ For example, if we have many items described on a page, we can make the name or 
 
 What kinds of jQuery methods can we use in our chaining? So far we have seen addClass( ), removeClass( ), show( ), and hide( ). Of course, there are many more methods which will be introduced in chapters 2 and 3.
 
-In Chapters 2 and 3 we will learn about fancier selectors, how to traverse the DOM and how to change the CSS and other attributes of elements.  
+In Chapters 2 and 3 we will learn about fancier selectors, how to traverse the DOM and how to change the CSS and other attributes of elements. 
 
-In Chapter 4-6   we will see how to bind( ) and unbind( ) event handlers to events, how to manipulate the DOM and how to implement AJAX. 
+In Chapter 4-6 we will see how to bind( ) and unbind( ) event handlers to events, how to manipulate the DOM and how to implement AJAX. 
 
-So far we have blithely introduced changes on our pages (changed color, had error messages appear and disappear) without regard to how screen readers handle such changes (They don't). We have done this in order to focus on simple examples and understand how jQuery acts.  But, of course, we need to also write pages which are ARIA compliant.  With the understanding we have gained from the earlier chapters, in Chapter 8 we learn how to make our pages ARIA compliant. 
+So far we have blithely introduced changes on our pages (changed color, had error messages appear and disappear) without regard to how screen readers handle such changes (They don't). We have done this in order to focus on simple examples and understand how jQuery acts. But, of course, we need to also write pages which are ARIA compliant. With the understanding we have gained from the earlier chapters, in Chapter 8 we learn how to make our pages ARIA compliant. 
 
 
 ## Summary
@@ -224,7 +224,7 @@ We have also seen that when we use a selector 
 
     $(some selector) 
     
-then jQuery will return a set or collection of elements. We can then operate on those elements with a method.  When that method also returns a collection of elements (very common) then we can use a new method to operate on them. This is called chaining and typically it looks like 
+then jQuery will return a set or collection of elements. We can then operate on those elements with a method. When that method also returns a collection of elements (very common) then we can use a new method to operate on them. This is called chaining and typically it looks like 
 
     $(some selector).method1().method2().method3()….methodN(); 
     
@@ -247,7 +247,7 @@ And seen how to chain them. We have also seen how to use <br>
 `.val()` <br>
 `.text()` <br>
 `.length` <br>
-to find the relevant  properties.
+to find the relevant properties.
 
 ## Owning it
 
