@@ -2,7 +2,7 @@
 
 In this chapter we will set the stage for more complicated selectors by first reviewing the DOM and reminding ourselves about some properties of buttons.
 
-Then we can move on to fancier selectors – first the ones which use slightly more complicated CSS selectors and some general jQuery methods (which have some overlap),  then we learn how to back up the chain, and finally turn to using filters and eq().  This last part includes selecting using CSS pseudo-classes and also using some jQuery extensions to those filters based on those pseudo-classes.
+Then we can move on to fancier selectors – first the ones which use slightly more complicated CSS selectors and some general jQuery methods (which have some overlap), then we learn how to back up the chain, and finally turn to using filters and eq(). This last part includes selecting using CSS pseudo-classes and also using some jQuery extensions to those filters based on those pseudo-classes.
 
 In terms of the lingo associated with jQuery, this discussion includes both "selection" and "traversing the DOM".
 
@@ -11,9 +11,9 @@ In Chapter 3 we will learn how to use attributes and properties to make selectio
 ## Review of the DOM
 
 - **The DOM is a tree of nodes, used to represent web pages.** <br>
-That is, your HTML code is a document and it is very useful to have a model of it, in which each element is an represented as an object on a tree.  That model of your HTML document is the DOM or Document Object Model.
+That is, your HTML code is a document and it is very useful to have a model of it, in which each element is an represented as an object on a tree. That model of your HTML document is the DOM or Document Object Model.
 
-  Conceptually, the root of this tree is the document (or document object),  which has two nodes, head and body.  That is, the head and body are children of the document, so their nodes hang directly off the document node. Other nodes in the tree may be paragraphs, divs, etc. (i.e. elements) but also nodes with the text content of elements. Each node hangs off the node of its parent.
+  Conceptually, the root of this tree is the document (or document object), which has two nodes, head and body. That is, the head and body are children of the document, so their nodes hang directly off the document node. Other nodes in the tree may be paragraphs, divs, etc. (i.e. elements) but also nodes with the text content of elements. Each node hangs off the node of its parent.
   
   People often refer to the nodes as 'elements' on the tree, although, strictly speaking, some of the nodes are element-nodes, some are text-nodes, etc. (As of DOM4, published in 2015, attribute nodes are no longer part of the DOM node interface, but you may find earlier references to attribute-nodes.)
   
@@ -25,7 +25,7 @@ That is, your HTML code is a document and it is very useful to have a model of i
 When we add and remove classes, append and delete nodes, change attributes for an element, etc. we are changing the DOM. In JavaScript we used methods such as document.getElementById(). In jQuery we can simplify our code by using the $() operator to get elements by class, tag, ID, etc. And, in Chapter 4 we will also learn about jQuery methods for changing the DOM (usually referred to as manipulating the DOM.)
 
 - **There are tools for examining the DOM ** <br>
-Chrome, Firefox, Safari and Opera all use similar engines for rendering a layout of the DOM.  I admit to liking both Chrome and the Firefox Developer Version; when you have a page open in Chrome, ctl+shift+I (cmd+shift+I on Macs) will open the web developer tool, and the Elements panel will show you to DOM tree, which you can expand and collapse as you prefer. A clear and simple explanation of the basic capabilities may be found at 
+Chrome, Firefox, Safari and Opera all use similar engines for rendering a layout of the DOM. I admit to liking both Chrome and the Firefox Developer Version; when you have a page open in Chrome, ctl+shift+I (cmd+shift+I on Macs) will open the web developer tool, and the Elements panel will show you to DOM tree, which you can expand and collapse as you prefer. A clear and simple explanation of the basic capabilities may be found at 
 https://developers.google.com/web/tools/chrome-devtools/dom#view
 
   In Firefox the same functionality is available with ctl+shift+K (cmd+shift+K on Macs) and its Inspector pane. For example, using Chrome, the file demo_0_2_feedback_with_label_change.html (from Chapter 0), with the head collapsed, looks like
@@ -42,7 +42,7 @@ Placing the cursor over an element in the upper right panel (highlighted in ligh
 
 :warning: Warnings About the DOM
 
-1. The styling for a child (or a descendant) will override that of a parent. For example, in the code above, if we have used classes to style the div with blue text and the outer ul with green text, using removeClass() and addClass() to change the div to red text, the ul will still be green.  This is because the more specific styling in the cascade of CSS always prevails. 
+1. The styling for a child (or a descendant) will override that of a parent. For example, in the code above, if we have used classes to style the div with blue text and the outer ul with green text, using removeClass() and addClass() to change the div to red text, the ul will still be green. This is because the more specific styling in the cascade of CSS always prevails. 
 
 2. A paragraph may not have lists inside it; divs may.
 
@@ -84,10 +84,10 @@ More examples of this sort may be found at https://stackoverflow.com/questions/1
   
 ### A reminder about buttons
 We will be using a lot of buttons to trigger events, so it's good to have a reminder about some of their properties before we start. <br>
-In HTML5 there are two ways to code for a button -  with a `<button>` tag or with an `<input type = 'button'>` tag.
+In HTML5 there are two ways to code for a button - with a `<button>` tag or with an `<input type = 'button'>` tag.
 
 There are a few important differences between these two methods:
-- Button tags need to be closed, while the input tag (like the  `<br>` tag ) is empty.
+- Button tags need to be closed, while the input tag (like the `<br>` tag ) is empty.
 - The clickable text in the input tag is given by the value attribute inside the tag `<input type = 'button' value = 'Click here'>` while the clickable part of the button tag is given between the opening and closing tags `<button>Click here</button>`
 - Because everything between the opening and closing button tags is clickable, you may include images, etc. It is also easier to style the button.
 - **The `<Input type='button' >` is always inside a form, while the `<button>` may be either inside or outside a form.**
@@ -115,7 +115,7 @@ The toggle() function will swap the display state. That is, if the display is bl
            
 will take 1.2 seconds to hide/show the selected elements.  
 
-The toggleClass(some list of classes)  will swap the named classes. For example, 
+The toggleClass(some list of classes) will swap the named classes. For example, 
 
     $(someSelector).toggleClass('redText')  
 
@@ -163,7 +163,7 @@ will add/remove the class redText to the selected elements. This code demos th
 ### Fancier selectors and filters 
 
 - **Using hierarchies**  
-jQuery provides many ways to use the DOM to find elements.  Let’s start with the simplest ones, _all of which follow the same syntax as in CSS:_
+jQuery provides many ways to use the DOM to find elements. Let’s start with the simplest ones, _all of which follow the same syntax as in CSS:_
   - **Immediate child** <br>
     `$('selector1 > selector2')` will find all elements that match selector2 and whose immediate parent matches selector1.
 
@@ -195,7 +195,7 @@ jQuery provides many ways to use the DOM to find elements.  Let’s start with t
   
     The difference between descendants and children is illustrated in the following script
   
-    Examine the code just below the next screen shot. In this script there are two identical lists, each with three items; and the second list element has a nested list with 3 items.   
+    Examine the code just below the next screen shot. In this script there are two identical lists, each with three items; and the second list element has a nested list with 3 items. 
   
     So the lists look like:
     - Item 1
@@ -324,7 +324,7 @@ jQuery provides many ways to use the DOM to find elements.  Let’s start with t
   - **Siblings** <br>
       jQuery also allows us to find either the next sibling of an element or all following siblings of an element.   
   
-      We will  use these when we manipulate the DOM in Chapter 5.
+      We will use these when we manipulate the DOM in Chapter 5.
   
       I urge you to load the code and play with the various buttons in the examples below.
   
@@ -404,7 +404,7 @@ The second thing is more subtle, so be warned. If you ask for
             
 Then the immediate sibling after selector1 must match selector2 ... Or nothing happens.
 
-To see this, we modify the code above slightly ---- namely we add two paragraphs between form1 and form2 and two new buttons (code is bold).   The first of these paragraphs is the immediate successor of form1.   (See if you can predict what will happen, and then read the explanation after the code.)
+To see this, we modify the code above slightly ---- namely we add two paragraphs between form1 and form2 and two new buttons (code is bold). The first of these paragraphs is the immediate successor of form1.   (See if you can predict what will happen, and then read the explanation after the code.)
 
 [demo_2_3_siblings_playing.html](http://web.simmons.edu/~menzin/CS321/Unit_5_jQuery_and_Ajax/About_jQuery/Chapter02/demo_2_3_siblings_playing.html)
 
@@ -467,7 +467,8 @@ To see this, we modify the code above slightly ---- namely we add two paragraphs
     </html>
 ```
 
- The new buttons work just fine, but look what happened the first button (code in italics; it has the value "Make next sibling red"  ) ...  It looks for `$('#form1 + form')` That is, it looks for a form which is the immediate sibling of form1  ---- and there isn't such an element.  The immediate sibling of form1 is a paragraph!  The button right after the italicized one does work – because it looks for forms which are any siblings of form1.  
+ The new buttons work just fine, but look what happened the first button (code in italics; it has the value "Make next sibling red" ) ... It looks for `$('#form1 + form')` That is, it looks for a form which is the immediate sibling of form1 ---- and there isn't such an element. The immediate sibling of form1 is a paragraph!  The button right after the italicized one does work – because it looks for forms which are any siblings of form1. 
+ 
 Finally, as you should expect, if there are multiple occurrences of paragraphs right after forms, we can handle all of them at once. The code is below. In addition to adding the two paragraphs after form2 we have modified the last two buttons.
 
 [demo_2_4_siblings_playing_more.html](http://web.simmons.edu/~menzin/CS321/Unit_5_jQuery_and_Ajax/About_jQuery/Chapter02/demo_2_4_siblings_playing_more.html)
@@ -544,7 +545,7 @@ Again, these are all standard CSS usage, except that, as always in jQuery, we pu
 
 **Owning It **
 
-Look at the page at http://web.simmons.edu/~menzin/CS321/CS321_TOC.html (It is easy to see its code and copy the code.) There is one (top level) list, with each unit as an <li> and there are nested lists in each unit for the chapters.  Add a button which will toggle the unit headings to have blue text. Add a second button which toggles the first item in each unit have green text and all subsequent items to have red text.  
+Look at the page at http://web.simmons.edu/~menzin/CS321/CS321_TOC.html (It is easy to see its code and copy the code.) There is one (top level) list, with each unit as an <li> and there are nested lists in each unit for the chapters. Add a button which will toggle the unit headings to have blue text. Add a second button which toggles the first item in each unit have green text and all subsequent items to have red text.  
 
 
 **More relatives**
@@ -714,7 +715,7 @@ On the other hand, $(someSelector).find('*') will return all descendents of some
 
      $(someSelector1).children(someSelector2)  
 
-will return all elements which are children (again, one level down in the Dom tree) of someSelector1 which match someSelector2.  So this is equivalent to 
+will return all elements which are children (again, one level down in the Dom tree) of someSelector1 which match someSelector2. So this is equivalent to 
 
     $(someSelector1 > someSelector2) 
 
@@ -746,11 +747,11 @@ Suppose that I have code such as   
 
     $('.reviewClass').addClass('redText' 'embolden').children().addClass('blueText')
 
-We have first gotten the set of all elements with class reviewClass. Then we have added two classes to those elements (which, recall,  doesn't change the jQuery set!). Then we went on to all the children of elements in our set and added a class to them.  Suppose now that we want to go back to those reviewClass elements to do some more stuff with them or find their next sibling etc. Then end() will do exactly that. 
+We have first gotten the set of all elements with class reviewClass. Then we have added two classes to those elements (which, recall, doesn't change the jQuery set!). Then we went on to all the children of elements in our set and added a class to them. Suppose now that we want to go back to those reviewClass elements to do some more stuff with them or find their next sibling etc. Then end() will do exactly that. 
 
-Another way to think of this is imagine that as we use jQuery we produce a stack (most recent at the top of the stack) of the jQuery sets that we have gotten. We are operating on the top jQuery set in that stack.  What end() does is to pop the top set off the stack, so we are operating on the next set down.   
+Another way to think of this is imagine that as we use jQuery we produce a stack (most recent at the top of the stack) of the jQuery sets that we have gotten. We are operating on the top jQuery set in that stack. What end() does is to pop the top set off the stack, so we are operating on the next set down. 
 
-⚠️ Warning: some jQuery methods return the same set that they operated on. Examples of these methods  would be  addClass(), removeClass(), and several such as  css() which we consider in the next chapter.   
+⚠️ Warning: some jQuery methods return the same set that they operated on. Examples of these methods would be addClass(), removeClass(), and several such as css() which we consider in the next chapter. 
  
 ### Using filters and .eq() 
 
@@ -766,7 +767,7 @@ For example,
   `$('div').eq(1)` will return the second div.  
 
 You may also count from the end by using negative numbers.  
-  `$('div').eq(-1)` will return the last div.  (There is no -0.)  
+  `$('div').eq(-1)` will return the last div. (There is no -0.)  
 
 And, should you need it, the length property of a jQuery set will tell you the number of elements returned.         
 
@@ -791,7 +792,7 @@ will collect all buttons (whether declared with an input tag or a button tag), w
 
 ⚠️ WARNING:  If you use `<button>`, you must say `<button type = 'button'> `unless you want a submit button. Otherwise you get double bind!!!
 
-There are analogous filters for all radio buttons, passwords, etc.  but as we shall see in the next section, we can also do this by using attributes (rather than learning a host of filters.)
+There are analogous filters for all radio buttons, passwords, etc. but as we shall see in the next section, we can also do this by using attributes (rather than learning a host of filters.)
 
 - **Other filters**
   
@@ -799,7 +800,7 @@ jQuery supports all the CSS pseudo-classes (such as :first-child) and a few more
 
 I find that I rarely use most of them, And so am not discussing them here. But you can see the list of them at https://api.jquery.com/category/selectors/. If you are already a great user of CSS pseudo-classes , then you can find a list of just the jQuery extensions at https://api.jquery.com/category/selectors/jquery-selector-extensions/  
 
-Do be careful, because quite a few of the filters have been deprecated in favor of newer methods.  (For example the .eq() method replaces the :eq() filter.)  The documentation notes when a filter or method has been deprecated and suggests alternatives.
+Do be careful, because quite a few of the filters have been deprecated in favor of newer methods. (For example the .eq() method replaces the :eq() filter.) The documentation notes when a filter or method has been deprecated and suggests alternatives.
 
 
 ## Review
@@ -810,7 +811,7 @@ We can also chain such methods as children(), find(someSelector), parent(), pare
 
 We can use end() to back up one step. 
 
-There are also a variety of filters to find particular types of input elements, (see https://api.jquery.com/category/selectors/form-selectors/ ),  first child, (see https://api.jquery.com/category/selectors/child-filter-selectors/) etc. but you must exercise care as some of them have been deprecated.
+There are also a variety of filters to find particular types of input elements, (see https://api.jquery.com/category/selectors/form-selectors/ ), first child, (see https://api.jquery.com/category/selectors/child-filter-selectors/) etc. but you must exercise care as some of them have been deprecated.
 
 ## Owning it
 
@@ -818,21 +819,3 @@ Look at the code at http://web.simmons.edu/~menzin/CS321/CS321_TOC.html and make
 
 Create a page with 3 divisions. Each division should have some content (for example some jpeg's). Start with the divisions hidden, but add a clickable element to the headline for each division which allows you to show/hide its content.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-   
