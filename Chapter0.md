@@ -238,7 +238,8 @@ For example, with classes redText and blueText as above, if you simply addClass 
     <p class = "redText blueText">Blue comes after red</p>
     <p class = "blueText redText">Blue comes before red</p>
     
-And, oddly enough, both paragraphs will appear in blue! (You can verify this by looking in the Elements panel of the console.)  
+And, oddly enough, both paragraphs will appear in blue! (You can verify this by looking in the Elements panel of the console.)
+
 If your classes include both properties which are may conflict with other classes and properties which won't (e.g. color and margin where you change only color) then you might want to use multiple classes for those two types of properties. 
 
 To see this, examine:
@@ -401,7 +402,7 @@ While these examples validate one element, givenName, we could easily pass the I
 
 jQuery is a library of functions which is useful for manipulating the appearance and functionality of web pages.  
 
-The first thing you must do is make that library accessible to your web page – either by downloading jquery.js. saving it  and linking to it right after your title tag, or by linking to it in a CDN such as Google’s or Microsoft’s.  
+The first thing you must do is make that library accessible to your web page – either by downloading jquery.js. saving it and linking to it right after your title tag, or by linking to it in a CDN such as Google’s or Microsoft’s.  
 
 $( ) is a shorthand for accessing the jQuery functions. 
 
