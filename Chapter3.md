@@ -173,6 +173,8 @@ Note: the colon in the checked filter!
 
 We can see the attributes and properties in question using the code below: 
 
+[demo_3_2_checked.html](http://web.simmons.edu/~menzin/CS321/Unit_5_jQuery_and_Ajax/About_jQuery/Chapter03/demo_3_2_checked.html)
+
 ```html
 <!doctype html>
 <html lang = 'en'>
@@ -213,7 +215,9 @@ We can see the attributes and properties in question using the code below: 
 
 - **Radio Buttons**
 
-For a group of radio buttons there is, of course, only one which is checked. Here we can use the :checked filter to identify the one button in the group which has been checked, and then print its value. We could have used the .is(':checked') here (as with checkboxes) instead.   
+For a group of radio buttons there is, of course, only one which is checked. Here we can use the :checked filter to identify the one button in the group which has been checked, and then print its value. We could have used the .is(':checked') here (as with checkboxes) instead. 
+
+[demo_3_3_radio.html](http://web.simmons.edu/~menzin/CS321/Unit_5_jQuery_and_Ajax/About_jQuery/Chapter03/demo_3_3_radio.html)
 
 ``` html
 <!doctype html>
@@ -250,3 +254,146 @@ For a group of radio buttons there is, of course, only one which is checked. Her
 	</body>
 	</html>
  ```
+
+- **Select lists are discussed after we look at text() below.**
+
+**For some attributes and properties we have more specific methods ----- val(), html(), and text(). **
+
+All three of these methods follow the same general structure, with some subtleties: 				 
+ - `$(someSelector).oneOfTheseMethods()`  returns a value (not chainable)
+ - `$(someSelector).oneOfTheseMethods(newValue)`  sets the value & returns a jQuery set (is chainable.)
+ 
+We have already seen that **val()** is used to get and set the value of any element (button, textarea, or input type) of a form. 
+
+Example: 
+
+	<input type ='text' id = 'team'> 
+ 	$('#team').val('Please enter the team you are on'); 
+  
+The css() method is similar, in that  css() may be used to get and set a specific css property. With css() however you must always specify what property you are interested in. 
+- `css('someProperty')`  may be used to get **that property** (not chainable)
+- `css('someProperty', 'newValue')` set the style properties of an element.
+
+In other words, for all these methods
+- when you use it as a getter, it returns a value & is not chainable;
+- when you add a parameter and use it as a setter, it returns a jQuery set and is chainable.
+
+As with css() you can set multiple properties or attributes by putting the name-value pairs in an object. For example,  
+        
+	$('.conditions').prop({'color':'gray', 'font-size':'small'}) ;  
+ will make all items with the conditons class be in small, gray text.
+
+_Please notice that_ 
+- Unlike the other methods we are discussing in this section, css(), attr() and prop() require a specific property or attribute  whose value we will get or set.
+- When we are setting the multiple properties, our object of key-value pairs needs quotes around both the property names and their values!
+
+[demo 3_4_css_method.html](http://web.simmons.edu/~menzin/CS321/Unit_5_jQuery_and_Ajax/About_jQuery/Chapter03/demo_3_4_css_method.html)
+
+``` html
+<!doctype html>
+<html lang = 'en'>
+
+    <meta charset="utf-8">
+    <head>	
+       <title>css() demo</title>
+       <script src="jquery.js"></script>
+	   
+	   <style>
+	      .redText {color:red;}
+		  .blueText {color:blue;}
+		  .embolden {font-weight:bold;}
+		  .plain {font-weight:normal;}  		  
+	</style>  
+		
+	  </head>
+	<body>
+	Open the console to see how the css() method operates.<br />
+	After any change, use the buttons which show the elements' properties.<br ><br>
+	   <div class = 'redText'>The div heading is red
+       <p class = 'embolden'>The paragraph inside the div.  </p>
+	   </div>
+	   <button onclick="console.log($('div').css('color'));">Show div color</button> 
+	      <!--returns rgb(255,0,0)--><br>
+	   <button onclick="console.log($('p').css('color'));">Show paragraph color</button>
+	      <!-- returns rgb(255,0,0)--> <br><br>
+	   
+	   <button onclick = "var pr= $('div').css(['color','font-weight']);
+	                      console.log(pr)">
+	      Show div styles using an array of properties</button>
+		  <!-- returns {color: "rgb(255, 0, 0)", font-weight: "400"} --><br />		 
+		<button onclick = "var pr= $('p').css(['color','font-weight']);
+	                      console.log(pr)">
+	       Show paragraph styles using an array of properties</button>
+			<!-- returns {color: "rgb(255, 0, 0)", font-weight: "700"}  --><br><br>
+		<button onclick="$('p').css('font-weight', 'normal');"> 
+		       Remove bold from paragraph with css method</button>	 <br>
+		<button onclick ='$("div").css({"color": "blue", "font-weight": "bold"});'>Change div properties</button>		
+  
+	 </body>
+</html>	 
+```
+
+Next we turn to text() and html(). Both of these methods return the "inner" text at the identified selector, but the returned material is interpreted differently, and they return different numbers of matches.
+
+This will become useful in Chapter 5 when we learn how to manipulate the DOM in sophisticated ways. For now, let's use them in straightforward ways.
+ 
+The **text()** method, like the other methods we have examined, may be used to get content or  to set it!  
+
+If the jQuery set that the selector returned has multiple elements in it _then the content of all those elements will be strung together in the return value or will be reset_, depending on whether you are using text() to get or set the text. 
+
+This is a very important difference from all the other methods we have been discussing  - attr(), prop(), css() and html()  -  which get or set only the first match!   
+
+Again, text() will retreive all the text in the selected elements, while html() retreives only the text from the first match.  This makes a get with the text() method different from html(), val(), etc. 
+
+Warning: _you may not use text() to get the value of form elements_. For form elements you need to use val()
+
+[demo_3_5_text_method.html](http://web.simmons.edu/~menzin/CS321/Unit_5_jQuery_and_Ajax/About_jQuery/Chapter03/demo_3_5_text_method.html) 
+``` html
+
+<!doctype html>
+<html lang = 'en'>
+  <head>
+    <meta charset="utf-8">	
+    <title>select list  demo</title>
+    <script src="jquery.js"></script>	   
+	</head>
+	<body>
+	<div id='div1'>
+	  <p id='p1'>Paragraph 1</p>
+	  <p>Paragraph 2</p>
+	</div>
+	
+	<div id='div2'>
+	  <ol>Ordered List
+	     <li>Item A</li>
+		 <li>Item B</li>
+		 <li>Item c</li>
+	  </ol>
+	</div>
+	<button type = 'button' onclick = "console.log($('#div1').text());"> Show text for first div</button>
+	<button type = 'button' onclick = "console.log($('#div2').text());"> Show text for second div</button><br>
+	<button type = 'button' onclick = "$('#p1').text('New stuff');">Change first paragraph</button>
+	<button type = 'button' onclick = "$('p').text('Surprise!');">Change all paragraphs</button>
+	
+	
+	</body>
+</html>
+```
+
+As always, you should predict what will happen, based on the material just above this code, and then verify your predictions by running the demo.
+
+Finally, we turn to **html()**. The html() method is just like the text() method except that it gets only the first match. For setting, it operates on all matches.
+
+**Summary table**
+
+Notes: You may use `$(this)` as the selector. 
+
+See code exmples for checked (above) and selectedIndex (below). 
+
+Remember: You get **ONE** value but can set **MANY**: **html()** and **val()** as getters have no parameters. **text()** is different from **html()** in that it retreives all the matched content.
+
+**The content of `<input type='text'…>` is accessed with val()**. You may use `$(this).val()` in its onclick handler, because, as always, the value of _this_ is determined by where the handler is called from.
+
+<img width="549" alt="SummaryTable1" src="https://github.com/menzin/About_jQuery/assets/144168274/c13bfa3f-7bb0-486d-a50f-04a331d0dbb4"><img width="546" alt="SummaryTable2" src="https://github.com/menzin/About_jQuery/assets/144168274/ab159490-682a-494b-9f4a-8b511f07f7ad">
+
+Warning: When you replace a value make sure that you are leaving you html as valid html. 
