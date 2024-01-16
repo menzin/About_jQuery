@@ -140,7 +140,113 @@ For example, if we need to add an alt value to <img id='logo'…> we could say�
     $('#logo').attr('alt', 'company logo');
 
 
+## Using Properties
 
+We  have seen how to select based on attribute values and also how to get and set attribute values.
 
+We can get and set property values, analogously to attribute values, but there is no jQuery filter which will select based  on property values. (Of course, we can retrieve the property value and test it with traditional JavaScript.)
 
+The syntax for getting and setting properties is exactly like that for attributes.: 
+    `$'(someSelector').prop('someProperty')` will get the named property of the _first_ element which matches someSelector. <br>
+         $'(someSelector').prop('someProperty', newValue)` will set the named property to newValue for _all_ elements which match someSelector.
 
+If our code included `<input type='text' id='fName'>` and we wished to change what appears in the text box, we might say: 
+
+    $('#fName').prop('value', 'First name is required'); 
+    
+### Owning it: 
+
+Take a page you have previously designed which has several images, and define an object which gives the same width, height and border to an image. In your initial script (the one which executes when the DOM is ready), use that object to make all you images have that format. Optionally, you can have a button which changes all the images to a larger format.  
+
+Take a page you have previously designed which has a form.  For any input of type text which is required you would like the initial value to be "Required: please enter " or some similar message.  Using either a class req or checking that the required attribute is present, make the value of all those fields be the desired message. As in the previous, example, this should be part of your initial script.
+
+## Check it out --- checked and selectedIndex
+
+The difference between attributes and properties is especially relevant for check boxes, radio buttons and select lists.
+
+- **Checkboxes**
+
+For a checkbox, the attribute 'checked' will always have the value that was set in the (original) HTML. But the property will change based upon user input. The attribute 'checked' will have either the value 'checked' or the value 'undefined'. The property 'checked' will have the value 'true' or 'false'. The two values below will be the same: 
+- `$('#someId').prop('checked')`
+- `$('#someId').is(':checked')`
+Note: the colon in the checked filter!
+
+We can see the attributes and properties in question using the code below: 
+
+```html
+<!doctype html>
+<html lang = 'en'>
+
+    <meta charset="utf-8">
+    <head>	
+       <title>checkbox demo</title>
+       <script src="jquery.js"></script>
+	   <script>
+	      function displayCheck(){
+		  var mes1 = "For the initially checked button the value of the attribute checked is  ";
+		  mes1 += $('#startChecked').attr('checked');
+		  mes1 += " and the checked property is "
+		  mes1 += $('#startChecked').prop('checked');
+		  var mes2 = "... For the initially unchecked button the value of the attribute checked is ";
+		  mes2 += $('#startUnchecked').attr('checked');
+		  mes2 += " and the checked property is "
+		  mes2 += $('#startUnchecked').prop('checked');
+		  alert(mes1 + mes2);
+		  //alert(mes2);
+		  }
+		</script>    
+	  
+		
+	</head>
+	<body>
+	<form>
+	  <input type = 'checkbox' id = 'startChecked' checked>Initially checked <br>
+	  <input type = 'checkbox' id = 'startUnchecked'>Initially unchecked <br>
+	  You can check and uncheck these boxes and see what happens to the attr and prop 'checked'.<br>
+	  <button type = 'button' onclick = 'displayCheck();'>Show the attr and prop </button>
+	  
+	</form>
+	</body>
+	</html>
+
+```
+
+- **Radio Buttons**
+
+For a group of radio buttons there is, of course, only one which is checked. Here we can use the :checked filter to identify the one button in the group which has been checked, and then print its value. We could have used the .is(':checked') here (as with checkboxes) instead.   
+
+``` html
+<!doctype html>
+<html lang = 'en'>
+
+    <meta charset="utf-8">
+    <head>	
+       <title>checkbox demo</title>
+       <script src="jquery.js"></script>
+	   <script>
+	      function displayCheck(){
+		  var $rButton = $('input[name = "firstGroupName"]:checked');
+		  alert($rButton.val());  
+		  }
+		</script>    
+	  
+		
+	</head>
+	<body>
+	<form>
+	First set of radio buttons:<br />
+	  <input type="radio" name="firstGroupName" id="firstGroup1" 		   
+	     value="value for first button" checked="true" />Text next to button 1.&nbsp;&nbsp;
+	  <input type="radio" name="firstGroupName" id="firstGroup2" 
+	      value="value for second button"/ >Text next to button 2.&nbsp;&nbsp;
+	  <input type="radio" name="firstGroupName" id="firstGroup3" 
+	     value="value for third button" />Text next to button 3.&nbsp;&nbsp;
+	  <input type="radio" name="firstGroupName" id="firstGroup4" 
+	     value="value for fourth button" />Text next to button 4.<br /><br />
+	  You can changed the checked and see the value of the checked.<br>
+	  <button type = 'button' onclick = 'displayCheck();'>See the value</button>
+	  
+	</form>
+	</body>
+	</html>
+ ```
