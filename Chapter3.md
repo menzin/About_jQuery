@@ -345,7 +345,8 @@ This is a very important difference from all the other methods we have been disc
 
 Again, text() will retreive all the text in the selected elements, while html() retreives only the text from the first match.  This makes a get with the text() method different from html(), val(), etc. 
 
-Warning: _you may not use text() to get the value of form elements_. For form elements you need to use val()
+> [!WARNING]
+> _you may not use text() to get the value of form elements_. For form elements you need to use val()
 
 [demo_3_5_text_method.html](http://web.simmons.edu/~menzin/CS321/Unit_5_jQuery_and_Ajax/About_jQuery/Chapter03/demo_3_5_text_method.html) 
 ``` html
@@ -396,7 +397,8 @@ Remember: You get **ONE** value but can set **MANY**: **html()** and **val()** a
 
 <img width="549" alt="SummaryTable1" src="https://github.com/menzin/About_jQuery/assets/144168274/c13bfa3f-7bb0-486d-a50f-04a331d0dbb4"><img width="546" alt="SummaryTable2" src="https://github.com/menzin/About_jQuery/assets/144168274/ab159490-682a-494b-9f4a-8b511f07f7ad">
 
-Warning: When you replace a value make sure that you are leaving you html as valid html. 
+> [!WARNING]
+> When you replace a value make sure that you are leaving you html as valid html. 
 
 - **Select lists**
 
