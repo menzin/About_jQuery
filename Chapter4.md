@@ -34,7 +34,7 @@ Because writing elem adds clarity to the code (and because the context for _this
 > [!WARNING]
 > You need to refer to the element you are operating on with `$(this)` or `$(elem)` if you are going to apply a jQuery method to it.
 
-See the button which colors the list items (second button) using the css() method and compare it to the one which makes them all black again (third button) using plain assignment of property values. The third button changes a style property and so we can use this.style.color = whatever. The second button applies the css() method and so we need to use $(this).css(stuff) here.  
+See the button which colors the list items (second button) using the css() method and compare it to the one which makes them all black again (third button) using plain assignment of property values. The third button changes a style property and so we can use `this.style.color = whatever`. The second button applies the css() method and so we need to use `$(this).css(stuff)` here.  
 
 [demo_4_0_v3.html](http://web.simmons.edu/~menzin/CS321/Unit_5_jQuery_and_Ajax/About_jQuery/Chapter04/demo_4_0_v3.html)
 
@@ -75,7 +75,7 @@ See the button which colors the list items (second button) using the css() metho
 
 An aside about tables: You will see something like the code above applied to tables, where different rows have different background colors (for legibility). 
 
-The most common situation is to alternate two background colors – and in older code you  may see the odd() or even() methods to select all such rows at once.  These methods have been deprecated as of version 3.4 of jQuery. 
+The most common situation is to alternate two background colors – and in older code you may see the odd() or even() methods to select all such rows at once.  These methods have been deprecated as of version 3.4 of jQuery. 
 
 You can adapt the code above replacing indx%3 with indx%2. Or you can use the `:even` selector. If you prefer the :even selector then your code will look like: 
 
