@@ -3,6 +3,8 @@
 
 ## $.each Versus $(someSelector).each()
 
+## $.cursive
+
 There are two each() methods in jQuery and they are different.  
 
 **$**(someSelector).**each**(someFunction) takes the **collection** returned by $(someSelector) and applies someFunction to each member of the collection in turn.     
