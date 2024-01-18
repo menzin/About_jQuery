@@ -3,7 +3,7 @@
 
 ## $.each Versus $(someSelector).each()
 
-## $.each
+## $.each versus
 
 There are two each() methods in jQuery and they are different.  
 
