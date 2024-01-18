@@ -3,7 +3,7 @@
 
 ## $.each Versus $(someSelector).each()
 
-## $.cursive
+## $.each
 
 There are two each() methods in jQuery and they are different.  
 
