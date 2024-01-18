@@ -1,7 +1,7 @@
 # Chapter 4: Loops
 **Sometimes you absolutely must write a loop- or to each his own **
 
-## $.each vs. $(someSelector).each()
+## $.each   vs. $(someSelector).each()
 
 There are two each() methods in jQuery and they are different.  
 
