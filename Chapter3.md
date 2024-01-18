@@ -412,89 +412,89 @@ And, as noted above, text() will string together all the texts of matching items
 
 [demo_3_6_selectList.html](http://web.simmons.edu/~menzin/CS321/Unit_5_jQuery_and_Ajax/About_jQuery/Chapter03/demo_3_6_selectList.html)
 
-``html
+``` html
 
-	<!doctype html>
-	<html lang = 'en'>
-	
-	    <meta charset="utf-8">
-	    <head>	
-	       <title>select list  demo</title>
-	       <script src="jquery.js"></script>
-		   <script>
-		      function displayOption1(){
-			  //This list has no default option selected
-			  var $chosenOption = $('#dropDownName1').prop('selectedIndex');
-			  //Line below does not work
-			  //var $chosenOption = $('#dropDownName1 [selected = "selected"]');
-			  
-			  alert($('#dropDownName1 option').eq($chosenOption).val());  
-			  }
-			  function displayOption2(){
-			  var $chosenOption = $('#dropDownName2 option:selected');
-			  //NOTE: There should be NO space before the semi-colon		  
-			  alert("The text for your option is " +$chosenOption.text());    		  		  
-			  }
-			  function displayOption3(){
-			  var $chosenOption = $('#dropDownName3 option:selected');
-			  //NOTE: There should be NO space before the semi-colon
-			  
-			  alert("The text for your option is " +$chosenOption.text());
-			  alert("The value for your option is " +$chosenOption.val());		      		  		  
-			  }
-			  
-			</script>    
-		  
-			
-		</head>
-		<body>
-		<form>
-		<!-- The value is what is passed to the web server .. e.g. it might be MA when the text says Massachusetts.  -->
-		<!-- It is possible to find ready made drop down lists for all states, all countries, etc.  on line.  -->
-		Instructions for drop-down list goes here!<br />
-		This drop down list has no default value selected.<br />
-		<select name='dropDownName1' id='dropDownName1' size='maxNumberItems' multiple='false'>
-			<option value='info for choice 1 for useful procesing' >Text appearing on list for choice 1</option>
-			<option value='info for choice 2 for useful procesing' >Text appearing on list for choice 2</option>
-	
-			<option value='info for choice 3 for useful procesing' >Text appearing on list for choice 3</option>
-			<option value='info for choice 4 for useful procesing' >Text appearing on list for choice 4</option>
-	</select>
-	<br /><br />
-	
-	<!-- Here is a drop down list which allows for multiple selections -->
-	<!-- Notice that the multiple attribute of select is set to multiple or true -->
-	Instructions for multiple selection drop-down list goes here!<br />
-	<select name='dropDownName2' id='dropDownName2' size='maxNumberItems' multiple='true'>
-	    <option value='info for choice 1 for useful procesing' selected='true'>Text appearing on list for choice 1 </option>
-	
-	    <option value='info for choice 2 for useful procesing' >Text appearing on list for choice 2 </option>
-	    <option value='info for choice 3 for useful procesing' >Text appearing on list for choice 3 </option>
-	    <option value='info for choice 4 for useful procesing' >Text appearing on list for choice 4 </option>
-	</select>
-	<br /><br />
-	
-	Instructions for third drop-down list goes here!<br />
-	This drop down list has the second item selected as the default value.<br />
-	<select name='dropDownName3' id='dropDownName3' size='maxNumberItems' multiple='false'>
-	    <option value='info for choice 1 for useful procesing'>Text appearing on list for choice 1</option>
-	
-	    <option value='info for choice 2 for useful procesing' selected='selected'>Text appearing on list for choice 2</option>
-	    <option value='info for choice 3 for useful procesing' >Text appearing on list for choice 3</option>
-	    <option value='info for choice 4 for useful procesing' >Text appearing on list for choice 4</option>
-	</select>
-	<br /><br />
-	   
-		  You can changed the checked and see the value of the checked.<br>
-		  <button type = 'button' onclick = 'displayOption1();'>See the option on the first list</button>
-		  <button type = 'button' onclick = 'displayOption2();'>See the option(s) on the second list</button>
-		  <button type = 'button' onclick = 'displayOption3();'>See the option on the third list</button>
-		  
-		</form>
-		</body>
-		</html>
+<!doctype html>
+<html lang = 'en'>
 
-	```
+    <meta charset="utf-8">
+    <head>	
+       <title>select list  demo</title>
+       <script src="jquery.js"></script>
+	   <script>
+	      function displayOption1(){
+		  //This list has no default option selected
+		  var $chosenOption = $('#dropDownName1').prop('selectedIndex');
+		  //Line below does not work
+		  //var $chosenOption = $('#dropDownName1 [selected = "selected"]');
+		  
+		  alert($('#dropDownName1 option').eq($chosenOption).val());  
+		  }
+		  function displayOption2(){
+		  var $chosenOption = $('#dropDownName2 option:selected');
+		  //NOTE: There should be NO space before the semi-colon		  
+		  alert("The text for your option is " +$chosenOption.text());    		  		  
+		  }
+		  function displayOption3(){
+		  var $chosenOption = $('#dropDownName3 option:selected');
+		  //NOTE: There should be NO space before the semi-colon
+		  
+		  alert("The text for your option is " +$chosenOption.text());
+		  alert("The value for your option is " +$chosenOption.val());		      		  		  
+		  }
+		  
+		</script>    
+	  
+		
+	</head>
+	<body>
+	<form>
+	<!-- The value is what is passed to the web server .. e.g. it might be MA when the text says Massachusetts.  -->
+	<!-- It is possible to find ready made drop down lists for all states, all countries, etc.  on line.  -->
+	Instructions for drop-down list goes here!<br />
+	This drop down list has no default value selected.<br />
+	<select name='dropDownName1' id='dropDownName1' size='maxNumberItems' multiple='false'>
+		<option value='info for choice 1 for useful procesing' >Text appearing on list for choice 1</option>
+		<option value='info for choice 2 for useful procesing' >Text appearing on list for choice 2</option>
+
+		<option value='info for choice 3 for useful procesing' >Text appearing on list for choice 3</option>
+		<option value='info for choice 4 for useful procesing' >Text appearing on list for choice 4</option>
+</select>
+<br /><br />
+
+<!-- Here is a drop down list which allows for multiple selections -->
+<!-- Notice that the multiple attribute of select is set to multiple or true -->
+Instructions for multiple selection drop-down list goes here!<br />
+<select name='dropDownName2' id='dropDownName2' size='maxNumberItems' multiple='true'>
+    <option value='info for choice 1 for useful procesing' selected='true'>Text appearing on list for choice 1 </option>
+
+    <option value='info for choice 2 for useful procesing' >Text appearing on list for choice 2 </option>
+    <option value='info for choice 3 for useful procesing' >Text appearing on list for choice 3 </option>
+    <option value='info for choice 4 for useful procesing' >Text appearing on list for choice 4 </option>
+</select>
+<br /><br />
+
+Instructions for third drop-down list goes here!<br />
+This drop down list has the second item selected as the default value.<br />
+<select name='dropDownName3' id='dropDownName3' size='maxNumberItems' multiple='false'>
+    <option value='info for choice 1 for useful procesing'>Text appearing on list for choice 1</option>
+
+    <option value='info for choice 2 for useful procesing' selected='selected'>Text appearing on list for choice 2</option>
+    <option value='info for choice 3 for useful procesing' >Text appearing on list for choice 3</option>
+    <option value='info for choice 4 for useful procesing' >Text appearing on list for choice 4</option>
+</select>
+<br /><br />
+   
+	  You can changed the checked and see the value of the checked.<br>
+	  <button type = 'button' onclick = 'displayOption1();'>See the option on the first list</button>
+	  <button type = 'button' onclick = 'displayOption2();'>See the option(s) on the second list</button>
+	  <button type = 'button' onclick = 'displayOption3();'>See the option on the third list</button>
+	  
+	</form>
+	</body>
+	</html>
+
+```
 
 
 
