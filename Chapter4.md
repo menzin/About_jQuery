@@ -98,6 +98,50 @@ Again, there may be situations where summary or sub-total rows need to be emphas
 
 Remember that, in general, it is better to use a selector to return all the elements you wish to act upon than to iterate through the elements with `$(someSelector).each()`
 
+This site  https://learn.jquery.com/using-jquery-core/iterating/ also points out when we use attr(), prop(), css() etc. as getters they retreive the appropriate value from only the first match. But we can use `$( ).each()` as a work-around. That is, we can use the each() method to walk through the whole set and retreive the appropriate value for each.
 
+For example, the code below finds the css('color') for each li-element  and logs them to the console. (Of course `$('li').css('color')` would give the color of only the first li.) 
 
+[demo_4_3.html](http://web.simmons.edu/~menzin/CS321/Unit_5_jQuery_and_Ajax/About_jQuery/Chapter04/demo_4_3_v1.html)
+
+``` html
+<!doctype html>
+<html lang = 'en'>
+
+    <meta charset="utf-8">
+    <head>	
+       <title>$().(each()) demo with getter</title>
+        <script src = "jquery.js"> </script> 
+        <style>
+			.blueText {color:blue; }
+			.redText  {color:red; }
+			.greenText  {color:green; }
+		</style>  		
+    </head>
+    <body>
+	<div>Some colors which you may identify by name: 
+	<ul>
+	   <li class = 'blueText'>Blue asa the sky</li>
+	   <li class = 'greenText'>Green as the grass</li>
+	   <li class = 'redText'>Red as a rose</li>
+	 </ul>  
+	</div> 
+	<script>
+	  $('li').each(function(index){var cl = $(this).css('color'); console.log(cl);})
+	</script>
+     </body>
+</html>
+```
+
+Our script
+
+     $('li').each(function(index){
+     	var cl = $(this).css('color');
+      	console.log(cl);})
+
+could also have been written as
+
+    $('li').each(function(index, item){
+    	var cl = $(item).css('color'); 
+     	console.log(cl); })  
 
