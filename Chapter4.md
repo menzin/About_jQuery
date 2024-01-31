@@ -17,8 +17,8 @@ But, with **$.each**(someThing, someFunction()) we need to tell the each loop to
 ## $(someSelector).each() 
 
 So, we have a collection of objects returned by $(someSelector) and we want to do something with them. First of all, if you can use a jQuery method such as addClass() then you should do so. That will be both more efficient and clearer than writing a function to pass to each(). But let us suppose that we need to do something more detailed. Then we will write an anonymous function (a callback) to pass to each(). This anonymous function can have either one parameter or two:  
--  `function(indx, elem) { //do stuff}`
--  `function(indx) {//do stuff}`
+- `function(indx, elem) { //do stuff}`
+- `function(indx) {//do stuff}`
 
 Here: 
 - **indx** is the index of the element as we iterate through the collection
@@ -75,7 +75,7 @@ See the button which colors the list items (second button) using the css() metho
 
 An aside about tables: You will see something like the code above applied to tables, where different rows have different background colors (for legibility). 
 
-The most common situation is to alternate two background colors – and in older code you may see the odd() or even() methods to select all such rows at once.  These methods have been deprecated as of version 3.4 of jQuery. 
+The most common situation is to alternate two background colors – and in older code you may see the odd() or even() methods to select all such rows at once. These methods have been deprecated as of version 3.4 of jQuery. 
 
 You can adapt the code above replacing indx%3 with indx%2. Or you can use the `:even` selector. If you prefer the :even selector then your code will look like: 
 
@@ -98,9 +98,9 @@ Again, there may be situations where summary or sub-total rows need to be emphas
 
 Remember that, in general, it is better to use a selector to return all the elements you wish to act upon than to iterate through the elements with `$(someSelector).each()`
 
-This site  https://learn.jquery.com/using-jquery-core/iterating/ also points out when we use attr(), prop(), css() etc. as getters they retreive the appropriate value from only the first match. But we can use `$( ).each()` as a work-around. That is, we can use the each() method to walk through the whole set and retreive the appropriate value for each.
+This site https://learn.jquery.com/using-jquery-core/iterating/ also points out when we use attr(), prop(), css() etc. as getters they retreive the appropriate value from only the first match. But we can use `$( ).each()` as a work-around. That is, we can use the each() method to walk through the whole set and retreive the appropriate value for each.
 
-For example, the code below finds the css('color') for each li-element  and logs them to the console. (Of course `$('li').css('color')` would give the color of only the first li.) 
+For example, the code below finds the css('color') for each li-element and logs them to the console. (Of course `$('li').css('color')` would give the color of only the first li.) 
 
 [demo_4_3.html](http://web.simmons.edu/~menzin/CS321/Unit_5_jQuery_and_Ajax/About_jQuery/Chapter04/demo_4_3_v1.html)
 
@@ -187,6 +187,44 @@ Here is a very simple example: 
 	</html>
 ```
 
+The $.each() method works on arrays and objects. If you wished to operate on all the letters of a string you need to first turn the string into an array. Fortunately, JavaScript's myString.split("") method will do exactly that to myString. 
 
+For example suppose we wish to count the number of Gs and Cs in a string of DNA. (Recall the such a snippet of DNA is made up of the letters A, C, G, and T. It turns out that the proportions of Gs and Cs in such a snippet will help predict whether you are looking at an exon – protein encoding region – or an intron – not encoding region.)  To do this we first use the split() function in JavaScript to turn our string of DNA into an array and then use $.each() on that array:  
 
+[demo 4_2.html](http://web.simmons.edu/~menzin/CS321/Unit_5_jQuery_and_Ajax/About_jQuery/Chapter04/demo_4_2_v1.html)
+
+``` html
+
+<!doctype html>
+<html lang = 'en'>
+
+    <meta charset="utf-8">
+    <head>	
+       <title>$.(each) demo with DNA</title>
+        <script src = "jquery.js"> </script>   		
+    </head>
+    <body>
+	<script>
+	  var DNA = 'ATGATCCGT';
+	  alert(DNA);
+	  var GCsum = 0;
+	  var A = DNA.split("");
+	  $.each( A, function( index, value ){
+             if (value =='G' || value == 'C')  GCsum++
+          });
+          var proportion = GCsum/A.length;
+	  proportion = Math.round(100*proportion)/100;   //round to 2 decimal places
+          alert("The proportion of Gs and Cs in this snippet is " + proportion); 
+	</script>
+     </body>
+</html>
+```
+
+In addition to operating on arrays and objects, $.each() will also operate on JavaScript structures which have a length property, such as a NodeList or the arguments object. Such structures are beyond the scope of this book.
+
+## Owning it:
+
+- Suppose that you have a form in which some of the text boxes have a class forCompare. Change the value in all those text boxes so that they are all upper case.
+- Suppose you have an array of objects which represent employees. Each object is of the form `{name: personName, salary:monthlySalary}` Give each person a 3% raise.
+- Instead of counting Gs and Cs in demo_4_2.html, define an object countAll which counts the number of occurrences of each of the 4 letters in your DNA snippet. Modify the code to do the counting and use $.each() to also report the result from countAll. 
 
