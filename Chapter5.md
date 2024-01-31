@@ -125,7 +125,7 @@ For example, an **outside** insertion of `var material = "<b>Hello</b>"` at the 
          <p>Don't say goodbye; say </p>
          <b>Hello</b>
 
-While an **inside** insertion at the end of each <p> would result in the body being 
+While an **inside** insertion at the end of each `<p>` would result in the body being 
 
          <p>I would like to say:<b>Hello</b> </p>
          <br>
