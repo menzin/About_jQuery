@@ -225,6 +225,7 @@ In addition to operating on arrays and objects, $.each() will also operate on Ja
 ## Owning it:
 
 - Suppose that you have a form in which some of the text boxes have a class forCompare. Change the value in all those text boxes so that they are all upper case.
-- Suppose you have an array of objects which represent employees. Each object is of the form `{name: personName, salary:monthlySalary}` Give each person a 3% raise.
+- Suppose you have an array of objects which represent employees. Each object is of the form
+	`{name: personName, salary:monthlySalary}` Give each person a 3% raise.
 - Instead of counting Gs and Cs in demo_4_2.html, define an object countAll which counts the number of occurrences of each of the 4 letters in your DNA snippet. Modify the code to do the counting and use $.each() to also report the result from countAll. 
 
