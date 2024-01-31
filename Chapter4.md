@@ -144,4 +144,49 @@ could also have been written as
     $('li').each(function(index, item){
     	var cl = $(item).css('color'); 
      	console.log(cl); })  
+## $.each()      
+$.each is used to index through an array or object and apply the function passed to each() to every entry in the array or property in the object.  
+
+The formats for arrays and objects respectively are: 
+     
+     $.each(someArray, function(indx, elem) { //do something} );
+     $.each(someObject, function(key, value) {//do something} );  
+     
+Notice that, whether we are operating on an array or on an object, the first parameter of $.each() is that array or object – either its identifier or the array/object itself. 
+
+For example, we could write
+	
+ 	$.each([2, 3, 5, 7], function(j, elem){console.log(elem*elem);}) )
+
+The second parameter is a function – which takes an index and element of an array, or the key and value of an object.  
+
+Here is a very simple example: 
+
+[demo_4_1.html](http://web.simmons.edu/~menzin/CS321/Unit_5_jQuery_and_Ajax/About_jQuery/Chapter04/demo_4_1_v0f.html)
+``` html
+
+<!doctype html>
+<html lang = 'en'>
+    <meta charset="utf-8">
+    <head>	
+       <title>$.(each) demo</title>
+        <script src = "jquery.js"> </script>     
+		
+	  </head>
+	<body>
+	<script>
+	var A = [1, 2, 3];
+	alert(A);
+	var sum = 0;
+	$.each( A, function( index, value ){
+            sum += value;
+              }); 
+        alert( sum ); 
+	</script>		
+	</body>
+	</html>
+```
+
+
+
 
