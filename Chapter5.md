@@ -127,11 +127,12 @@ For example, an **outside** insertion of `var material = "<b>Hello</b>"` at the 
 ```
 While an **inside** insertion at the end of each `<p>` would result in the body being 
 
-         <p>I would like to say:<b>Hello</b> </p>
-         <br>
-         <div>Now let's have another paragraph:</div>
-         <p>Don't say goodbye; say <b>Hello</b></p>
-
+ ```html
+   <p>I would like to say:<b>Hello</b> </p>
+   <br>
+   <div>Now let's have another paragraph:</div>
+   <p>Don't say goodbye; say <b>Hello</b></p>
+```
 So our insertion methods break down into groups of outside insertions and inside insertions (four methods in each group.) The 'inside' methods place the new material just inside the receiving elements and the outside methods place the new material just outside the receiving or targeted elements.
 
 Not so surprisingly, we also find that there are methods which correspond to insertions at the start of the selected elements and at the end of the selected element.
