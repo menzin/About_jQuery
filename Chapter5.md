@@ -5,12 +5,12 @@
 jQuery has eight different methods for inserting new material into a page. We will look at one carefully, and then describe the landscape of all eight. (Once you see one, all this will make sense.)
 
 Let's start with the `after()` method. This method is used to insert some html right after a set of selected elements. Suppose that your page includes the code:
-
-      <p>I would like to say: </p>
-      <br>
-      <div>Now let's have another paragraph:</div>
-      <p>Don't say goodbye; say </p>  
-      
+```html
+<p>I would like to say: </p>
+<br>
+<div>Now let's have another paragraph:</div>
+<p>Don't say goodbye; say </p>  
+```      
 and you would like to insert Hello right after each paragraph. 
 
 To make things simple we'll create a variable material to hold what we want to insert, and then write a script to do the insertion:
