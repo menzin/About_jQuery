@@ -216,7 +216,7 @@ I have tried to keep the examples above relatively straightforward, but the mate
 And, of course, you might be adding elements with onclick event handlers, etc. The jQuery site warns us that using any of these methods to add code from an unknown source to our page may leave the page vulnerable to malware.
 
 
-### Owning It
+## Owning It
 
 Suppose that you have an unordered list `<ul id = 'myDogs'>` with three items on it. Suppose also that you have an icon of a dog.   Place that icon at the beginning of each list item. You should be able to do this in two different ways.
 
