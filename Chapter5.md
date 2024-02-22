@@ -211,10 +211,14 @@ Here is the  summary chart below with some examples of what they do. In this cha
 <img width="595" alt="Screenshot 2024-02-22 at 12 57 36 AM" src="https://github.com/menzin/About_jQuery/assets/144168274/012cd08b-ac45-413c-a976-ccf5572b08f3">
 
 
+I have tried to keep the examples above relatively straightforward, but the material you insert might be more complex – e.g. an entire div, identified by an id. 
+
+And, of course, you might be adding elements with onclick event handlers, etc.   The jQuery site warns us that using any of these methods to add code from an unknown source to our page may leave the page vulnerable to malware.
 
 
+### Owning It
 
-
+Suppose that you have an unordered list ``` html <ul id = 'myDogs'>```with three items on it. Suppose also that you have an icon of a dog.   Place that icon at the beginning of each list item. You should be able to do this in two different ways.
 
 
 
