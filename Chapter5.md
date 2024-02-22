@@ -167,9 +167,9 @@ Modify the code to try it before() and prepend().You should be able to predict w
 
 To summarize, we have four new methods - `after()`, `append()`, `before()` and `prepend()` - all of which work on the general form: 
 
-```html
-$(someSelector).ourNewMethodWhichSpecifiesWhereTheNewStuffGoes(theNewStuff);
-```
+
+     $(someSelector).ourNewMethodWhichSpecifiesWhereTheNewStuffGoes(theNewStuff);
+
 
 Warning ⚠️: I stored "the new stuff" in a variable, but if you choose to type in that string directly, then you must put it inside quotation marks: 
 
@@ -180,6 +180,37 @@ Sometimes, it is useful to switch the order in which we specify what the new stu
 There are four methods – `insertAfter()` , `appendTo()`, `insertBefore()`, `prependTo()` – which correspond to our four previous methods and do this for us.
 
 Their general format is:
+
+     $(theNewStuff)).ourNewMethodWhichSpecifiesWhereTheNewStuffGoes(someSelector).
+
+For example, the following are equivalent, where we have stored our new stuff in the var material:
+
+        $('p').after(material); 
+        $(material).insertAfter('p');
+
+Here is another example. In order to get
+
+        <h3 id='resultsHead'><Results</h3>  <div id = 'results'> Our results...</div>
+
+We could either select for `#resultsHead` and use a method on that set to put `#results` after it,  
+
+       $('#resultsHead').after($('#results');
+
+or we could select for `#results` and use a method on that set to put `#resultsHead` before it
+
+          $('#results').insertBefore( $('#resultsHead'));
+
+So, all together we get eight methods – four which are methods that belong to the targeted elements and four which belong to new elements. Each set of four has two for insertion at the beginning (inside and outside) and two for insertion at the end (inside and outside.)   
+
+Now this is a lot of options – so one way to keep all these methods straight in your mind is to notice that the first four methods, the ones which belong to the receiving/targeted elements – `after()`, `before()`, `append()` and `prepend()` = all have one word names; the second group of methods, those which belong to the new material – `insertAfter()`, `insertBefore()`, `appendTo()`, `prependTo()` – all  have two word names.
+
+Here is the  summary chart below with some examples of what they do. In this chart I have listed first the four outside methods and then the four inside methods. And I have paired them so that you see the method which belongs to the receiving element followed by the method which belongs the the new material (& both methods do the same thing.) 
+
+<img width="595" alt="Screenshot 2024-02-22 at 12 57 08 AM" src="https://github.com/menzin/About_jQuery/assets/144168274/75e44dee-b342-4595-8abc-0bf318174c64">
+
+<img width="595" alt="Screenshot 2024-02-22 at 12 57 36 AM" src="https://github.com/menzin/About_jQuery/assets/144168274/012cd08b-ac45-413c-a976-ccf5572b08f3">
+
+
 
 
 
