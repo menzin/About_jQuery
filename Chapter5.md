@@ -137,6 +137,54 @@ So our insertion methods break down into groups of outside insertions and inside
 
 Not so surprisingly, we also find that there are methods which correspond to insertions at the start of the selected elements and at the end of the selected element.
 
+For another example, suppose we have a `div with id = 'results'`: 
+
+     <div id = 'results'> Our results ... </div> 
+     
+Inserting `<h3>Results</h3>`  with an '_outside_' insertion at the beginning of this div will results in 
+
+     <h3><Results</h3>  <div id = 'results'> Our results...</div>  
+     
+While an '_inside_' insertion will result in:
+
+     <div id = 'results'><h3>Results</h3>Our results...</div>
+
+So, there are 4 different place you might want to place the new material – just inside or just outside; at the start or the end. That gives us the need for 4 methods.  
+
+While `after()` is an **outside** method, `append()` is an **inside** method.  Consider what happens when we replace after() with append().
+
+Now you can see (from the yellow background) that the material we added is at the end of the paragraph but inside it (and the yellow background)!
+
+
+ <img width="701" alt="Screenshot 2024-02-22 at 12 48 04 AM" src="https://github.com/menzin/About_jQuery/assets/144168274/ed57d020-9a55-4786-bc03-05ce2c47fc12">
+
+
+Similarly, `before()` is an **outside** method and `prepend()` in an **inside** method.
+
+### Owning It
+
+Modify the code to try it before() and prepend().You should be able to predict what will happen.
+
+To summarize, we have four new methods - `after()`, `append()`, `before()` and `prepend()` - all of which work on the general form: 
+
+```html
+$(someSelector).ourNewMethodWhichSpecifiesWhereTheNewStuffGoes(theNewStuff);
+```
+
+Warning ⚠️: I stored "the new stuff" in a variable, but if you choose to type in that string directly, then you must put it inside quotation marks: 
+
+     $('p').after('<b>Hello</b>')
+
+Sometimes, it is useful to switch the order in which we specify what the new stuff is and where it is going.  
+
+There are four methods – `insertAfter()` , `appendTo()`, `insertBefore()`, `prependTo()` – which correspond to our four previous methods and do this for us.
+
+Their general format is:
+
+
+
+
+
 
 
 
