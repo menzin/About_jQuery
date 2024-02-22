@@ -213,13 +213,30 @@ Here is the  summary chart below with some examples of what they do. In this cha
 
 I have tried to keep the examples above relatively straightforward, but the material you insert might be more complex – e.g. an entire div, identified by an id. 
 
-And, of course, you might be adding elements with onclick event handlers, etc.   The jQuery site warns us that using any of these methods to add code from an unknown source to our page may leave the page vulnerable to malware.
+And, of course, you might be adding elements with onclick event handlers, etc. The jQuery site warns us that using any of these methods to add code from an unknown source to our page may leave the page vulnerable to malware.
 
 
 ### Owning It
 
-Suppose that you have an unordered list ``` html <ul id = 'myDogs'>```with three items on it. Suppose also that you have an icon of a dog.   Place that icon at the beginning of each list item. You should be able to do this in two different ways.
+Suppose that you have an unordered list `<ul id = 'myDogs'>` with three items on it. Suppose also that you have an icon of a dog.   Place that icon at the beginning of each list item. You should be able to do this in two different ways.
 
+### Removing elements from the DOM
+
+There are several ways to remove elements using jQuery. A detailed discussion is beyond the scope of this book, but you can find details at https://api.jquery.com/category/manipulation/dom-removal/ 
+
+Very briefly:
+- `empty()` takes all the descendants (and text)  of the selected collection
+- `remove()` takes away the elements in the collection and their descendants , and all the content and bound events of the elements which are removed.
+- `detach()` removes the element but not its data or events
+
+### Cloning and wrapping elements
+
+Again, this is beyond the scope of the book, but details may be found at https://api.jquery.com/category/manipulation/
+
+Very briefly:
+- `clone()` makes a deep copy of the indicated elements. We might, for example, clone an icon which, on being clicked,  collapses/expands part of a menu, save that in a var, and then insert it before any element with a class='collapse'.
+- `wrap("someCode")` may be used to wrap someCode around the selected elements – e.g. put the elements in a `<div>` or `<li>`.
+- `unwrap()` undoes `wrap()`. 
 
 
 
