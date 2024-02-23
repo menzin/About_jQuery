@@ -27,4 +27,5 @@ These methods fall into three general categories: 
 > 2. If your code ends with return false then the default action will be prevented. (See below for information about preventDefault.) You have actually seen this before when the validation function for a submit button returns false in order to prevent the form's submission.
 
 - Put the code into the onclick attribute:
-  ```<button type ='button' id="But1" onclick ="alert('But1 was clicked');" >Click Me!</button> ```         
+
+      <button type ='button' id="But1" onclick ="alert('But1 was clicked');" >Click Me!</button>       
