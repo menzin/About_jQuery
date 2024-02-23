@@ -20,7 +20,7 @@ In classic JavaScript, there are many ways to register an event handler. We will
 
 These methods fall into three general categories: 
 
-**General category 1**: Use the onclick attribute inside the tag for the element in question. 
+<ins>**General category 1**: Use the onclick attribute inside the tag for the element in question.</ins>
 
 > [!NOTE]
 > 1. The Mozilla Developer Network recommends not using this. Among other sins, you are mixing structure (HTML) and behavior (JavaScript).
