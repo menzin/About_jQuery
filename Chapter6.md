@@ -8,7 +8,7 @@ _**Browser and Mouse Events**_
 
 There are many events built into the browser API – most notably **click**, **blur**, **focus**, **mouseup**, **mousedown**. The structure for all is similar, so we will focus on the click event. There are other events associated with the document, such as its being loaded. We will not be discussing them here. 
 
-_**An event listener** _
+_**An event listener**_
 
 Listens for an event to happen and then fires an **event handler**. Many people use the terms event listener and event handler as synonyms (though not always.)
   
