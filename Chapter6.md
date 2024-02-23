@@ -62,8 +62,8 @@ And then, inside a script and after the DOM is loaded:
     But4.onclick = But4Handler;     //NO parentheses after But4Handler 
     
 > [!NOTE]
-> But4Handler can be either a function: function But4Handler(evt) {...} or
-> But4Handler can be a function expression: But4Handler = function(evt) {...}
+> But4Handler can be either a function: function But4Handler(evt) {...}
+> Or But4Handler can be a function expression: But4Handler = function(evt) {...}
 
 - Set the button's onclick attribute to be an anonymous functions (i.e. a function expression):
 
