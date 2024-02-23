@@ -63,4 +63,9 @@ And then, inside a script and after the DOM is loaded:
     
 > [!NOTE]
 > But4Handler can be either a function: function But4Handler(evt) {...} or
-> But4Handler can be a function expression: But4Handler = function(evt) {...} 
+> But4Handler can be a function expression: But4Handler = function(evt) {...}
+
+- Set the button's onclick attribute to be an anonymous functions (i.e. a function expression):
+
+      <button type ='button' id = "But5" >ClickMe! </button>
+      But5.onclick = function() {alert('But5 was clicked');}; 
