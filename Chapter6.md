@@ -15,3 +15,13 @@ Listens for an event to happen and then fires an **event handler**. Many peopl
 We also speak interchangeably of **adding an event listener** or **registering an event handler**; both expressions mean that we have specified what happens when a particular event happens.
 
 For browser and mouse events, those events typically are associated with an action (such as a click or a mouseover) and an element where it takes places.  So the event handler will specify what happens when that action happens to that element; the event handler then becomes a property/attribute of the element and the name of that property tells you the action- e.g. `someElement.onclick`  
+
+In classic JavaScript, there are many ways to register an event handler. We will, in a minute, show you how to do this with jQuery, but here are the methods you may have seen in the past. The only purpose of reminding you of these ways to register an event handler is to tie the topic into your previous knowledge. We will not be using these approaches; we will get a better way to do this with jQuery. 
+
+These methods fall into three general categories: 
+
+**General category 1**: Use the onclick attribute inside the tag for the element in question. 
+
+> [!NOTE]
+> 1. The Mozilla Developer Network recommends not using this. Among other sins, you are mixing structure (HTML) and behavior (JavaScript).
+> 2. If your code ends with return false then the default action will be prevented. (See below for information about preventDefault.) You have actually seen this before when the validation function for a submit button returns false in order to prevent the form's submission.                           
