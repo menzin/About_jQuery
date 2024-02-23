@@ -29,3 +29,17 @@ These methods fall into three general categories: 
 - Put the code into the onclick attribute:
 
       <button type ='button' id="But1" onclick ="alert('But1 was clicked');" >Click Me!</button>       
+
+- Write an IEFE (immediately executable function expression) for the onclick attribute:
+
+      <button type ='button' id="But2" onclick ="(function() {alert('But2 was clicked');})()" > Click Me!</button>
+
+- Write a function and set the onclick attribute in the button tag to be that function:
+  ```html
+      function But3Handler() {alert('But3 was clicked')};
+      <button type ='button' id = "But3" onclick = "But3Handler() ;" >
+      ClickMe! </button>
+  ```
+> [!NOTE]
+>  This actually makes the But3Handler function run.
+> The But3Handler() is defined separately in a script. 
