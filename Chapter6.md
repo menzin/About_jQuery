@@ -42,4 +42,6 @@ These methods fall into three general categories: 
   ```
 > [!NOTE]
 >  This actually makes the But3Handler function run.
-> The But3Handler() is defined separately in a script. 
+> The But3Handler() is defined separately in a script.
+
+<ins>**General category 2**: Use JavaScript to set the  onclick attribute for the element</ins>  
