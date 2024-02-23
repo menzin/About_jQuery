@@ -44,4 +44,23 @@ These methods fall into three general categories: 
 >  This actually makes the But3Handler function run.
 > The But3Handler() is defined separately in a script.
 
+
 <ins>**General category 2**: Use JavaScript to set the  onclick attribute for the element</ins>  
+
+> [!NOTE]
+> The element is identified by its id.
+> The oncllick attribute is set inside a script and after the DOM is loaded.
+> You may either define the handler directly, as in the But5 example, or you may set it to another function, as in the But4 example.
+> You may remove the handler by coding myElement.onclick = null.
+
+- Write a function and set the button's onclick property (in the DOM) to be that function:
+``` html
+function But4Handler() {alert('But4 was clicked')};     <button type ='button' id = "But4">ClickMe! </button>
+```
+And then, inside a script and after the DOM is loaded:
+
+    But4.onclick = But4Handler;     //NO parentheses after But4Handler 
+    
+> [!NOTE]
+> But4Handler can be either a function: function But4Handler(evt) {...} or
+> But4Handler can be a function expression: But4Handler = function(evt) {...} 
