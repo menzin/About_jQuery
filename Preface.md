@@ -37,10 +37,10 @@ In order to use this book you should be comfortable with:
   You should be completely comfortable with core JavaScript. That is, you should know how to write and use loops, functions, arrays, objects (realized as associative arrays). It will be very helpful if you have written anonymous functions, although there will be a brief discussions of that in Chapter 1. You may or may not have used callbacks and you may or may not be using ES6 (or later – sometimes called ESnext). I had to decide whether or not to use ESnext in this book. My decision to forgo ESnext is based on the importance of this in jQuery, and avoiding the temptation to use arrow functions, which, of course, handle this differently from traditional functions.
 
 ## How this book is organized
-- **Chapter 0 – Just Get Me Going **
+- **Chapter 0 – Just Get Me Going**
   This chapter shows you how to use jQuery in very simple examples, without a lot of background about what is happening behind the scenes
   
--** Chapter 1 – What Is Happening Here** 
+- **Chapter 1 – What Is Happening Here** 
     Please read this short chapter, even if you have used jQuery.
 This chapter explains the basic mechanisms of jQuery and provides examples of code which is used frequently.. We discuss collections, chaining, and backing up the chain.
 
