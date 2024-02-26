@@ -14,12 +14,29 @@ AJAX is used for quizzes and, more generally, for adding new material to a page 
 
 Visual effects implemented through jQuery run the gamut from coloring the rows of a table to displaying carousels of images to implementing sliders and to user re-sizing an element with drag-and-drop.  
 
-Event handlers, such as reacting to button clicks, are intrinsic to making a page interactive.  jQuery makes it easy for the page to load (so the user can see the whole page) while the event handlers are being added silently; thus speeding up the user’s experience.
+Event handlers, such as reacting to button clicks, are intrinsic to making a page interactive. jQuery makes it easy for the page to load (so the user can see the whole page) while the event handlers are being added silently; thus speeding up the user’s experience.
 
 So, jQuery will make it easier for us to add a lot of useful and amusing features to our pages.
 
-Why this book?
-For over 10 years I have been teaching jQuery to my students at Simmons University.  In that time we have tried to use a variety of references, some of which were too basic and some too elaborate or too focused on highly refined visual design.  
-This book is an attempt to fill the middle ground.  It is intended for people who know the basics of HTML, CSS and JavaScript, but haven’t yet tried to use jQuery or other framework, and may (or may not yet) be completely clear on the nuances of callbacks, closures or events.
+## Why this book?
+For over 10 years I have been teaching jQuery to my students at Simmons University. In that time we have tried to use a variety of references, some of which were too basic and some too elaborate or too focused on highly refined visual design.
+
+This book is an attempt to fill the middle ground. It is intended for people who know the basics of HTML, CSS and JavaScript, but haven’t yet tried to use jQuery or other framework, and may (or may not yet) be completely clear on the nuances of callbacks, closures or events.
+
 A detailed set of references is found at the end of this book, and more references on web centric computing may be found at http://web.simmons.edu/~menzin/WebCentricResources.html
+
+## What you should know
+In order to use this book you should be comfortable with:
+- **HTML**
+    You should be able to write basic HTML, including tags for images, anchors , lists, forms, buttons, divs and spans. You should also have used event handlers, such as onclick. How the DOM is represented will be reviewed in Chapter 1, but it will be helpful if you have worked with this material before. It is an advantage but not required that you understand basic issues around responsive web design  and accessibility.
+
+- **CSS**
+  You should be able to use basic selectors for a class, id, tag. We will not be using ultra fancy CSS, but the selectors for CSS are used through out jQuery. Using your favorite cheat sheet you should be able to set the color and font properties of the text. We will review the difference between the display and visibility properties in Chapter 1.
+
+- **Javascript**
+  You should be completely comfortable with core JavaScript. That is, you should know how to write and use loops, functions, arrays, objects (realized as associative arrays). It will be very helpful if you have written anonymous functions, although there will be a brief discussions of that in Chapter 1. You may or may not have used callbacks and you may or may not be using ES6 (or later – sometimes called ESnext). I had to decide whether or not to use ESnext in this book. My decision to forgo ESnext is based on the importance of this in jQuery, and avoiding the temptation to use arrow functions, which, of course, handle this differently from traditional functions.
+
+## How this book is organized
+
+
 
