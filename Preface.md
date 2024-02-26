@@ -58,3 +58,6 @@ This chapter explains the basic mechanisms of jQuery and provides examples of co
   All code examples are at in the same folder as the chapter's text. Please use the downloaded code rather than copying from the Word documents --- we all know that that will lead to all kinds of problems.
 
 
+## Acknowledgements
+
+
