@@ -1,1 +1,25 @@
+# Preface to About jQuery
+© Margaret S. Menzin 2021
+
+## Why jQuery? 
+Once upon a time, a long time ago, there was something called “the browser wars”, whereby many features of HTML and JavaScript were not uniformly implemented across all popular browsers. At that time, jQuery was designed to provide a uniform interface to all browsers.
+
+Those bad days have passed, but jQuery proved to be so helpful and useful, that it remains the most popular library of functions for JavaScript on the web, with over 50% of all web sites using jQuery. In addition there is now a huge eco-system of plug-ins which add additional functionality to jQuery. So, if you believe in the wisdom of crowds, or in not re-inventing the wheel, or if  you simply want to be able to maintain existing web sites, it behooves you to learn jQuery. Plus, it’s a lot of fun and will make your life easier.
+
+The most common uses of jQuery are to add event handlers to multiple elements, to implement AJAX, to animate a page with visual effects, and to manipulate the DOM by changing either what elements appear on a page or how they appear.  
+
+That last category includes such things as reacting to form validation either by showing and hiding error messages or by changing the color or font weight of the label.  It also includes having sections of a page (e.g. on a page of FAQs) open up or close. That is, we can manipulate the DOM either by adding/removing elements or by changing their attributes.
+
+AJAX is used for quizzes and, more generally, for adding new material to a page without re-loading the whole page.  
+
+Visual effects implemented through jQuery run the gamut from coloring the rows of a table to displaying carousels of images to implementing sliders and to user re-sizing an element with drag-and-drop.  
+
+Event handlers, such as reacting to button clicks, are intrinsic to making a page interactive.  jQuery makes it easy for the page to load (so the user can see the whole page) while the event handlers are being added silently; thus speeding up the user’s experience.
+
+So, jQuery will make it easier for us to add a lot of useful and amusing features to our pages.
+
+Why this book?
+For over 10 years I have been teaching jQuery to my students at Simmons University.  In that time we have tried to use a variety of references, some of which were too basic and some too elaborate or too focused on highly refined visual design.  
+This book is an attempt to fill the middle ground.  It is intended for people who know the basics of HTML, CSS and JavaScript, but haven’t yet tried to use jQuery or other framework, and may (or may not yet) be completely clear on the nuances of callbacks, closures or events.
+A detailed set of references is found at the end of this book, and more references on web centric computing may be found at http://web.simmons.edu/~menzin/WebCentricResources.html
 
