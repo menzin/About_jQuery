@@ -68,4 +68,12 @@ And then, inside a script and after the DOM is loaded:
 - Set the button's onclick attribute to be an anonymous functions (i.e. a function expression):
 
       <button type ='button' id = "But5" >ClickMe! </button>
-      But5.onclick = function() {alert('But5 was clicked');}; 
+      But5.onclick = function() {alert('But5 was clicked');};
+  
+> [!NOTE]
+> Again, the last line must be inside a script & after the DOM is loaded.
+
+<ins>**General category 3**: Use addEventListener and removeEventListener </ins>  
+
+- Use addEventListener (and removeEventListener).
+
