@@ -23,7 +23,7 @@ These methods fall into three general categories: 
 <ins>**General category 1**: Use the onclick attribute inside the tag for the element in question.</ins>
 
 > [!NOTE]
-> 1. The Mozilla Developer Network recommends not using this. Among other sins, you are mixing structure (HTML) and behavior (JavaScript).  <br> 
+> 1. The Mozilla Developer Network recommends not using this. Among other sins, you are mixing structure (HTML) and behavior (JavaScript). 
 > 2. If your code ends with return false then the default action will be prevented. (See below for information about preventDefault.) You have actually seen this before when the validation function for a submit button returns false in order to prevent the form's submission.
 
 - Put the code into the onclick attribute:
