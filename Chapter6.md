@@ -23,7 +23,7 @@ These methods fall into three general categories: 
 <ins>**General category 1**: Use the onclick attribute inside the tag for the element in question.</ins>
 
 > [!NOTE]
-> 1. The Mozilla Developer Network recommends not using this. Among other sins, you are mixing structure (HTML) and behavior (JavaScript).
+> 1. The Mozilla Developer Network recommends not using this. Among other sins, you are mixing structure (HTML) and behavior (JavaScript).  <br> 
 > 2. If your code ends with return false then the default action will be prevented. (See below for information about preventDefault.) You have actually seen this before when the validation function for a submit button returns false in order to prevent the form's submission.
 
 - Put the code into the onclick attribute:
@@ -41,16 +41,16 @@ These methods fall into three general categories: 
       ClickMe! </button>
   ```
 > [!NOTE]
->  This actually makes the But3Handler function run.
+>  This actually makes the But3Handler function run. <br> 
 > The But3Handler() is defined separately in a script.
 
 
 <ins>**General category 2**: Use JavaScript to set the  onclick attribute for the element</ins>  
 
 > [!NOTE]
-> The element is identified by its id.
-> The oncllick attribute is set inside a script and after the DOM is loaded.
-> You may either define the handler directly, as in the But5 example, or you may set it to another function, as in the But4 example.
+> The element is identified by its id.  <br> 
+> The oncllick attribute is set inside a script and after the DOM is loaded.  <br> 
+> You may either define the handler directly, as in the But5 example, or you may set it to another function, as in the But4 example. <br> 
 > You may remove the handler by coding myElement.onclick = null.
 
 - Write a function and set the button's onclick property (in the DOM) to be that function:
