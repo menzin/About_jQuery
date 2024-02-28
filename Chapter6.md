@@ -198,5 +198,6 @@ _**Events propagate aka bubble up**_
 		We can recover the element it fired on as evt.target and we can recover the current target as evt.currentTarget or as this. In other words, as the event bubbles up, the value of this refers to the place where you are in the bubbling – i.e. to the currentTarget. 
 
 > [!NOTE]
-> If you want to know what the current target is you should ask for evt.currentTarget.id 
+> If you want to know what the current target is you should ask for evt.currentTarget.id
+		In example in this paragraph, (since we wrote a handler specifically for clicking on yourItem1) we know what the target is but in a few paragraphs we will see how to write one handler for clicking on multiple elements – and then we will want to know what the target is. 
 	  
