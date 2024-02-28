@@ -182,3 +182,6 @@ _**Events propagate aka bubble up**_
   	<li id = 'yourItem1' onclick='expose(this);'>See my details</li>
   ```
   **then expose() is passing <ins>_this_</ins>, which is the <ins>_element_</ins> where the event is firing**.
+
+  We can think of this as expose(el) knowing that the parameter el being passed in is an <ins>_element_</ins>. Remember that _this_ refers to an element.
+
