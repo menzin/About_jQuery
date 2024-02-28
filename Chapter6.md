@@ -14,7 +14,7 @@ Listens for an event to happen and then fires an **event handler**. Many peopl
   
 We also speak interchangeably of **adding an event listener** or **registering an event handler**; both expressions mean that we have specified what happens when a particular event happens.
 
-For browser and mouse events, those events typically are associated with an action (such as a click or a mouseover) and an element where it takes places.  So the event handler will specify what happens when that action happens to that element; the event handler then becomes a property/attribute of the element and the name of that property tells you the action- e.g. `someElement.onclick`  
+For browser and mouse events, those events typically are associated with an action (such as a click or a mouseover) and an element where it takes places. So the event handler will specify what happens when that action happens to that element; the event handler then becomes a property/attribute of the element and the name of that property tells you the action- e.g. `someElement.onclick`  
 
 In classic JavaScript, there are many ways to register an event handler. We will, in a minute, show you how to do this with jQuery, but here are the methods you may have seen in the past. The only purpose of reminding you of these ways to register an event handler is to tie the topic into your previous knowledge. We will not be using these approaches; we will get a better way to do this with jQuery. 
 
@@ -41,11 +41,11 @@ These methods fall into three general categories: 
       ClickMe! </button>
   ```
 > [!NOTE]
->  This actually makes the But3Handler function run. <br> 
+> This actually makes the But3Handler function run. <br> 
 > The But3Handler() is defined separately in a script.
 
 
-<ins>**General category 2**: Use JavaScript to set the  onclick attribute for the element</ins>  
+<ins>**General category 2**: Use JavaScript to set the onclick attribute for the element</ins>  
 
 > [!NOTE]
 > The element is identified by its id.  <br> 
@@ -80,12 +80,12 @@ And then, inside a script and after the DOM is loaded:
 > [!NOTE]
 > As with the approach of general category 2, the event handlers are registered inside a script and after the DOM is loaded.
 
-- But6.addEventListener('click', But6Handler);  or using an anonymous function for the                  second parameter.
+- But6.addEventListener('click', But6Handler); or using an anonymous function for the second parameter.
 
 > [!NOTE]
 > This may be used to add multiple handlers to the same event. Classic JS does not allow for multiple handlers on the same event unless you use this approach. jQuery does allow for multiple handlers on the same event.  
 
-- We will see that jQuery makes this easy and more powerful –  using the `on()` method to add a listener and the `off()` method to remove it. (Note: The old bind() and unbind() methods are deprecated as of version 3.0 of jQuery)
+- We will see that jQuery makes this easy and more powerful – using the `on()` method to add a listener and the `off()` method to remove it. (Note: The old bind() and unbind() methods are deprecated as of version 3.0 of jQuery)
 
 - The code for all these examples is in [eventHandlerDemo.html](http://web.simmons.edu/~menzin/CS321/Unit_5_jQuery_and_Ajax/About_jQuery/Chapter06/eventHandlerDemo.html)
 
@@ -156,17 +156,27 @@ _**Events propagate aka bubble up**_
   ```
   	and have defined `function expose(evt) {alert(evt.id)};`
 
-	When you click on myItem1 or myItem2, then all the onclick handlers going up the DOM will 	be fired – firing whatever onclick handler has been attached to that element.
+	When you click on myItem1 or myItem2, then all the onclick handlers going up the DOM will be fired – firing whatever onclick handler has been attached to that element.
 
 	On the other hand, it you have
 	```html
 	<div id='yourDiv' onclick = 'expose(this);'>
 		<ul id = 'yourList'>
-		 <li id = 'yourItem1' onclick='expose(this);'>See my details</li>                		 <li id = 'yourItem2' onclick='expose(this);'>And  my details</li>            			</ul>
+		 <li id = 'yourItem1' onclick='expose(this);'>See my details</li>
+ 		 <li id = 'yourItem2' onclick='expose(this);'>And my details</li>
+
+		</ul>
 	</div>
 	```
 	
- 	then clicking on yourItem1 (while it propagates up the DOM) – notice that yourLIst does 	not have any onclick event handlers to fire, but yourDiv does (and it fires.).  
+ 	then clicking on yourItem1 (while it propagates up the DOM) – notice that yourLIst does not have any onclick event handlers to fire, but yourDiv does (and it fires.).  
   
-  	In other words, the event bubbles up the DOM, firing the onclick event handler when one 	exists (& skipping the elements where there is no onclick event handler.)
+  	In other words, the event bubbles up the DOM, firing the onclick event handler when one exists (& skipping the elements where there is no onclick event handler.)
 
+- **Distinguishing between and using both the event object and its current target.**
+  	There is another thing to notice here: be clear about whether your handler is a function of an element or of an event!
+  
+- **When the onclick event handler calls expose(this) from the element, as in**
+
+  		<li id = 'yourItem1' onclick='expose(this);'>See my details</li>
+  **then expose() is passing this, which is the element where the event is firing.**  
