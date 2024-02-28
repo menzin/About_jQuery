@@ -199,5 +199,6 @@ _**Events propagate aka bubble up**_
 
 > [!NOTE]
 > If you want to know what the current target is you should ask for evt.currentTarget.id
-		In example in this paragraph, (since we wrote a handler specifically for clicking on yourItem1) we know what the target is but in a few paragraphs we will see how to write one handler for clicking on multiple elements – and then we will want to know what the target is. 
+
+In example in this paragraph, (since we wrote a handler specifically for clicking on yourItem1) we know what the target is but in a few paragraphs we will see how to write one handler for clicking on multiple elements – and then we will want to know what the target is. 
 	  
