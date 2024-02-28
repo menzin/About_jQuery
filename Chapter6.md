@@ -77,3 +77,55 @@ And then, inside a script and after the DOM is loaded:
 
 - Use addEventListener (and removeEventListener).
 
+> [!NOTE]
+> As with the approach of general category 2, the event handlers are registered inside a script and after the DOM is loaded.
+
+- But6.addEventListener('click', But6Handler);  or using an anonymous function for the                  second parameter.
+
+> [!NOTE]
+> This may be used to add multiple handlers to the same event. Classic JS does not allow for multiple handlers on the same event unless you use this approach. jQuery does allow for multiple handlers on the same event.  
+
+- We will see that jQuery makes this easy and more powerful –  using the `on()` method to add a listener and the `off()` method to remove it. (Note: The old bind() and unbind() methods are deprecated as of version 3.0 of jQuery)
+
+- The code for all these examples is in [eventHandlerDemo.html](http://web.simmons.edu/~menzin/CS321/Unit_5_jQuery_and_Ajax/About_jQuery/Chapter06/eventHandlerDemo.html)
+
+``` html
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Classic Registration of Event Handlers Demo</title>
+  
+  <script src="jquery.js"></script>
+  
+<script>
+function But3Handler() {alert('But3 was clicked')};
+function But4Handler() {alert('But4 was clicked')};
+function But6Handler() {alert('But6 was clicked')};
+
+//Once the DOM is loaded can assign event handlers etc.
+$(document).ready(function() {
+	But4.onclick = But4Handler;     //NO parentheses after But4Handler
+	But5.onclick = function() {alert('But5 was clicked');};
+	But6.addEventListener('click', But6Handler);  
+});
+
+</script>
+</head>
+<body>
+<h4>The buttons described in the section of Chapter 6 on the classic methods for registering event handlers:</h4>
+
+<button type ='button' id="But1" onclick ="alert('But1 was clicked');" >
+          But1 - Click Me!  Uses: Codes the onclick handler directly in the button tag</button><br/><br />
+<button type ='button' id="But2" onclick ="(function() {alert('But2 was clicked');})()" >
+          But2 - Click Me! Uses: Codes the onclick handler as an anonymous function in the button tag</button><br /><br />
+<button type ='button' id = "But3"   onclick = "But3Handler() ;" >
+          But3 - ClickMe! Uses: The handler is the result of a function defined elsewhere</button><br /><br />
+<button type ='button' id = "But4">But4 - ClickMe! Uses: The handler is a function defined elsewhere</button><br /><br />
+<button type ='button' id = "But5" >But5 - ClickMe! Uses: The handler is a function expression defined elsewhere</button><br /><br /> 
+<button type ='button' id = "But6" >But6 - ClickMe! Uses: Handler is added with addEventListener</button><br /><br /><br />     		   
+ 
+</body>
+</html>
+```
+_**Events have properties**_
