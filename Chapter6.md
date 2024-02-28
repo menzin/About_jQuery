@@ -197,6 +197,6 @@ _**Events propagate aka bubble up**_
 
 		We can recover the element it fired on as evt.target and we can recover the current target as evt.currentTarget or as this. In other words, as the event bubbles up, the value of this refers to the place where you are in the bubbling – i.e. to the currentTarget. 
 
-		> [!NOTE]
-		> If you want to know what the current target is you should ask for evt.currentTarget.id 
-			  
+> [!NOTE]
+> If you want to know what the current target is you should ask for evt.currentTarget.id 
+	  
