@@ -145,7 +145,7 @@ _**Events propagate aka bubble up**_
 
 - If you fire an event on an element which is nested inside another element, then that event will first work on that element, and then on its parent, and so on up the DOM. We say that the event **propagates** or **bubbles** up.
   
-	For example, suppose that you have:
+	For example, suppose that you have
   ```html
   <div id='myDiv' onclick='expose(this);'>
   	<ul id = 'myList' onclick='expose(this);'>
