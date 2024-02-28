@@ -180,4 +180,4 @@ _**Events propagate aka bubble up**_
 
   		<li id = 'yourItem1' onclick='expose(this);'>See my details</li>
   
-  **then expose() is passing this, which is the element where the event is firing.**  
+  **then expose() is passing this, which is the element where the event is firing.** 
