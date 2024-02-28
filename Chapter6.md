@@ -185,3 +185,5 @@ _**Events propagate aka bubble up**_
 
   We can think of this as expose(el) knowing that the parameter el being passed in is an <ins>_element_</ins>. Remember that **_this_** refers to an element.
 
+  If needed, we can still access the actual event and all its properties: the browser will automatically create an event object (named _event_) so we can use event.type, event.clientX and event.clientY for the coordinates of the click, etc. 
+
