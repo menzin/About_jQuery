@@ -178,6 +178,7 @@ _**Events propagate aka bubble up**_
   
 - **When the onclick event handler calls expose(this) from the element, as in**
 
-  		<li id = 'yourItem1' onclick='expose(this);'>See my details</li>
-  
+  ``` html
+  	<li id = 'yourItem1' onclick='expose(this);'>See my details</li>
+  ```
   **then expose() is passing this, which is the element where the event is firing.** 
