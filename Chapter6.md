@@ -173,10 +173,11 @@ _**Events propagate aka bubble up**_
   
   	In other words, the event bubbles up the DOM, firing the onclick event handler when one exists (& skipping the elements where there is no onclick event handler.)
 
-- **Distinguishing between and using both the event object and its current target.**
+- **Distinguishing between and using both the event object and its current target.** <br>
   	There is another thing to notice here: be clear about whether your handler is a function of an element or of an event!
   
 - **When the onclick event handler calls expose(this) from the element, as in**
 
   		<li id = 'yourItem1' onclick='expose(this);'>See my details</li>
+  
   **then expose() is passing this, which is the element where the event is firing.**  
