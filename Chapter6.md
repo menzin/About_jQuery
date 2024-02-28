@@ -153,3 +153,6 @@ _**Events propagate aka bubble up**_
   	</ul>
   </div>
   ```
+  	and have defined `function expose(evt) {alert(evt.id)};`
+
+	When you click on myItem1 or myItem2, then all the onclick handlers going up the DOM will 	be fired – firing whatever onclick handler has been attached to that element.
