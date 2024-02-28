@@ -128,4 +128,28 @@ $(document).ready(function() {
 </body>
 </html>
 ```
+
 _**Events have properties**_
+
+- An event listener can always take a parameter evt which refers to the event object and is automatically passed to the event handler.
+- The most often used properties are evt.target which is the object on which the original event (e.g. the click) took place and evt.type which is the name of the event (e.g. 'click').
+- `this` in an event handler refers to the element on which the event is operating (see the next paragraph.)
+- `evt.clientX` and `evt.clientY` give the coordinates of the event relative to what is visible in the application window. These coordinates might be useful for drag-and-drop.
+- `evt.pageX` and `evt.pageY` give the coordinates coordinates of the event relative to the whole document, including parts of it which may have been scrolled out of view. For example, if you are looking at coordinates on a map then you want to use the pageX and pageY coordinates, since you have no control of (or interest in ) how the user has resized or scrolled the window.
+- There are also properties (see next paragraph) which related to how events bubble or propagate up through the DOM.
+- A full list of all the properties of an event may be found at https://developer.mozilla.org/en-US/docs/Web/API/Event. From there you can also follow the links to more specific types of events, such as mouse events.
+- If you have never worked much with events, a good, fuller discussion of events may be found at https://javascript.info/events (although jQuery will simplify some of the issues discussed in the second half of that chapter.)  
+
+
+_**Events propagate aka bubble up**_
+
+- If you fire an event on an element which is nested inside another element, then that event will first work on that element, and then on its parent, and so on up the DOM. We say that the event **propagates** or **bubbles** up.
+- For example, suppose that you have:
+  ```html
+  <div id='myDiv' onclick='expose(this);'>
+  	<ul id = 'myList' onclick='expose(this);'>
+  	  <li id = 'item1' onclick='expose(this);'>See my details</li>
+  	  <li id = 'item2' onclick='expose(this);'>And  my details</li>
+  	</ul>
+  </div>
+  ```
