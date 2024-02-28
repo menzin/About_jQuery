@@ -144,6 +144,7 @@ _**Events have properties**_
 _**Events propagate aka bubble up**_
 
 - If you fire an event on an element which is nested inside another element, then that event will first work on that element, and then on its parent, and so on up the DOM. We say that the event **propagates** or **bubbles** up.
+  
 	For example, suppose that you have:
   ```html
   <div id='myDiv' onclick='expose(this);'>
@@ -156,3 +157,16 @@ _**Events propagate aka bubble up**_
   	and have defined `function expose(evt) {alert(evt.id)};`
 
 	When you click on myItem1 or myItem2, then all the onclick handlers going up the DOM will 	be fired – firing whatever onclick handler has been attached to that element.
+
+	On the other hand, it you have
+	```html
+	<div id='yourDiv' onclick = 'expose(this);'>
+		<ul id = 'yourList'>
+		 <li id = 'yourItem1' onclick='expose(this);'>See my details</li>                		 <li id = 'yourItem2' onclick='expose(this);'>And  my details</li>            			</ul>
+	</div>
+	```
+	
+ 	then clicking on yourItem1 (while it propagates up the DOM) – notice that yourLIst does 	not have any onclick event handlers to fire, but yourDiv does (and it fires.).  
+  
+  	In other words, the event bubbles up the DOM, firing the onclick event handler when one 	exists (& skipping the elements where there is no onclick event handler.)
+
