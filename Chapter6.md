@@ -194,6 +194,6 @@ _**Events propagate aka bubble up**_
      		yourItem1.onclick = function(evt){ …}  then evt is a event . An event handler expects one parameter – namely the event.
      	```
 	
-	We can recover the element it fired on as evt.target and we can recover the current target as evt.currentTarget or as this. In other words, as the event bubbles up, the value of this refers to the place where you are in the bubbling – i.e. to the currentTarget. 
+		We can recover the element it fired on as evt.target and we can recover the current target as evt.currentTarget or as this. In other words, as the event bubbles up, 		the value of this refers to the place where you are in the bubbling – i.e. to the currentTarget. 
 
 	  
