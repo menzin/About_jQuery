@@ -202,3 +202,6 @@ _**Events propagate aka bubble up**_
 
 In example in this paragraph, (since we wrote a handler specifically for clicking on yourItem1) we know what the target is but in a few paragraphs we will see how to write one handler for clicking on multiple elements – and then we will want to know what the target is. 
 	  
+
+- **The target vs. the currentTarget**
+  When the event is bubbling up **evt.target** refers to the element on which the event (e.g. the click) originally took place and **evt.currentTarget** refers to the element on which the event is taking place now (i.e. as it bubbles up.) _**this**_ will also refer to the currentTarget. 
