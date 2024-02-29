@@ -295,7 +295,17 @@ In the example in this paragraph, (since we wrote a handler specifically for cli
  	```
 
 
+	Rather than write an onclick event handler for each of the three books, we could write one for the whole ul and then test to see which book was clicked. Our event handler would look like:
 
+  	``` html
+  	 var bookList = $('#books');   //or use document.getElementById('book'): if no jQuery
+         bookList.addEventListener('click',
+   		function(evt) {
+   			trgt = evt.target;
+   			if (trgt.tagName == "LI")  //Respond only to a click on a list item
+   				{addToCart(trgt.id)'}
+   			};
+   	```
 
 
 
