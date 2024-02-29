@@ -287,11 +287,11 @@ In the example in this paragraph, (since we wrote a handler specifically for cli
 	For example, suppose that we have a list of items and clicking on one of them adds it to a shopping cart. Then our code might look like:
 
 	``` html
- 		<ul id = 'books'>Books
- 		  <li id ='jsgp'>JavaScript: the Good Parts by Douglas Crawford</li>
- 		  <li id ='ydkjs'>You Don't Know JavaScript by Kyle Simpson</li>
- 		  <li id ='ydkjsyet'>You Don't Know JavaScript Yet by Kyle Simpson</li>
- 		</ul>
+	<ul id = 'books'>Books
+	  <li id ='jsgp'>JavaScript: the Good Parts by Douglas Crawford</li>
+	  <li id ='ydkjs'>You Don't Know JavaScript by Kyle Simpson</li>
+	  <li id ='ydkjsyet'>You Don't Know JavaScript Yet by Kyle Simpson</li>
+	</ul>
  	```
 
 
