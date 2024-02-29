@@ -211,5 +211,74 @@ In the example in this paragraph, (since we wrote a handler specifically for cli
 
 	⚠️: Some events – notably focus and blur – do not bubble.
 
-	All these are illustrated in the code for eventPropagationDemo.html
+	All these are illustrated in the code for [eventPropagationDemo.html](http://web.simmons.edu/~menzin/CS321/Unit_5_jQuery_and_Ajax/About_jQuery/Chapter06/eventPropagationDemo.html)
 
+	```html
+	<!doctype html>
+	<html lang="en">
+	<head>
+	  <meta charset="utf-8">
+	  <title>Event Propagation demo</title>
+	  
+	  <script src="jquery.js"></script>
+	  
+	<script>
+	//Various functions which will be used as event handlers
+	function expose(element) {
+	   alert(element.id )
+	   };
+	function exposeOnce(element) {
+	   alert(element.id );
+	   event.stopPropagation();  
+	   };
+	   
+	exposeEvent = function(evt) {
+	   alert("The event.type is " + evt.type + ". Its event.target is " + evt.target.id + " and its currentTarget "+evt.currentTarget.id);
+	   alert("Inside the event handler the value of this is " + this.id);
+	   }
+	
+	//Once the DOM is loaded can assign event handlers etc.
+	$(document).ready(function() {
+	    //The onclick handlers for myItem3 and myItem4 are passed the event
+		myItem3.onclick = exposeEvent;
+		myItem4.onclick = exposeEvent;
+		
+		//In yourList we have handlers for the div and the first 2 items, but not the list
+		yourDiv.onclick = exposeEvent;
+		yourItem2.onclick = exposeEvent;
+		});
+		</script>
+	</head>
+	<body>
+	
+	<h4>myDiv: with clickable items inside myList</h4>
+	<div id='myDiv' onclick='expose(this);'>
+		<ul id = 'myList' onclick='expose(this);'>myList with its clickable list items:
+		   <li id = 'myItem1' onclick='expose(this);'>myItem1: See the onclick propagate from the li to the list to the div</li>
+		   <li id = 'myItem1A' onclick='expose(this);'>myItem1A: Same as myItem1; just showing the propagation from another li</li>
+		   <li id = 'myItem2' onclick='exposeOnce(this);'>myItem2: For this item we stopped the propagation</li>
+		   <li id = 'myItem3'>myItem3: This time we use an onclick handler which is passed the event, but still bubbles up</li>
+		   <li id = 'myItem4'>myItem4: Same as myItem3; just showing the propagation from another li</li>
+	    </ul>
+	</div>
+	</br>
+	<h4>yourDiv with some clickable items inside yourList: </h4>
+	The first two items and the div have onclick handlers, third item and the list do not.<br>
+	Notice that the bubbling goes from the list item directly to the div.<br> 
+	Also notice that as the click on yourItem2 propagates, the value of this is the currentTarget.
+	<!-- yourList doesn't have an onclick handler, but clicks bubble up to yourDiv -->
+	<div id='yourDiv' onclick = 'expose(this)'>
+	   <ul id = 'yourList' >
+	       <li id = 'yourItem1' onclick='expose(this);alert("From here I can see the type is "+event.type);'>yourItem1 has an onclick handler</li>
+	       <li id = 'yourItem2' >yourItem2 also has an onclick handler</li>
+		   <li id = 'yourItem3' >yourItem3: Has no onclick, but watch clicks bubble up.</li>
+		   
+	  </ul>
+	</div>
+	<br>
+	 
+	</body>
+	</html>
+
+ 	```
+ 
