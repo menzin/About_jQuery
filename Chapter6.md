@@ -299,7 +299,7 @@ In the example in this paragraph, (since we wrote a handler specifically for cli
 
   	``` html
   	 var bookList = $('#books');   //or use document.getElementById('book'): if no jQuery
-   bookList.addEventListener('click',
+   	bookList.addEventListener('click',
    		function(evt) {
    			trgt = evt.target;
    			if (trgt.tagName == "LI")  //Respond only to a click on a list item
