@@ -210,3 +210,6 @@ In the example in this paragraph, (since we wrote a handler specifically for cli
 	Sometimes you want to stop this propagation. `event.stopPropagation()` will stop the event from bubbling up the DOM. `event.stopImmediatePropagation()` will stop any other event handlers which are attached to this same event from firing. Both of these are supported in jQuery – with the same names as in JavaScript.
 
 	⚠️: Some events – notably focus and blur – do not bubble.
+
+	All these are illustrated in the code for eventPropagationDemo.html
+
