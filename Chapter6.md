@@ -311,6 +311,23 @@ In the example in this paragraph, (since we wrote a handler specifically for cli
 	Reminder: tagName returns the tag for an element node in all upper case; nodeName does the same for all types of nodes (elements, attributes, etc.) 
 
 
+	(Actually, we can improve this by adding a custom attribute isbn to each of our books, and then pass the isbn to an appropriate function.)
+
+	The important point here is that we have delegated the event handling to the parent element (here, the ul) and written only one event handler.
+
+	Further, because of bubbling, if we add more books to our list then clicking on a new book will again cause bubbling up to the #books onclick, and the desired steps will take place.
+
+	So event delegation has two powerful advantages: we write the code only once (making it easier to maintain) and we can have that code work on elements which we have yet to add.
+
+	While this example, has a relatively simple event handler, there may be situations where we want a more complex function.  And, obviously, we could define that function separately outside the event handler.
+
+	As you will see shortly, jQuery also makes if possible to do this, with some extra bells and whistles. You will see that with proper coding, jQuery allows us to have event handlers that will also work for new DOM elements as they are added.
+
+
+> [!WARNING]
+> The currentTarget is always the element to which the event handler is attached. In the case of delegated events, that is the element at top of piece of the DOM to which you attached the delegated event handler! For instance, in the example above the currentTarget is #books and the target is the list item which was selected.   
+
+
 
 
 
