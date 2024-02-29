@@ -281,4 +281,33 @@ In the example in this paragraph, (since we wrote a handler specifically for cli
 	</html>
 
  	```
+- **Events may be delegated** <br>
+	Rather than write and attach an event handler for each of many elements, it may be more convenient to attach the event handler to their parent (or other ancestor) and then use the target to make the response specific to the element where the event fired.
+
+	For example, suppose that we have a list of items and clicking on one of them adds it to a shopping cart. Then our code might look like:
+
+	``` html
+ 		<ul id = 'books'>Books
+ 		  <li id ='jsgp'>JavaScript: the Good Parts by Douglas Crawford</li>
+ 		  <li id ='ydkjs'>You Don't Know JavaScript by Kyle Simpson</li>
+ 		  <li id ='ydkjsyet'>You Don't Know JavaScript Yet by Kyle Simpson</li>
+ 		</ul>
+ 	```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
  
