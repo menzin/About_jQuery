@@ -200,8 +200,13 @@ _**Events propagate aka bubble up**_
 > [!NOTE]
 > If you want to know what the current target is you should ask for evt.currentTarget.id
 
-In example in this paragraph, (since we wrote a handler specifically for clicking on yourItem1) we know what the target is but in a few paragraphs we will see how to write one handler for clicking on multiple elements – and then we will want to know what the target is. 
+In the example in this paragraph, (since we wrote a handler specifically for clicking on yourItem1) we know what the target is but in a few paragraphs we will see how to write one handler for clicking on multiple elements – and then we will want to know what the target is. 
 	  
 
 - **The target vs. the currentTarget** <br>
-  When the event is bubbling up **evt.target** refers to the element on which the event (e.g. the click) originally took place and **evt.currentTarget** refers to the element on which the event is taking place now (i.e. as it bubbles up.) _**this**_ will also refer to the currentTarget. 
+	When the event is bubbling up `evt.target` refers to the element on which the event (e.g. the click) originally took place and `evt.currentTarget` refers to the element on which the event is taking place now (i.e. as it bubbles up.) _**this**_ will also refer to the currentTarget. 
+
+- **Stopping propagation** <br>
+	Sometimes you want to stop this propagation. `event.stopPropagation()` will stop the event from bubbling up the DOM. `event.stopImmediatePropagation()` will stop any other event handlers which are attached to this same event from firing. Both of these are supported in jQuery – with the same names as in JavaScript.
+
+	⚠️: Some events – notably focus and blur – do not bubble.
