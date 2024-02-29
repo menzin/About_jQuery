@@ -307,7 +307,8 @@ In the example in this paragraph, (since we wrote a handler specifically for cli
    			};
    	```
 
-
+	where we have previously defined a function addToCart which takes the id and processes it. <br>
+	Reminder: tagName returns the tag for an element node in all upper case; nodeName does the same for all types of nodes (elements, attributes, etc.) 
 
 
 
