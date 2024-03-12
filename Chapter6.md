@@ -327,11 +327,20 @@ In the example in this paragraph, (since we wrote a handler specifically for cli
 > [!WARNING]
 > The currentTarget is always the element to which the event handler is attached. In the case of delegated events, that is the element at top of piece of the DOM to which you attached the delegated event handler! For instance, in the example above the currentTarget is #books and the target is the list item which was selected.   
 
+In some situations the browser may not identify a currentTarget for delegated events, so it is safest to code around that by using this.
 
+A detailed example of event delegation is in the jQuery paragraph about attaching events with delegation, as jQuery makes this easy for us to do. 
 
+- **Events have default behaviors, which you can prevent.** <br>
+	The most common default behavior is for anchors, where your browser will follow the link provided. There are other default behaviors, too. For example, submit and reset buttons have default behaviors.
 
+	Every event comes with a `preventDefault()` method.
 
+ 	You can also prevent the default behavior with **return false**, but that obviously doesn't allow you to have other things happen once you have returned from the function. With preventDefault() you can code for the other things you want to have happen.
 
+  You will see that in jQuery the preventDefault method works in the standard way - but you can use jQuery to select a collection of target elements on which this behavior is implemented.
+
+  When you have an event **evt** then `evt.preventDefault()` will (not surprisingly) prevent the default action from taking place. Typically, this would be one ste
 
 
 
