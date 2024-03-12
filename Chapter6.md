@@ -324,12 +324,11 @@ In the example in this paragraph, (since we wrote a handler specifically for cli
 	As you will see shortly, jQuery also makes if possible to do this, with some extra bells and whistles. You will see that with proper coding, jQuery allows us to have event handlers that will also work for new DOM elements as they are added.
 
 
-> [!WARNING]
-> The currentTarget is always the element to which the event handler is attached. In the case of delegated events, that is the element at top of piece of the DOM to which you attached the delegated event handler! For instance, in the example above the currentTarget is #books and the target is the list item which was selected.   
-
-In some situations the browser may not identify a currentTarget for delegated events, so it is safest to code around that by using this.
-
-A detailed example of event delegation is in the jQuery paragraph about attaching events with delegation, as jQuery makes this easy for us to do. 
+	⚠️ The currentTarget is always the element to which the event handler is attached. In the case of delegated events, that is the element at top of piece of the DOM to which you attached the delegated event handler! For instance, in the example above the currentTarget is #books and the target is the list item which was selected.   
+	
+	In some situations the browser may not identify a currentTarget for delegated events, so it is safest to code around that by using this.
+	
+	A detailed example of event delegation is in the jQuery paragraph about attaching events with delegation, as jQuery makes this easy for us to do. 
 
 - **Events have default behaviors, which you can prevent.** <br>
 	The most common default behavior is for anchors, where your browser will follow the link provided. There are other default behaviors, too. For example, submit and reset buttons have default behaviors.
@@ -340,7 +339,19 @@ A detailed example of event delegation is in the jQuery paragraph about attachin
 
   You will see that in jQuery the preventDefault method works in the standard way - but you can use jQuery to select a collection of target elements on which this behavior is implemented.
 
-  When you have an event **evt** then `evt.preventDefault()` will (not surprisingly) prevent the default action from taking place. Typically, this would be one ste
+  When you have an event **evt** then `evt.preventDefault()` will (not surprisingly) prevent the default action from taking place. Typically, this would be one step in an event handler - e.g.
+  
+  	``` html
+   	<p id = 'foil'>Foiled again!</p>
+     	$('#foil').onclick = function(evt) {evt.preventDefault;  alert('Sorry!'); } 
+	```
+   A more useful example would be:
+
+	**Owning it:** <br>
+	Write an event handler for an anchor which puts up a confirm dialog box, asking if the user wants to leave the site, and responds appropriately – i.e. prevents the default behavior if the user fails to confirm a willingness to leave the site.
+
+	<ins>Hint:</ins> It will be easier if you use a separately coded event handler as in But4 of demo_6_3_using_on.html, below, since then you will be able to get ahold of the event itself. If you need to force a way to re-direct the user to a page they have confirmed they wish to go to, https://css-tricks.com/redirect-web-page/ (about a third of the way down the page) will show you several ways to make this happen. The simplest is to set `window.location = "http:// put new url here ";`
+
 
 
 
