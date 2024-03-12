@@ -319,12 +319,12 @@ In the example in this paragraph, (since we wrote a handler specifically for cli
 
 	So event delegation has two powerful advantages: we write the code only once (making it easier to maintain) and we can have that code work on elements which we have yet to add.
 
-	While this example, has a relatively simple event handler, there may be situations where we want a more complex function.  And, obviously, we could define that function separately outside the event handler.
+	While this example, has a relatively simple event handler, there may be situations where we want a more complex function. And, obviously, we could define that function separately outside the event handler.
 
 	As you will see shortly, jQuery also makes if possible to do this, with some extra bells and whistles. You will see that with proper coding, jQuery allows us to have event handlers that will also work for new DOM elements as they are added.
 
 
-	⚠️ The currentTarget is always the element to which the event handler is attached. In the case of delegated events, that is the element at top of piece of the DOM to which you attached the delegated event handler! For instance, in the example above the currentTarget is #books and the target is the list item which was selected.   
+	⚠️: The currentTarget is always the element to which the event handler is attached. In the case of delegated events, that is the element at top of piece of the DOM to which you attached the delegated event handler! For instance, in the example above the currentTarget is #books and the target is the list item which was selected.   
 	
 	In some situations the browser may not identify a currentTarget for delegated events, so it is safest to code around that by using this.
 	
@@ -350,11 +350,18 @@ In the example in this paragraph, (since we wrote a handler specifically for cli
 	**Owning it:** <br>
 	Write an event handler for an anchor which puts up a confirm dialog box, asking if the user wants to leave the site, and responds appropriately – i.e. prevents the default behavior if the user fails to confirm a willingness to leave the site.
 
-	<ins>Hint:</ins> It will be easier if you use a separately coded event handler as in But4 of demo_6_3_using_on.html, below, since then you will be able to get ahold of the event itself. If you need to force a way to re-direct the user to a page they have confirmed they wish to go to, https://css-tricks.com/redirect-web-page/ (about a third of the way down the page) will show you several ways to make this happen. The simplest is to set `window.location = "http:// put new url here ";`
+	<ins>Hint:</ins> It will be easier if you use a separately coded event handler as in But4 of demo_6_3_using_on.html, below, since then you will be able to get ahold of the event itself. If you need to force a way to re-direct the user to a page they have confirmed they wish to go to, https://css-tricks.com/redirect-web-page/ (about a third of the way down the page) will show you several ways to make this happen. The simplest is to set:
 
+  		window.location = "http:// put new url here ";
 
+## jQuery and events 
 
+jQuery allows us to do all the standard things with events and also some additional things. For example, jQuery supports attaching an event handler to multiple events (e.g. a click on a class of elements) and supports defining your own custom event. In addition, by using jQuery we can attach event handlers to new DOM elements as they are added to the page! Of course, jQuery does preserve our ability to access event attributes (such as target and currentTarget) and to stop propagation, prevent default behavior, etc. 
 
+There are many advantages of using jQuery to handle events.
+- First of all, please remark that in our three general categories of how to register event listeners using classic methods, the first categories of how to register event listeners using classic methods, the first category (using onclick inside the element tag) is not recommended, and the second and third categories require us to wait until the whole webpage is loaded (including images and scripts), not just when the DOM is loaded. But jQuery's `$(document).ready()` method does precisely that for us (and is faster and more robust than the classic onload event.) - that is `$(document).ready()` gets to work when just the DOM has been loaded. 
+
+- 
 
  
  
