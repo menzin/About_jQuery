@@ -340,11 +340,10 @@ In the example in this paragraph, (since we wrote a handler specifically for cli
   You will see that in jQuery the preventDefault method works in the standard way - but you can use jQuery to select a collection of target elements on which this behavior is implemented.
 
   When you have an event **evt** then `evt.preventDefault()` will (not surprisingly) prevent the default action from taking place. Typically, this would be one step in an event handler - e.g.
-  
-  	``` html
-   	<p id = 'foil'>Foiled again!</p>
-     	$('#foil').onclick = function(evt) {evt.preventDefault;  alert('Sorry!'); } 
-	```
+  ``` html
+    <p id = 'foil'>Foiled again!</p>
+    $('#foil').onclick = function(evt) {evt.preventDefault;  alert('Sorry!'); } 
+    ```
    A more useful example would be:
 
 	**Owning it:** <br>
