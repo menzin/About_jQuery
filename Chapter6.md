@@ -389,5 +389,44 @@ If you have defined function myHandler() { …} elsewhere then your code might b
 Either line of code will look for all elements with the class bigDealClass and when they are clicked will execute the anonymous function which adds the class embolden to them.  
 
 Please notice that <ins> _in the code for the event handler, this refers to the element for which the handler is being attached_. </ins>   
+
+In other words, whether you define the handler function separately or code it as an anonymous function inside on(), the handler function 'knows' that it is an event handler and so it automatically gets this referring to the element on which it attached, but may have as a parameter the event which fired it. Thus, you can reference this.target, etc.  
+
+To see this, examine:
+
+[demo_6_3_using_on.html](http://web.simmons.edu/~menzin/CS321/Unit_5_jQuery_and_Ajax/About_jQuery/Chapter06/demo_6_3_using_on.html)
+
+```html
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Using on()demo</title>
+  
+  <script src="jquery.js"></script>
+  <script>
+	function But3Handler(){alert(typeof(this));alert(this.id);} ;
+	function But4Handler(evt) {alert(typeof(this));alert(this.id);alert(evt.target);alert(evt.target.id);}
+	$(document).ready( function() {
+			          $('#But1').on('click',function(){alert(typeof(this));alert(this.id);})
+				  $('#But3').on('click', But3Handler);
+				  $('#But4').on('click', But4Handler);
+               });
+
+</script>
+</head>
+<body>
  
+<button id="But1"  type ='button'>
+          Click But1 on() is used to code an anonymous event handler</button><br>
+<button id = "But3"   type = 'button'>
+           Click But3! onclick is set with on()to a separately defined function</button><br>
+
+<button id = "But4" type = 'button'>Click But4! onclick property is set with on() to a separately 
+defined function</button>
+
+</body>
+</html>
+```
  
