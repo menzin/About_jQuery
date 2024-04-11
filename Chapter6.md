@@ -360,7 +360,18 @@ jQuery allows us to do all the standard things with events and also some additio
 There are many advantages of using jQuery to handle events.
 - First of all, please remark that in our three general categories of how to register event listeners using classic methods, the first categories of how to register event listeners using classic methods, the first category (using onclick inside the element tag) is not recommended, and the second and third categories require us to wait until the whole webpage is loaded (including images and scripts), not just when the DOM is loaded. But jQuery's `$(document).ready()` method does precisely that for us (and is faster and more robust than the classic onload event.) - that is `$(document).ready()` gets to work when just the DOM has been loaded. 
 
-- 
+- Second, jQuery allows us to easily assign multiple handlers to the same event – which in classic JS we could do only with addEvent Listener.
+
+- Third, as you will see, jQuery allows us to define and handle our own (custom) events.
+
+- Fourth, by using jQuery selectors we can assign handlers to many events at once – e.g. all events with a certain class. And this assignment will also be made automatically to new elements as we add them to our DOM.
+
+- Fifth, using jQuery we can trigger an event – i.e. make it happen under script control.
+
+- Finally, jQuery allows us to pass other data to the event handler.
+
+So on to using jQuery with events!
+
 
  
  
