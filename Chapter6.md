@@ -372,6 +372,22 @@ There are many advantages of using jQuery to handle events.
 
 So on to using jQuery with events!
 
+_**Attaching an event handler to an event – basic**_
 
+The basic format for attaching a handler to some events is: 
+	
+	 $(someSelector).on('nameOfEvent', handlerFunction) 
+ 
+For example:
+
+	$('.bigDealClass').on('click', function() {$(this).addClass('embolden') } ); 
+      
+If you have defined function myHandler() { …} elsewhere then your code might be:
+
+	$('.bigDealClass').on('click', myHandler);      //NO parentheses after myHandler  
+
+Either line of code will look for all elements with the class bigDealClass and when they are clicked will execute the anonymous function which adds the class embolden to them.  
+
+Please notice that <ins> _in the code for the event handler, this refers to the element for which the handler is being attached_. </ins>   
  
  
