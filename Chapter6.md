@@ -440,4 +440,138 @@ To repeat, then, the on() method expects (at least) two parameters – the first
 The example in the next paragraph demonstrates **direct** (not delegated) event handling, and two different ways to code for delegated event handling.
 
 
+_**Attaching an event handler designed for delegation**_
+
+Because delegation is such a useful way to attach event handlers to multiple events, jQuery has a special way to make this easy. 
+
+Our basic way to attach event handlers is:
+
+	$(someSelector).on('nameOfEvent', handlerFunction)  
+ 
+Notice that I rather slyly refered to the parameters of on() as the first and last parameter. Now we will add another parameter between them.   
+
+	$(someSelector).on('nameOfEvent', descendentSelector(),  handlerFunction) 
+
+Now, the handlerFunction will be called only on elements which are descendants of our someSelector and match the descendantSelector. 
+
+For example, if we wish to execute handlerFunction on any list item inside a ul we would code: 
+
+	$('ul').on('click', 'li', handlerFunction); 
+
+This is much cleaner than the code we wrote without jQuery (where we had the test that the target – the li element - was not the same as the currentTarget – the ul element or test that target had nodeName of LI.) 
+
+On the other hand, by restricting our event handler to fire only for li elements, we lose the opportunity to do something for other elements (unless we write handlers for them specifically.) 
+
+[eventDelegationWithjQueryplusDemo.html](http://web.simmons.edu/~menzin/CS321/Unit_5_jQuery_and_Ajax/About_jQuery/Chapter06/eventDelegationWith_jQueryPlusDemo.html)
+
+``` html
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Event Delegation withjQuery demo</title>
+  
+  <script src="jquery.js"></script>
+  
+<script>
+//Various functions which will be used as event handlers
+
+var counter = 1;    //used to generate new id's as add list items
+
+//As you examine the event handlers, remember:
+//this is the target element, NOT the event; the event is named event
+//The id and nodeName properties belong to this, which is also equal to event.currentTarget
+//Methods like preventDefault() belong to event.
+
+function expose() {
+   console.log(this.id )
+   };
+   
+function delExpose(){ 
+   //This handler is attached at the ul level.  As the <ul> is NOT inside a div etc.
+   //There is no bubbling up from the ul.   
+  var $tgt = event.target;   //Delegated event - target is the ul or li
+  var $ourTag = $tgt.nodeName;   //Shows as tag, as it should
+  console.log("At an element with tag "+ $ourTag);
+  console.log("In delExpose with target " + $tgt.id) //shows the id for the UL.
+  console.log("Ready to see if we are at an LI and if so handle appropriately.")		  
+  if ($ourTag == "LI")   //so not at the ul
+	 {console.log($tgt.id);
+	 //console.log(event.delegateTarget.id);
+	 }
+	 else     //should bubble and doesn't!!
+	 {console.log("Now you are not at an LI")};
+	 }   
+	 
+function delExpose2() {
+    //This is like delExpose() but takes advantage on the additional parameter in on()
+	//So we do not need to test for being at an li.
+	var $tgt = event.target;   //Delegated event - target is the ul or li
+    var $ourTag = $tgt.nodeName;   //Shows as tag, as it should
+    console.log("At an element with tag "+ $ourTag);
+    console.log("In delExpose2 with target " + $tgt.id) //shows the id for the UL.
+	//Now, knowing we are at an li, we can handle the event
+	console.log($tgt.id);
+	}	 
+
+function newItem(idForMyUL){
+  //Function to attach another list item to the end of a ul
+  var li2= document.createElement('li')
+  li2.innerHTML = 'new list item';
+  li2.id = 'new' + counter;
+  counter ++;
+  idForMyUL.appendChild(li2);
+}   
+
+
+//Once the DOM is loaded can assign event handlers etc.
+//We have to use the each() method here -rather than say $('li').onclick = expose;
+//Because a handler is attached to each li in tthe stdUL, new li's don't get the handler.
+//Because the handler for delUL is attached at the ul level and delegated, new li's get handled.
+$(document).ready(function() {
+    $('#stdUL li').each(function(i){this.onclick = expose;});
+	$('#delUL').on('click', delExpose);
+	$('#delUL2').on('click', 'li',delExpose2);
+	});
+</script>
+</head>
+<body>
+<ul id='stdUL'>Our list starts with two items
+  <li id='item1'>Original clickable item 1</li>
+  <li id='item2'>Original clickable item 2</li>
+</ul>  
+<br />
+Click on the items above to verify that their onclick handlers are attached.<br>
+Then click on the button below to add a new item to the list and see if it has an onclick handler.<br>
+<button type = 'button' onclick = "newItem(stdUL);">Click to add an item to the list above</button><br>
+Check to see that the new item does NOT have the onclick event handler.<br><br>
+
+Now we repeat this with event delegation.
+<ul id='delUL'>Our list starts with two items
+  <li id='item1del'>Original clickable item 1 from list with delegation</li>
+  <li id='item2del'>Original clickable item 2 from list with delegation</li>
+</ul>  <br>
+Here is the button to add to the list with event delegation:
+<br />
+<button type = 'button' onclick = "newItem(delUL);">Click to add an item to the list above</button><br>
+Check to see that the new item does NOT have the onclick event handler.<br><br>
+
+And we repeat again, using event delegation for only list items.<br />
+Notice that we were able to get a 'not a list item' message in the previous list, because 
+we tested for being at an li or not in our onclick handler.<br />
+Here, because that testing is managed by the on() method, we have no handler for clicking on the ul.<br>
+<ul id='delUL2'>Our list starts with two items
+  <li id='item1del2'>Original clickable item 1 from second list with delegation</li>
+  <li id='item2del2'>Original clickable item 2 from second list with delegation</li>
+</ul>  <br>
+Here is the button to add to the list with event delegation:
+<br />
+<button type = 'button' onclick = "newItem(delUL2);">Click to add an item to the list above</button><br>
+Check to see that the new item does NOT have the onclick event handler.<br><br>
+</body>
+</html>
+```
+
+
+
  
