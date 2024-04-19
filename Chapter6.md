@@ -429,4 +429,15 @@ defined function</button>
 </body>
 </html>
 ```
- 
+
+To repeat, then, the on() method expects (at least) two parameters – the first is the name of the event and the last is a function which 'knows' the value of the event (if that is passed as a parameter) and of this, i.e. 'knows' the event and hence the value of event.target, the element to  which the event handler is being attached. 
+
+> [!WARNING]
+>  1. This will attach the onclick handler only to existing elements which match the selector. To make this work for all elements which match the selector you need to use a    delegated  event handler – see example below.
+>  2. Put the script which adds the event handlers at the bottom of the page, so that all the elements are loaded, or (my preference) use $(document).ready().
+>  3. You can use a named function or function expression for the event handler but it should be defined before you attach the event handler. Recall that function definitions are hoisted, but function expressions are not hoisted.
+
+The example in the next paragraph demonstrates **direct** (not delegated) event handling, and two different ways to code for delegated event handling.
+
+
+ 
