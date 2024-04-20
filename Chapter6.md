@@ -324,7 +324,7 @@ In the example in this paragraph, (since we wrote a handler specifically for cli
 	As you will see shortly, jQuery also makes if possible to do this, with some extra bells and whistles. You will see that with proper coding, jQuery allows us to have event handlers that will also work for new DOM elements as they are added.
 
 
-	⚠️: The currentTarget is always the element to which the event handler is attached. In the case of delegated events, that is the element at top of piece of the DOM to which you attached the delegated event handler! For instance, in the example above the currentTarget is #books and the target is the list item which was selected.   
+	⚠️: The currentTarget is always the element to which the event handler is attached. In the case of delegated events, that is the element at top of piece of the DOM to which you attached the delegated event handler! For instance, in the example above the currentTarget is #books and the target is the list item which was selected. 
 	
 	In some situations the browser may not identify a currentTarget for delegated events, so it is safest to code around that by using this.
 	
@@ -342,7 +342,7 @@ In the example in this paragraph, (since we wrote a handler specifically for cli
   When you have an event **evt** then `evt.preventDefault()` will (not surprisingly) prevent the default action from taking place. Typically, this would be one step in an event handler - e.g.
   ``` html
     <p id = 'foil'>Foiled again!</p>
-    $('#foil').onclick = function(evt) {evt.preventDefault;  alert('Sorry!'); } 
+    $('#foil').onclick = function(evt) {evt.preventDefault; alert('Sorry!'); } 
     ```
    A more useful example would be:
 
@@ -430,10 +430,10 @@ defined function</button>
 </html>
 ```
 
-To repeat, then, the on() method expects (at least) two parameters – the first is the name of the event and the last is a function which 'knows' the value of the event (if that is passed as a parameter) and of this, i.e. 'knows' the event and hence the value of event.target, the element to  which the event handler is being attached. 
+To repeat, then, the on() method expects (at least) two parameters – the first is the name of the event and the last is a function which 'knows' the value of the event (if that is passed as a parameter) and of this, i.e. 'knows' the event and hence the value of event.target, the element to which the event handler is being attached. 
 
 > [!WARNING]
->  1. This will attach the onclick handler only to existing elements which match the selector. To make this work for all elements which match the selector you need to use a    delegated  event handler – see example below.
+>  1. This will attach the onclick handler only to existing elements which match the selector. To make this work for all elements which match the selector you need to use a delegated event handler – see example below.
 >  2. Put the script which adds the event handlers at the bottom of the page, so that all the elements are loaded, or (my preference) use $(document).ready().
 >  3. You can use a named function or function expression for the event handler but it should be defined before you attach the event handler. Recall that function definitions are hoisted, but function expressions are not hoisted.
 
@@ -448,9 +448,9 @@ Our basic way to attach event handlers is:
 
 	$(someSelector).on('nameOfEvent', handlerFunction)  
  
-Notice that I rather slyly refered to the parameters of on() as the first and last parameter. Now we will add another parameter between them.   
+Notice that I rather slyly refered to the parameters of on() as the first and last parameter. Now we will add another parameter between them.  
 
-	$(someSelector).on('nameOfEvent', descendentSelector(),  handlerFunction) 
+	$(someSelector).on('nameOfEvent', descendentSelector(), handlerFunction) 
 
 Now, the handlerFunction will be called only on elements which are descendants of our someSelector and match the descendantSelector. 
 
