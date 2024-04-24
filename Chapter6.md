@@ -572,6 +572,12 @@ Check to see that the new item does NOT have the onclick event handler.<br><br>
 </html>
 ```
 
+jQuery also provides a **delegateTarget** property. For any event evt, evt.delegateTarget is the element to which the event handler is attached. (For an event which is not delegated, then evt.delegateTarget is the same as evt.currentTarget.) 
+
+Although both the jQuery api and the w3schools site show code which use event.delegateTarget, this property is not part of the official DOM specification for events at https://dom.spec.whatwg.org/#introduction-to-dom-events, and when using jQuery, the use of this property is not robust. Finally, you don't really need it. With a delegated event handler, the event bubbles up until it gets to the element where the handler is attached, and that element is then the event.currentTarget. 
+
+Finally, the on() method also allows you to have a parameter in which you pass in additional data. https://api.jquery.com/on/#on-events-selector-data-handler has examples of this, as well as many examples about default behavior for submit buttons, etc. 
+
 
 
  
