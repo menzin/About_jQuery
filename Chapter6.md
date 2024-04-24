@@ -578,7 +578,7 @@ Although both the jQuery api and the w3schools site show code which use event.de
 
 Finally, the on() method also allows you to have a parameter in which you pass in additional data. https://api.jquery.com/on/#on-events-selector-data-handler has examples of this, as well as many examples about default behavior for submit buttons, etc. 
 
-_**Removing event handlers**_
+**_Removing event handlers_**
 
 Just as on() will attach event handlers, off() will remove them.  
 
@@ -593,7 +593,7 @@ and we could remove that event handler with
 	$('#delUL').off('click', delExpose);
 
 
-_**You can have custom events and even pass them data**_ 
+**_You can have custom events and even pass them data_** 
 
 Using jQuery you can define your own events, and attach event handlers. 
 
@@ -602,13 +602,19 @@ You can also pass data to these event handlers. The discussion of custom events 
 _**Stopping the bubbling/propagation and preventing defaults**_ 
 
 As noted above, jQuery provides a uniform interface for all browsers for the standard methods
-- evt.stopPropagation()
-- evt.stopImmediatePropagation()
-- evt.preventDefault()
+- `evt.stopPropagation()`
+- `evt.stopImmediatePropagation()`
+- `evt.preventDefault()`
 where evt is any event.
 
 In addition, jQuery provides methods which return boolean variables and which allow us to test to see if these actions have taken place.
 
+Again, with evt being any event, the methods are:     
+- `evt.isPropagationStopped()`
+- `evt.isImmediatePropagationStopped()`
+- `evt.isDefaultPrevented()`
+
+As a reminder, these are methods on the _event_.  
 
 
  
