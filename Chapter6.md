@@ -593,8 +593,8 @@ and we could remove that event handler with
 	$('#delUL').off('click', delExpose);
 
 
-- _**You can have custom events and even pass them data
-**_
+_**You can have custom events and even pass them data**_
+
 Using jQuery you can define your own events, and attach event handlers. 
 
 You can also pass data to these event handlers. The discussion of custom events is beyond the scope of this book, but you can learn more at https://learn.jquery.com/events/introduction-to-custom-events/.
@@ -622,7 +622,10 @@ As outlined in the "Owning It" exercise above, the preventDefault() method is po
 
 In fact, we also are all familiar with this general idea from submit buttons, where a false is returned (and the form is not submitted) when validation fails.   
 
-_**Event capturing (going down the DOM)**_
-Rarely used and so beyond the scope of this book. Default value is false, which means you  don't capture. 
+_**Event capturing (going down the DOM)**_ <br>
+Rarely used and so beyond the scope of this book. Default value is false, which means you don't capture. 
+
+_**Multiple event handlers**_ <br>
+An element may have multiple handlers for the same event. For example, if you have a catalog of items for sale, focusing on some of them might bring up a dialog box which asks for size. Those items would have an identifying class, and you could attach an appropriate event handler to all items in that class. Then, there might be another event handler which fires for clicking on any item. 
 
  
