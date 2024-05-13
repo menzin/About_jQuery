@@ -74,6 +74,7 @@ And then, inside a script and after the DOM is loaded:
 > [!NOTE]
 > Again, the last line must be inside a script & after the DOM is loaded.
 
+<br>
 <ins>**General category 3**: Use addEventListener and removeEventListener </ins>  
 
 - Use addEventListener (and removeEventListener).
