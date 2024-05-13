@@ -578,7 +578,8 @@ Although both the jQuery api and the w3schools site show code which use event.de
 
 Finally, the on() method also allows you to have a parameter in which you pass in additional data. https://api.jquery.com/on/#on-events-selector-data-handler has examples of this, as well as many examples about default behavior for submit buttons, etc. 
 
-**_Removing event handlers_**
+
+- **_Removing event handlers_**
 
 Just as on() will attach event handlers, off() will remove them.  
 
@@ -593,13 +594,14 @@ and we could remove that event handler with
 	$('#delUL').off('click', delExpose);
 
 
-_**You can have custom events and even pass them data**_
+- _**You can have custom events and even pass them data**_
 
 Using jQuery you can define your own events, and attach event handlers. 
 
 You can also pass data to these event handlers. The discussion of custom events is beyond the scope of this book, but you can learn more at https://learn.jquery.com/events/introduction-to-custom-events/.
 
-_**Stopping the bubbling/propagation and preventing defaults**_
+
+- _**Stopping the bubbling/propagation and preventing defaults**_
 
 As noted above, jQuery provides a uniform interface for all browsers for the standard methods
 - `evt.stopPropagation()`
@@ -622,9 +624,11 @@ As outlined in the "Owning It" exercise above, the preventDefault() method is po
 
 In fact, we also are all familiar with this general idea from submit buttons, where a false is returned (and the form is not submitted) when validation fails.   
 
+
 - _**Event capturing (going down the DOM)**_ 
 
 Rarely used and so beyond the scope of this book. Default value is false, which means you don't capture. 
+
 
 - _**Multiple event handlers**_ 
 
@@ -632,14 +636,15 @@ An element may have multiple handlers for the same event. For example, if you ha
 
 When an item has multiple handlers, they fire in the order in which they were bound to the element. 
 
-_**Triggering an event with trigger() or triggerHandler(), and event.result**_ 
+
+- _**Triggering an event with trigger() or triggerHandler(), and event.result**_ 
 
 Using jQuery we can force an event to fire – i.e. to trigger it. For example, if a user leaves a text box empty we might want to triggger the onfocus event on it.
 
 `$('myID').trigger('click')` will cause the onclick event handler to fire and then go on to the default behavior for the click event. If you do not want the default behavior to execute, then use `triggerHandler()`. That is triggerHandler is like `trigger()` and then `preventDefault()`. Events fired with either `trigger()` or `triggerHandler()` will bubble up the DOM. If your event handler returns a value, then the most recently returned value is stored in `event.result` (Remember that an event may have multiple handlers.) 
 
 
-_**Shortcuts – for common events**_
+- _**Shortcuts – for common events**_
 
 Some events are so common that there are shortcut names for binding event handlers.
 
