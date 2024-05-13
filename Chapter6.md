@@ -616,5 +616,13 @@ Again, with evt being any event, the methods are: 
 
 As a reminder, these are methods on the _event_.  
 
+As noted in the earlier part of this chapter, preventDefault() is part of the event API, and jQuery makes it available and robust.  A more detailed discussion of these boolean properties and propagation methods  is beyond the scope of this book; documentation can be found at https://api.jquery.com/category/events/event-object/ ; specification of the standard behavior is at https://developer.mozilla.org/en-US/docs/Web/API/Event/stopPropagation etc. and a discussion of preventing default behavior without the use of jQuery is discussed at https://javascript.info/default-browser-action 
+
+As outlined in the "Owning It" exercise above, the preventDefault() method is potentially useful in a complex event handler.  
+
+In fact, we also are all familiar with this general idea from submit buttons, where a false is returned (and the form is not submitted) when validation fails.   
+
+_**Event capturing (going down the DOM)**_
+Rarely used and so beyond the scope of this book. Default value is false, which means you  don't capture. 
 
  
