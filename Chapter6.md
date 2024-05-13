@@ -593,8 +593,8 @@ and we could remove that event handler with
 	$('#delUL').off('click', delExpose);
 
 
-**_You can have custom events and even pass them data_** 
-
+- _**You can have custom events and even pass them data
+**_
 Using jQuery you can define your own events, and attach event handlers. 
 
 You can also pass data to these event handlers. The discussion of custom events is beyond the scope of this book, but you can learn more at https://learn.jquery.com/events/introduction-to-custom-events/.
