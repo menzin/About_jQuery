@@ -622,11 +622,11 @@ As outlined in the "Owning It" exercise above, the preventDefault() method is po
 
 In fact, we also are all familiar with this general idea from submit buttons, where a false is returned (and the form is not submitted) when validation fails.   
 
-_**Event capturing (going down the DOM)**_ 
+- _**Event capturing (going down the DOM)**_ 
 
 Rarely used and so beyond the scope of this book. Default value is false, which means you don't capture. 
 
-_**Multiple event handlers**_ 
+- _**Multiple event handlers**_ 
 
 An element may have multiple handlers for the same event. For example, if you have a catalog of items for sale, focusing on some of them might bring up a dialog box which asks for size. Those items would have an identifying class, and you could attach an appropriate event handler to all items in that class. Then, there might be another event handler which fires for clicking on any item. 
 
