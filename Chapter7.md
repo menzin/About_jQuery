@@ -204,3 +204,25 @@ Instead of using and accordion in the Table of Contents for http://web.simmons.e
 
 Modify that page so that the first three Units are clickable (and create the appropriate html file for the chapters you will load.)
 
+
+## Retrieval of some JSON data – which we will massage with our callback function
+
+**Reminder about JSON and objects in JavaScript.**
+
+JSON is actually a subset of JavaScript objects, but with a few details that must be taken care of – especially the requirement that every key be a string written with double quote marks. For example, 365 is not an acceptable key in JSON, but "365" is. Fortunately, the JSON module will make the needed conversions for us.  
+
+If you have a JavaScript object someObject in your code then `JSON.stringify()` will turn it into JSON - i.e. JSON.stringify(someObject) is a new JSON variable. 
+
+If you have a JSON object someJSON then `JSON.parse ()` will turn it into a JavaScript object -  i.e. JSON.parse(someJSON) is a new JavaScript object.  
+
+There are also utilities, external to your script, which you may find useful if you want to prepare some JSON for AJAX to retrieve: 
+- Utility to convert a csv file to json is at https://www.csvjson.com/csv2json
+- Utility to convert a string to json is at https://www.json-generator.com/
+- Several utilities, including for XML conversion, are at https://onlinejsontools.com/stringify-json
+
+| State | Capital |
+| ------------- | ------------- |
+| Massachusetts  | Boston  |
+| Texas  | Austin  |
+| New York  | Albany  |
+| New Hampshire  | Concord  |
