@@ -198,3 +198,9 @@ The complete set of possibilities for the load() method is (see https://api.jque
 
 That said, load() is usually used for straightforward applications. We will see these optional parameters used for extensively in `.getJSON()` and `.ajax()`
 
+### Owning It
+
+Instead of using and accordion in the Table of Contents for http://web.simmons.edu/~menzin/CS321/CS321_TOC.html we could have shown just the Units, and made them clickable, to bring in the chapter headings.
+
+Modify that page so that the first three Units are clickable (and create the appropriate html file for the chapters you will load.)
+
