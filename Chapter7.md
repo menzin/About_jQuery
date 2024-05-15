@@ -429,8 +429,22 @@ More generally, `$.getJSON` has three methods which you may specify: `done()`, w
 Because each of these methods returns the same jqxhr object, the syntax for them is chained: 
 
 ``` html
- $.getJSON('the_url' [,optional data for the server[], function(retrievedJSON){//process the JSON}] )               .done(function(retrievedJSON) {//after success })
+$.getJSON('the_url' [optional data for the server[], function(retrievedJSON){//process the JSON}] )               .done(function(retrievedJSON) {//after success })
 .fail(function(retrievedJSON){//after error})
 .always(function(retrievedJSON){//after everything else};
 ```
+You may omit one or more of the methods done, fail, always if they are not needed. It is also fine, if you find it easier to maintain, to write: 
+
+``` html
+ var myGJ =
+	$.getJSON('the_url' [,optional data for the server [], function(retrievedJSON){//process the JSON}] );          	myGJ.done = function(retrievedJSON) {//after success }); 
+ 	myGJ.fail = function(retrievedJSON) {//after error });
+	myGJ.always = function(retrievedJSON) {//after everything else });
+```
+
+Also, you may choose to put all the processing (upon success) in the done() method. When we talk about `$.ajax()` you will see that the processing upon success is put in the done() method.
+
+Reference: https://stackoverflow.com/questions/33946699/iterating-over-collection-from-getjson-and-pushing-new-objects-into-an-array-l
+
+Use of jQuery function $.getScript for retrieval of a script is touched upon at the end of this chapter.
 
