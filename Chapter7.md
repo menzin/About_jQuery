@@ -55,9 +55,24 @@ The versatility of the ajax() method lies in the settings. We won't describe all
 - **username** and **password** are the obvious things if the server requires your script to log on
 
 > [!NOTE]
->  In older code you may find code which uses success, error or complete. These are deprecated as of jQuery3.0 and you should now use done, failed, and always.
+> In older code you may find code which uses success, error or complete. These are deprecated as of jQuery3.0 and you should now use done, failed, and always.
 > One can also get detailed control over the stages in Ajax by using Ajax Events (See https://api.jquery.com/Ajax_Events/ ). We will not be discussing them here.
 
+### The shortcut methods:
 
+The shortcut methods (which we describe in more detail below, with examples) are:
+
+- `load()` - which loads a file with HTML (typically not an entire html document, but html which you wish to insert)
+- `getJSON()` – which retrieves some JSON using GET
+- `getScript()` – which retrieves a JavaScript script using GET
+
+_For these three methods above you must provide the URL on the server where the data is , and you can optionally provide data to send to the server and/or the function to execute if the request succeeds._
+
+There are also two general shortcut methods:
+
+- `get()` - which retrieves an arbitrary type of file/data using GET
+- `post()` - which retrieves an arbitrary type of file/data using POST
+
+For these last two methods, in addition to the required URL and optionla parameters for the first three shortcut methods you may able (optionally) provide the dataType of what you are retrieving.
 
 
