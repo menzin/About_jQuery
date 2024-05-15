@@ -37,3 +37,25 @@ There are a number of shortcut methods for simple requests (see next paragraph) 
 
 - `$(someSelector).ajax(url_where_the_data_is [, optional object with setting] )` //executes an Ajax equest, typically putting the data at someSelector  
 
+The versatility of the ajax() method lies in the settings. We won't describe all of them, but here are the most important ones: 
+
+- method: Possible values are "GET", "POST" and "PUT" ---- it defaults to "GET" if omitted.
+
+- done (replaces success ): Function to call after a successful completion of retrieving the data. Typically this handles whatever it is you want to do with the data
+
+- failed ( replaces error): Function to call when the data retrieval is not successful
+
+- always (replaces complete): an optional function to be executed after done or failed has finished executing.
+
+- data: The data (object, string or array) you are sending to the server. Details of how the data is sent are discussed below.
+
+- username and password are the obvious things if the server requires your script to log on
+
+> [!NOTE]
+> This lists the keys in the setting object – the programmer needs to provide the values, which may be a string (as for method) or a function to execute (as for done, failed and always) or some other object (as for data). 
+
+> [!NOTE]
+>  In older code you may find code which uses success, error or complete. These are deprecated as of jQuery3.0 and you should now use done, failed, and always.
+> One can also get detailed control over the stages in Ajax by using Ajax Events (See https://api.jquery.com/Ajax_Events/ ). We will not be discussing them here. 
+
+
