@@ -29,7 +29,7 @@ Depending on whether the data was XML or JSON it will be placed in a different p
 jQuery has a jqXHR object, which is an XMLHttpRequest object with some additional properties and methods. These additions will simplify our lives.
 
 
-***The .ajax() method***
+### The .ajax() method
 
 There are a number of shortcut methods for simple requests (see next paragraph) , but the basic structures for the general ajax() method are:  
 
@@ -56,6 +56,8 @@ The versatility of the ajax() method lies in the settings. We won't describe all
 
 > [!NOTE]
 >  In older code you may find code which uses success, error or complete. These are deprecated as of jQuery3.0 and you should now use done, failed, and always.
-> One can also get detailed control over the stages in Ajax by using Ajax Events (See https://api.jquery.com/Ajax_Events/ ). We will not be discussing them here. 
+> One can also get detailed control over the stages in Ajax by using Ajax Events (See https://api.jquery.com/Ajax_Events/ ). We will not be discussing them here.
+
+
 
 
