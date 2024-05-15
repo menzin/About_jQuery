@@ -125,3 +125,11 @@ In our example, the phrase "New HTML will go here" gets replaced.
 		</body>
 	</html>
 ``` 
+
+The html file which this page uses is:
+
+[newHTML.html](http://web.simmons.edu/~menzin/CS321/Unit_5_jQuery_and_Ajax/About_jQuery/Chapter07/newHTML.html)
+
+  	<h3>This is the contents of the newHTML file</h3>
+
+Load the demo, open the debugger to see the elements, and watch what happens to the div when you click the button. 
