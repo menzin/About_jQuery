@@ -446,5 +446,6 @@ Also, you may choose to put all the processing (upon success) in the done() meth
 
 Reference: https://stackoverflow.com/questions/33946699/iterating-over-collection-from-getjson-and-pushing-new-objects-into-an-array-l
 
-Use of jQuery function $.getScript for retrieval of a script is touched upon at the end of this chapter.
+Use of jQuery function `$.getScript` for retrieval of a script is touched upon at the end of this chapter.
 
+### Sending data, including deciding between GET and POST
