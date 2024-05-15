@@ -104,23 +104,22 @@ In our example, the phrase "New HTML will go here" gets replaced.
 - The new html you are inserting will get any styling that was specified in your style sheets.
 
     ``` html
-        
-<!doctype html>
-<html lang='en'>
-	<head>
-  	    <meta charset="utf-8">
-	    <title>AJAX Demo 1</title>
-     	<script src="jquery.js"> </script>   <!-- the jQuery library  -->
-	    <script>
-			//We can put functions here
-	
-	    </script>
-        <!--  links to style sheets go here  -->
-    </head>
-    </body>
-        <div id = 'divForLoad'>New HTML will go here</div>
-		<button type = 'button' onclick = "$('#divForLoad').load('newHTML.html');">
-		    Click here to load the newHTML contents</button>
-	</body>
-</html>
+	<!doctype html>
+	<html lang='en'>
+		<head>
+	  	    <meta charset="utf-8">
+		    <title>AJAX Demo 1</title>
+	     	<script src="jquery.js"> </script>   <!-- the jQuery library  -->
+		    <script>
+				//We can put functions here
+		
+		    </script>
+	        <!--  links to style sheets go here  -->
+	    </head>
+	    </body>
+	        <div id = 'divForLoad'>New HTML will go here</div>
+			<button type = 'button' onclick = "$('#divForLoad').load('newHTML.html');">
+			    Click here to load the newHTML contents</button>
+		</body>
+	</html>
 ``` 
