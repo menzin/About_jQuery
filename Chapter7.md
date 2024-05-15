@@ -104,6 +104,7 @@ In our example, the phrase "New HTML will go here" gets replaced.
 - The new html you are inserting will get any styling that was specified in your style sheets.
 
 [ajaxDemo1Load.html](http://web.simmons.edu/~menzin/CS321/Unit_5_jQuery_and_Ajax/About_jQuery/Chapter07/ajaxDemo1load.html)
+
     ``` html
 	<!doctype html>
 	<html lang='en'>
