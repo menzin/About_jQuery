@@ -81,3 +81,17 @@ In order to execute these examples you will need to make use of a <ins>_server_<
 
 For security reasons you will <ins>_not_</ins> be able to import data from a different domain. So we will put our home page and the files with our data in the same folder.
 
+## Use of jQuery for a simple retrieval of data
+
+**Retrieval of some HTML which we are going to insert on our page with load()**
+
+> [!NOTE]
+> These files need to be on a server – e.g. wherever you put your web pages.
+
+One of the simplest things to do is to get some html from another file and insert it on your page. Specifically we do the following: 
+
+- Identify a div or other element where we want the new html to go.
+      In this example we have identified the div with id _divForLoad_
+
+- Use the load method for that div or other element to identify the html we will pass in; the url is passed to load as its parameter in string form.
+    In this example we are going to get the contents of the file newHTML.html which is in the same folder as our script, although you could write a more complex path here. 
