@@ -182,3 +182,19 @@ This photo is by Anil Kumar Grindhar is from pexels.com</div>
 <div id='Fall456'>Whatever image and info you want about Fall456.
 This photo is by Zach Jarosz is from pexels.com</div>
 ```
+As with the previous demo, you should run this demo, watching the div contents in the debugger!
+
+So far we looked at `$('#someID').load('urlForTheHTML')`, retrieving either part or all of the html file. The load() method, however, has two optional parameters: an object which holds information for the server, and a callback function to execute if the load is successful. 
+
+Note that because one of these parameters is an object and the other a function, you may include either, neither or both – i.e. jQuery can tell what parameters you included. 
+
+As an example of the use of the callback function, suppose that if your user retrieved some html about an item which is on sale, you had an alert box pop up: 
+
+	$('#divForLoad').load('newHTML.html', function(){alert('On sale today only!')} ) ; 
+
+The complete set of possibilities for the load() method is (see https://api.jquery.com/load/#load-url-data-complete:): 
+
+	$('#someID').load(someURL [,someData] [, functionUponCompletion]) 
+
+That said, load() is usually used for straightforward applications. We will see these optional parameters used for extensively in `.getJSON()` and `.ajax()`
+
