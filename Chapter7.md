@@ -361,7 +361,10 @@ When we put this in a full script and try to actually use the entries we have lo
 		      console.log(arr);   //Shows an array w/ 4 elements, each of which is an array
 
 //And the contents of the 4 inner arrays are just what you expect
-		    //The next 2 lines don't work- See explanation right below the code			                            	    for(i=0; i<4; i++){alert(arr[i]);}  //Says undefined                                             			    for(i=0; i<4; i++){alert('The capital of '+ arr[i][0] + ' is ' + arr[i][1] )}			                    }
+		    //The next 2 lines don't work- See explanation right below the code
+
+			for(i=0; i<4; i++){alert(arr[i]);}  //Says undefined
+			for(i=0; i<4; i++){alert('The capital of '+ arr[i][0] + ' is ' + arr[i][1] )}			                    }
 				  
 	</script>   		
     </head>
