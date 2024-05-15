@@ -124,7 +124,7 @@ In our example, the phrase "New HTML will go here" gets replaced.
 			    Click here to load the newHTML contents</button>
 		</body>
 	</html>
-``` 
+	``` 
 
 The html file which this page uses is:
 
