@@ -364,7 +364,9 @@ When we put this in a full script and try to actually use the entries we have lo
 		    //The next 2 lines don't work- See explanation right below the code
 
 			for(i=0; i<4; i++){alert(arr[i]);}  //Says undefined
-			for(i=0; i<4; i++){alert('The capital of '+ arr[i][0] + ' is ' + arr[i][1] )}			                    }
+			for(i=0; i<4; i++){alert('The capital of '+ arr[i][0] + ' is ' + arr[i][1] )}
+
+	 }
 				  
 	</script>   		
     </head>
@@ -372,6 +374,56 @@ When we put this in a full script and try to actually use the entries we have lo
 	<button type = 'button' onclick = "manip()">Click for the capitals</button>       		
 	</body>
 </html>
-                            
 
+```
 
+The problem is that getJSON is ***asynchronous***. That means that it will work in the background, and meanwhile our script will go on to do other things. In fact, what happens is that the script tries to access the values in arr[i] _before getJSON_ has finished filling that array.
+
+For this code, the asynchronicity causes troubles even when we are retrieving json on the same web site. Clearly, if we are retrieving json from a remote website, it might take even longer for getJSON to complete its work.
+
+> [!NOTE]
+> This may be a problem in load() also, since load uses an asynchronous GET. In our load() example, however, we just stared at the new HTML and didn't try to interact with it.
+
+So, how do we resolve our getJson problem? .getJSON(), like the more general .ajax() function, has a method done() which will execute after the getJSON (or ajax) is done executing. At that point, of course, we know that arr[] has all the values we retrieved using our asynchronous function and we can interact with them.
+
+To make this happen, we have added the done method (in bold) to the object which `$.getJSON()` returns.
+
+[getJSONDemo.html](http://web.simmons.edu/~menzin/CS321/Unit_5_jQuery_and_Ajax/About_jQuery/Chapter07/getJsonDemo.html)
+
+``` html
+<!doctype html>
+<html lang='en'>
+	<head>
+  	    <meta charset="utf-8">
+	    <title>getJSON Demo</title>
+     	<script src="jquery.js"> </script>   <!-- the jQuery library  -->
+		<script> 
+		var arr=[];
+		var gJobject;
+		function manip(){
+		<!-- Manipulating a JSON object so as to put its key-value pairs in an array -->
+					
+			gjObject = $.getJSON('capitals.json', function(ourJson){
+			   $.each(ourJson, function(k, v){                           
+                           elem = [k, v.Capital];                            
+                           arr.push(elem);
+                          })
+			})
+			.done(function()
+			      {for(i=0; i<4; i++){alert('The capital of '+ arr[i][0] + ' is ' + arr[i][1] )}}
+				  );			
+			};
+			
+				  
+	     </script>   		
+    </head>
+    </body>
+	<button type = 'button' onclick = "manip()">Click for the capitals</button>       
+			
+			
+	</body>
+</html>
+```
+More generally, `$.getJSON` has three methods which you may specify: `done()`, which is exectuted when getJSON finishes successfully, `fail()`, which is executed when there is an error, and `always()` which is executed in either case and after done() or fail() if they have been specified. 
+
+Because each of these methods returns the same jqxhr object, the syntax for them is chained: 
