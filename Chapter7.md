@@ -33,7 +33,7 @@ jQuery has a jqXHR object, which is an XMLHttpRequest object with some additiona
 
 There are a number of shortcut methods for simple requests (see next paragraph) , but the basic structures for the general ajax() method are:  
 
-    $.ajax(url_where_the_data_is [, optional object with settings] ) //executes an Ajax request
+- `$.ajax(url_where_the_data_is [, optional object with settings] )` //executes an Ajax request
 
-    $(someSelector).ajax(url_where_the_data_is [, optional object with setting] ) //executes an Ajax equest, typically putting the data at someSelector  
+- `$(someSelector).ajax(url_where_the_data_is [, optional object with setting] )` //executes an Ajax equest, typically putting the data at someSelector  
 
