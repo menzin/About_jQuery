@@ -26,10 +26,13 @@ The Carnegie Museums have a very helpful website on accessibility, with everythi
 
 The Do-It project at the University of Washington https://www.washington.edu/doit/ has a list of resources, of which accessible web pages is only one part. The most relevant part for web design are at https://www.washington.edu/doit/programs/center-universal-design-education/overview , their center for universal design, and https://www.washington.edu/doit/programs/center-universal-design-education/resources/published-books-and-articles-about-universal , their books and articles about universal design.
 
-
 Ryerson University in Canada has published several free books on this topic: https://pressbooks.library.ryerson.ca/catalog/accessibility
 
 Laura Carlson at the U. Minnesota – Duluth publishes a newsletter which has many current articles about accessibility and she maintains a very complete list of resources on this subject https://www.d.umn.edu/itss/training/online/webdesign/accessibility.html. It is an excellent go-to place for specific topics, with sections for buttons, forms, links, carousels and slide shows, semantic HTML, tables, and, of course, testing and checklists.
+
+
+## Testing
+
 
 
 
