@@ -39,6 +39,9 @@ There are a number of shortcut methods for simple requests (see next paragraph) 
 
 The versatility of the ajax() method lies in the settings. We won't describe all of them, but here are the most important ones: 
 
+> [!NOTE]
+> This lists the keys in the setting object – the programmer needs to provide the values, which may be a string (as for method) or a function to execute (as for done, failed and always) or some other object (as for data).
+
 - **method**: Possible values are "GET", "POST" and "PUT" ---- it defaults to "GET" if omitted.
 
 - **done** (replaces **success** ): Function to call after a successful completion of retrieving the data. Typically this handles whatever it is you want to do with the data
@@ -50,9 +53,6 @@ The versatility of the ajax() method lies in the settings. We won't describe all
 - **data**: The data (object, string or array) you are sending to the server. Details of how the data is sent are discussed below.
 
 - **username** and **password** are the obvious things if the server requires your script to log on
-
-> [!NOTE]
-> This lists the keys in the setting object – the programmer needs to provide the values, which may be a string (as for method) or a function to execute (as for done, failed and always) or some other object (as for data). 
 
 > [!NOTE]
 >  In older code you may find code which uses success, error or complete. These are deprecated as of jQuery3.0 and you should now use done, failed, and always.
