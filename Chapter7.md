@@ -91,12 +91,36 @@ For security reasons you will <ins>_not_</ins> be able to import data from a dif
 One of the simplest things to do is to get some html from another file and insert it on your page. Specifically we do the following: 
 
 - Identify a div or other element where we want the new html to go. <br>
-      In this example we have identified the div with id _divForLoad_
+  In this example we have identified the div with id _divForLoad_
 
 - Use the load method for that div or other element to identify the html we will pass in; the url is passed to load as its parameter in string form. <br>
-    In this example we are going to get the contents of the file newHTML.html which is in the same folder as our script, although you could write a more complex path here.
+In this example we are going to get the contents of the file newHTML.html which is in the same folder as our script, although you could write a more complex path here.
 
 - That html file is just a snippet of html – not a whole web page!
 
 - Please notice that the entire contents of our div or other element will be _replaced_  by the new html. Obviously, if you don't want to replace anything, then you put the new html in an empty element. <br>
 In our example, the phrase "New HTML will go here" gets replaced.
+
+- The new html you are inserting will get any styling that was specified in your style sheets.
+
+    ``` html
+        
+<!doctype html>
+<html lang='en'>
+	<head>
+  	    <meta charset="utf-8">
+	    <title>AJAX Demo 1</title>
+     	<script src="jquery.js"> </script>   <!-- the jQuery library  -->
+	    <script>
+			//We can put functions here
+	
+	    </script>
+        <!--  links to style sheets go here  -->
+    </head>
+    </body>
+        <div id = 'divForLoad'>New HTML will go here</div>
+		<button type = 'button' onclick = "$('#divForLoad').load('newHTML.html');">
+		    Click here to load the newHTML contents</button>
+	</body>
+</html>
+``` 
