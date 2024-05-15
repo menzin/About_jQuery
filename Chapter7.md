@@ -75,4 +75,4 @@ There are also two general shortcut methods:
 
 For these last two methods, in addition to the required URL and optionla parameters for the first three shortcut methods you may able (optionally) provide the dataType of what you are retrieving.
 
-
+We are now ready to examine all these methods in more detail, starting with the simpler one and working 
