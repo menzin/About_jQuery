@@ -133,3 +133,52 @@ The html file which this page uses is:
   	<h3>This is the contents of the newHTML file</h3>
 
 Load the demo, open the debugger to see the elements, and watch what happens to the div when you click the button. 
+
+
+### More complex retrieval of html data using load()
+
+Rather than loading all of an html file you might choose to load only part with some particular ID. For example, we might have a page of thumbnails for shopping with each image having an id that corresponded to a catalog number – e.g. Fall123. If the html file we load from had divs with the same numbering system for their IDs, then when we clicked on the image with ID Fall123, we would construct a variable 'newHTML.html #Fall123' and use it as the parameter for the load:
+
+[ajaxDemo2load.html]()
+
+``` html
+
+<!doctype html>
+<html lang='en'>
+	<head>
+  	    <meta charset="utf-8">
+	    <title>AJAX Demo 2</title>
+     	<script src="jquery.js"> </script>   <!-- the jQuery library  -->
+	    <script>
+		function loadURL(someImage){
+		var newURL = 'newHTML2.html #' + someImage.id;
+		$('#emptySpot').load(newURL);
+		}
+	
+	    </script>
+        <!--  links to style sheets go here  -->
+    </head>
+    </body>
+        <p>General text</p>
+		<img src = Fall123Thumbnail.jpg alt = 'red umbrella from Anil Kumar Gridhar on pexels.com' 
+		    height="200" width="125" id = 'Fall123' onclick = 'loadURL(this);'>
+		    Some text about Fall123 <br>		
+		<img src = Fall456Thumbnail.jpg alt = 'blue umbrella from Zach Jarosz on pexels.com' 
+		    height="200" width="125" id = 'Fall456' onclick = 'loadURL(this);'>
+		    Some text about Fall456 <br>
+        <div id = 'emptySpot'></div>					
+	</body>
+</html>
+                            
+```
+
+Of course our newHTML.html file would now look like: 
+
+[newHTML2.html for ajaxDemo2load](http://web.simmons.edu/~menzin/CS321/Unit_5_jQuery_and_Ajax/About_jQuery/Chapter07/newHTML2.html)
+
+``` html
+<div id='Fall123'>Whatever image and info you want about Fall123. 
+This photo is by Anil Kumar Grindhar is from pexels.com</div>
+<div id='Fall456'>Whatever image and info you want about Fall456.
+This photo is by Zach Jarosz is from pexels.com</div>
+```
