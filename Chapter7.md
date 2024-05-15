@@ -94,4 +94,9 @@ One of the simplest things to do is to get some html from another file and inser
       In this example we have identified the div with id _divForLoad_
 
 - Use the load method for that div or other element to identify the html we will pass in; the url is passed to load as its parameter in string form. <br>
-    In this example we are going to get the contents of the file newHTML.html which is in the same folder as our script, although you could write a more complex path here. 
+    In this example we are going to get the contents of the file newHTML.html which is in the same folder as our script, although you could write a more complex path here.
+
+- That html file is just a snippet of html – not a whole web page!
+
+- Please notice that the entire contents of our div or other element will be _replaced_  by the new html. Obviously, if you don't want to replace anything, then you put the new html in an empty element. <br>
+In our example, the phrase "New HTML will go here" gets replaced.
