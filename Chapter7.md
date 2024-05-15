@@ -427,3 +427,10 @@ To make this happen, we have added the done method (in bold) to the object which
 More generally, `$.getJSON` has three methods which you may specify: `done()`, which is exectuted when getJSON finishes successfully, `fail()`, which is executed when there is an error, and `always()` which is executed in either case and after done() or fail() if they have been specified. 
 
 Because each of these methods returns the same jqxhr object, the syntax for them is chained: 
+
+``` html
+ $.getJSON('the_url' [,optional data for the server[], function(retrievedJSON){//process the JSON}] )               .done(function(retrievedJSON) {//after success })
+.fail(function(retrievedJSON){//after error})
+.always(function(retrievedJSON){//after everything else};
+```
+
