@@ -33,6 +33,29 @@ Laura Carlson at the U. Minnesota – Duluth publishes a newsletter which has ma
 
 ## Testing
 
+Google has a page on reviewing a site for accessibility at https://developers.google.com/web/fundamentals/accessibility/how-to-review. 
 
+Google and Microsoft use the axe tool https://www.deque.com/axe/. This site has a suite of tools to help with development and testing.
 
+Another such tool for this is pa11y https://github.com/pa11y/pa11y, which is also described at https://medium.com/angular-in-depth/test-for-accessibility-and-help-millions-of-people-97d86f72e2c4. <br> A related tool (focusing on sites which use Angular) is a11y – see https://medium.com/angular-in-depth/test-for-accessibility-and-help-millions-of-people-97d86f72e2c4, although this article also has a lot of good general information.  
+
+Utah State University has published wave https://wave.webaim.org/
+
+You will also find tools about testing for color blindness at http://web.simmons.edu/~menzin/WebCentricResources.html#tools_for_color_blind_viewing
+
+## Specific topics in web page accessibility
+
+https://websitesetup.org/web-accessibility-checklist/ has an accessibility checklist. Here Bruce Lawson, a great web site guru, has a useful article on how to improve your site's accessibility, and demos these practices on this page. 
+
+https://www.ovl.design/text/inclusive-inputs/ shows how to make your form inputs accessible. Another similar article is at https://bitsofco.de/labelling-form-elements/, by Ire Aderinokun, who writes quite a bit about these issues. A similar article, but which includes more html elements, is at https://css-tricks.com/a-complete-guide-to-links-and-buttons/
+
+https://www.w3.org/TR/wai-aria-practices/examples/landmarks/HTML5.html is about landmarks and sectioning. https://www.w3.org/TR/wai-aria-practices-1.1/examples/accordion/accordion.html has a useful table of roles and attributes for aria compliance.  
+
+https://www.deque.com/blog/text-links-practices-screen-readers/ shows you how to make your links accessible.
+
+https://github.com/scottaohara/accessible_components has a number of accessible links and other widgets.
+
+Peter-Paul Koch, who is always worth reading, has written about css and accessibility at https://www.quirksmode.org/blog/archives/2019/04/css_and_accessi.html. Jared Spool, who is also always worth reading, has written about css grid and accessibility at https://medium.com/adventures-in-ux-design/css-grid-accessibility-dd9cf7790dff <br> The article continues on to Mozilla's page on the same issues https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/CSS_Grid_Layout_and_Accessibility
+
+https://www.freecodecamp.org/news/how-to-make-an-accessible-form-its-easier-than-you-think-672d3f4ff573/ is about designing accessible forms. 
 
