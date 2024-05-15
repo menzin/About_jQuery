@@ -241,3 +241,134 @@ I used the first of these utilities to convert my csv file to a JSON object:
 	"Capital": "Concord"}
 }
 ```
+
+> [!NOTE]
+> If our CSV file did not have headings, we would get a much simpler json object. I am showing you how to handle the more complex json since you will want the headings when there are more than two columns – e.g. state capital and population (in millions). Then you will want the value of "Massachusetts" to be the object {"Capital": "Boston", "Population": 6.902}
+
+Remember how we handle JSON:
+[jsonReminders.html](http://web.simmons.edu/~menzin/CS321/Unit_5_jQuery_and_Ajax/About_jQuery/Chapter07/jsonReminders.html)
+
+``` html
+<!doctype html>
+<html lang='en'>
+	<head>
+  	    <meta charset="utf-8">
+	    <title>JSON reminders Demo 2</title>
+     	<script src="jquery.js"> </script>   <!-- the jQuery library  -->
+	    
+        <!--  links to style sheets go here  -->
+    </head>
+    </body>
+        <!-- Manipulating a JSON object so as to put its key-value pairs in an array -->
+		<script>
+			ourJson = {
+			  "Massachusetts": {
+				"Capital": "Boston"
+					},
+			  "Texas": {
+				"Capital": "Austin"
+				  },
+			  "New York": {
+				"Capital": "Albany"
+				  },
+			  "New Hampshire": {
+				"Capital": "Concord"
+				  }
+			};
+			arr = [];
+			
+			$.each(ourJson, function(k, v){console.log(k)});  //Logs the keys - e.g. Massachusetts			
+			
+			$.each(ourJson, function(k, v){console.log(v)}); //Logs the object values - e.g.
+			                   //  {Capital:"Boston"}
+						
+			$.each(ourJson, function(k,v){console.log(v.Capital)}) //Logs the value of Capital - e.g. Boston
+			
+			//construct the array of states and their capitals
+			
+			//Reminder: In JavaScript an ordered pair is an array.
+			
+			$.each(ourJson, function(k, v){elem = [k, v.Capital]; console.log(elem); arr.push(elem);})
+			
+		
+		</script>
+
+        <div id = 'emptySpot'></div>			
+			
+			
+	</body>
+</html>
+```
+
+Now, let's adapt this to using getJSON to retrieve our JSON from another file. Then, after I retrieve this JSON object I will make the array of ordered pairs of the form (State, Capital) so that I can write a quiz to randomly select a state, show its name, and ask for the capital. (NOTE: My utility offers me the option of an array of objects, which would use slightly different processing.) 
+
+The general form for getJSON is `$.getJSON(someURL [,someDataForServer][,callbackFunction]);`
+
+We'll defer the explanation of the optional Data parameter until we discuss the ajax method in the next section.
+
+Please notice that getJSON is a global function (unlike load() which is a method of a specific element). Suppose that our JSON is stored in a file capitals.json in the same folder as our webpage. (Note the json extension!) 
+
+Our webpage will ask for 
+
+	$.getJSON('capitals.json', callbackFunction) 
+ 
+We will write the callback function as an anonymous function; it will have one parameter, namely the json which getJSON has retrieved and put into that one parameter. So our code will look like:
+
+	 $.getJSON('capitals.json', function(myJSON) {//process myJSON }) 
+
+and now we need to process myJSON. The each() method is perfect for this task, just like in our code for jsonReminders.html (In fact, it is the identical processing function.) 
+
+Once again, because we are using the server to access a file, we need to upload our files to an appropriate site. That said, the code below will work:
+
+``` html
+var arr=[];
+	function manip(){
+	<!-- Manipulating a JSON object so as to put its key-value pairs in an array -->
+				
+		$.getJSON('capitals.json', function(ourJson){
+		   $.each(ourJson, function(k, v){                           
+		   elem = [k, v.Capital];                            
+		   arr.push(elem);
+		  })
+		});  //end of getJSON
+		} //end of manip
+```
+
+When we put this in a full script and try to actually use the entries we have loaded into arr, however, we have problems: 
+
+ Using ajaxDemoPartlyWorks_v7.html
+
+``` html
+<!doctype html>
+<html lang='en'>
+	<head>
+  	    <meta charset="utf-8">
+	    <title>getJSON Demo</title>
+            <script src="jquery.js"> </script>   <!-- the jQuery library  -->
+            <script> 
+		var arr=[];
+		function manip(){
+		<!-- Manipulating a JSON object so as to put its key-value pairs in an array -->
+					
+			$.getJSON('capitals.json', function(ourJson){
+			   $.each(ourJson, function(k, v){                           
+                           elem = [k, v.Capital];                            
+                           arr.push(elem);
+                          })
+			});
+
+		     //Now comes some interesting issues: 
+		      console.log(arr);   //Shows an array w/ 4 elements, each of which is an array
+
+//And the contents of the 4 inner arrays are just what you expect
+		    //The next 2 lines don't work- See explanation right below the code			                            	    for(i=0; i<4; i++){alert(arr[i]);}  //Says undefined                                             			    for(i=0; i<4; i++){alert('The capital of '+ arr[i][0] + ' is ' + arr[i][1] )}			                    }
+				  
+	</script>   		
+    </head>
+    </body>
+	<button type = 'button' onclick = "manip()">Click for the capitals</button>       		
+	</body>
+</html>
+                            
+
+
