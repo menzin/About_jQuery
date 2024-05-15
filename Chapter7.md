@@ -449,3 +449,14 @@ Reference: https://stackoverflow.com/questions/33946699/iterating-over-collectio
 Use of jQuery function `$.getScript` for retrieval of a script is touched upon at the end of this chapter.
 
 ### Sending data, including deciding between GET and POST
+
+
+
+
+## Owning it 
+
+You want to create a multiple choice quiz on each of two possible topics. The user will select the topic and then (with a click) start the quiz.
+
+Your web page should have a button to start the quiz and a piece of code with a place for the question and check boxes for the 4 possible answers. It will also need to hold an input element (not shown) for the correct answer. Of course, this will not be seen until the user starts a quiz.
+
+Starting the quiz will also cause the loading of the questions and answers for the topic chosen, and the storing of that information in an array. Then, one, by one, the questions will be displayed and after the user has selected an answer (and indicated that the user is ready to check the answer) a function will provide the appropriate feedback to the user. At the end of it would be nice to tell the user the number of questions answered and the number correct.
