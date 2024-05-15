@@ -75,4 +75,9 @@ There are also two general shortcut methods:
 
 For these last two methods, in addition to the required URL and optionla parameters for the first three shortcut methods you may able (optionally) provide the dataType of what you are retrieving.
 
-We are now ready to examine all these methods in more detail, starting with the simpler one and working 
+We are now ready to examine all these methods in more detail, starting with the simpler one and working our way up in complexity.
+
+In order to execute these examples you will need to make use of a <ins>_server_</ins> – e.g. a computer where you make your home page publicly available, not just your standalone computer.
+
+For security reasons you will <ins>_not_</ins> be able to import data from a different domain. So we will put our home page and the files with our data in the same folder.
+
