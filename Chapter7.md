@@ -226,3 +226,18 @@ There are also utilities, external to your script, which you may find useful if 
 | Texas  | Austin  |
 | New York  | Albany  |
 | New Hampshire  | Concord  |
+
+I used the first of these utilities to convert my csv file to a JSON object: 
+
+``` html
+{
+"Massachusetts": {
+	"Capital": "Boston"},
+"Texas": {
+	"Capital": "Austin"},
+"New York": {
+	"Capital": "Albany"},
+"New Hampshire": {
+	"Capital": "Concord"}
+}
+```
