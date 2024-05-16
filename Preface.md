@@ -4,15 +4,15 @@
 ## Why jQuery? 
 Once upon a time, a long time ago, there was something called “the browser wars”, whereby many features of HTML and JavaScript were not uniformly implemented across all popular browsers. At that time, jQuery was designed to provide a uniform interface to all browsers.
 
-Those bad days have passed, but jQuery proved to be so helpful and useful, that it remains the most popular library of functions for JavaScript on the web, with over 50% of all web sites using jQuery. In addition there is now a huge eco-system of plug-ins which add additional functionality to jQuery. So, if you believe in the wisdom of crowds, or in not re-inventing the wheel, or if  you simply want to be able to maintain existing web sites, it behooves you to learn jQuery. Plus, it’s a lot of fun and will make your life easier.
+Those bad days have passed, but jQuery proved to be so helpful and useful, that it remains the most popular library of functions for JavaScript on the web, with over 50% of all web sites using jQuery. In addition there is now a huge eco-system of plug-ins which add additional functionality to jQuery. So, if you believe in the wisdom of crowds, or in not re-inventing the wheel, or if you simply want to be able to maintain existing web sites, it behooves you to learn jQuery. Plus, it’s a lot of fun and will make your life easier.
 
-The most common uses of jQuery are to add event handlers to multiple elements, to implement AJAX, to animate a page with visual effects, and to manipulate the DOM by changing either what elements appear on a page or how they appear.  
+The most common uses of jQuery are to add event handlers to multiple elements, to implement AJAX, to animate a page with visual effects, and to manipulate the DOM by changing either what elements appear on a page or how they appear. 
 
-That last category includes such things as reacting to form validation either by showing and hiding error messages or by changing the color or font weight of the label.  It also includes having sections of a page (e.g. on a page of FAQs) open up or close. That is, we can manipulate the DOM either by adding/removing elements or by changing their attributes.
+That last category includes such things as reacting to form validation either by showing and hiding error messages or by changing the color or font weight of the label. It also includes having sections of a page (e.g. on a page of FAQs) open up or close. That is, we can manipulate the DOM either by adding/removing elements or by changing their attributes.
 
-AJAX is used for quizzes and, more generally, for adding new material to a page without re-loading the whole page.  
+AJAX is used for quizzes and, more generally, for adding new material to a page without re-loading the whole page. 
 
-Visual effects implemented through jQuery run the gamut from coloring the rows of a table to displaying carousels of images to implementing sliders and to user re-sizing an element with drag-and-drop.  
+Visual effects implemented through jQuery run the gamut from coloring the rows of a table to displaying carousels of images to implementing sliders and to user re-sizing an element with drag-and-drop. 
 
 Event handlers, such as reacting to button clicks, are intrinsic to making a page interactive. jQuery makes it easy for the page to load (so the user can see the whole page) while the event handlers are being added silently; thus speeding up the user’s experience.
 
@@ -43,6 +43,7 @@ In order to use this book you should be comfortable with:
   I had to decide whether or not to use ESnext in this book. My decision to forgo ESnext is based on the importance of this in jQuery, and avoiding the temptation to use arrow functions, which, of course, handle this differently from traditional functions.
 
 ## How this book is organized
+
 - **Chapter 0 – Just Get Me Going**
   
   This chapter shows you how to use jQuery in very simple examples, without a lot of background about what is happening behind the scenes
@@ -52,20 +53,28 @@ In order to use this book you should be comfortable with:
     Please read this short chapter, even if you have used jQuery.
 This chapter explains the basic mechanisms of jQuery and provides examples of code which is used frequently.. We discuss collections, chaining, and backing up the chain.
 
-- **Chapters 2 –  4** build your knowledge of the syntax and methods in jQuery.
+- **Chapters 2 – 4** build your knowledge of the syntax and methods in jQuery.
   
-- **Chapter 5- 7** are about the functionality which make jQuery shine.  They discuss respectively manipulating what is on your webpage, event handling and AJAX.
+- **Chapter 5 - 7** are about the functionality which make jQuery shine. They discuss respectively manipulating what is on your webpage, event handling and AJAX.
   
-- Chapter 8 provides a guide to learning how to maintain ARIA compliance when you are manipulating the page or using AJAX.
+- **Chapter 8** provides a guide to learning how to maintain ARIA compliance when you are manipulating the page or using AJAX.
   
-- **Chapters 9  - 10** respectively point you to next steps with jQuery ( e. g. for plug-ins and mobile devices) and references on jQuery.
+- **Chapters 9 - 10** respectively point you to next steps with jQuery ( e. g. for plug-ins and mobile devices) and references on jQuery.
   
 - **The Table of Contents** is quite detailed about each chapter's topics.
   
-- **Code **
-  All code examples are at in the same folder as the chapter's text. Please use the downloaded code rather than copying from the Word documents --- we all know that that will lead to all kinds of problems.
+- **Code**
+  
+  All code examples are at in the same folder as the chapter's text. <ins>Please use the downloaded code rather than copying from the Word documents</ins> --- we all know that that will lead to all kinds of problems.
 
 
 ## Acknowledgements
 
+Any book on jQuery should first acknowledge the debt that all of us owe to John Resig, the creator of jQuery. Without him and his wonderful library we would still be writing long and ugly code.
+
+Next I would like to acknowledge my many, many, students who learn new platforms in a variety of ways, and who are the raison d’etre for my work. 
+
+Equally important are my long-time colleagues in computing at Simmons – Denise Carroll, Dane Groves, Amber Stubbs, Bruce Tis and Nanette Veilleux. They have encouraged and critiqued my work and shared their wisdom for many years. Dean Marie desJardins supported the sabbatical on which this book was written. My wonderful student, Maleehah Africawala, has been an invaluable editor.
+
+Last, and very far from least, my husband, Marvin Menzin, who has tolerated my books, computers, work schedule, and so much more.
 
