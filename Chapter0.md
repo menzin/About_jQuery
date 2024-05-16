@@ -145,19 +145,19 @@ Immediately following that we write a script which asks jQuery until the DOM of 
 
 - ***Short review of very basic selectors***
 
-* `#thisThing` selector for element with ID thisThing (There may be only one element with a given ID.)
-    * Example: If you have an element with ID homepage, then $("#homePage") will return that element.
-      
-* `.thisClass` selector for all elements with class thisClass.
-    * Example: If some of your elements (paragraphs, spans, etc.) have the class hot then $(".hot") will return all of them (even if they are different types of elements.)
-      
-* `"thisTag"` selector for all elements with tag <thisTag>.
-    * Example: $("h3") will return all headline elements of size h3.
-      
-* Multiple selections: `selector1`, `selector2` will selector all elements that meet either selector.
-    * Example: $('h2, h3') will return all headline elements of size h2 or h3.
-      
-* `'*'` __selects all elements.__
+	* `#thisThing` selector for element with ID thisThing (There may be only one element with a given ID.)
+	    * Example: If you have an element with ID homepage, then $("#homePage") will return that element.
+	      
+	* `.thisClass` selector for all elements with class thisClass.
+	    * Example: If some of your elements (paragraphs, spans, etc.) have the class hot then $(".hot") will return all of them (even if they are different types of elements.)
+	      
+	* `"thisTag"` selector for all elements with tag <thisTag>.
+	    * Example: $("h3") will return all headline elements of size h3.
+	      
+	* Multiple selections: `selector1`, `selector2` will selector all elements that meet either selector.
+	    * Example: $('h2, h3') will return all headline elements of size h2 or h3.
+	      
+	* `'*'` __selects all elements.__
 
 
   
