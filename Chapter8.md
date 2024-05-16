@@ -59,3 +59,28 @@ Peter-Paul Koch, who is always worth reading, has written about css and accessib
 
 https://www.freecodecamp.org/news/how-to-make-an-accessible-form-its-easier-than-you-think-672d3f4ff573/ is about designing accessible forms. 
 
+## Resources specific to pages which change dynamically:
+
+https://bitsofco.de/using-aria-live/ shows you how to make pages which change and are aria-compliant. 
+
+Some accessible accordions are at https://github.com/nico3333fr/jquery-accessible-accordion-aria and https://github.com/DavideTriso/aria-accordion
+
+https://scottvinkle.me/blogs/blog/how-html-microdata-helps-with-accessibility is about using microdata to improve accessibility.
+
+https://www.accessibility-developer-guide.com/examples/sensible-aria-usage/hidden/ is about hiding elements and accessibility
+
+https://a11y.nicolas-hoffmann.net/ has plug-ins for accessible jQuery – tool tips, accordions, hide and show, etc.
+
+http://juicystudio.com/article/making-ajax-work-with-screen-readers.php is an older article about making ajax work for accessibility.
+
+http://accessibility.athena-ict.com/aria/Javascript-jquery-accessibility.shtml is focused on keyboard accessibility and jQuery.
+
+## Newsletters which follow this field:
+
+A list apart has many articles on this topic: https://alistapart.com/article/getting-to-the-heart-of-digital-accessibility/
+
+Briana Blaser at the U. of Washington's Do It project maintains an email list for interested people blaser@uw.edu
+
+As mentioned above, there is an excellent newsletter from U. Minnesota- Duluth. You can subscribe by emailing lcarlson@d.umn.edu
+
+
