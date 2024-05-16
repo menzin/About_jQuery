@@ -253,9 +253,9 @@ Finally, we have used the methods
 - `val("newValue")`
 
 And seen how to chain them. We have also seen how to use
-- `.val()` <br>
-- `.text()` <br>
-- `.length` <br>
+- `.val()` 
+- `.text()` 
+- `.length`
 to find the relevant properties.
 
 ## Owning it
