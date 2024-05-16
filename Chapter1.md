@@ -73,7 +73,9 @@ The $ at the start of the variable name is just a ‘heads-up’ that we have a 
 So, depending on your other needs, you could code:
 
     $(".caveats").hide() 
-    //or           
+    
+or           
+
     $myCaveats = $(".caveats");
     $myCaveats.hide();
     
@@ -83,7 +85,7 @@ So far we have seen how to get a collection by selecting for a class or an ID or
 
 ### Chaining
 
-**Chaining – what it is **
+**Chaining – what it is**
 
 The idea behind chaining is fairly simple and very powerful. As we saw in the previous section, the jQuery operator $() returns a set of elements on which you can operate with various jQuery methods. 
 
@@ -99,8 +101,9 @@ For example, in Chapter 0 we looked at the code: 
 - We then apply the method removeClass("blueText"). That method removes the class blueText and returns the same set of elements (now missing their blueText class).
 - Finally we apply the method addClass("redText"). That method adds the class redText to the set of elements which were passed to it (i.e. the elements which used to have the class blueText) and adds the class redText to those elements – and, you guessed it, returns the set of those elements.
 
+<br>
   
-_**What methods can you chain?**_
+**What methods can you chain?**
 
 - **Any method which returns a jQuery set may be chained.**
   
@@ -115,16 +118,17 @@ We have already seen that addClass(), removeClass(), show() and hide() all retur
 
 Obviously, then, when a method returns a string, number or array, then you can not chain it. 
 
-The most frequently returned properties are length, and the result of val() and text().: 
+The most frequently returned properties are **length**, and the result of **val()** and **text()**.: 
 
-`length` <br>  
-The length property is the number of elements in the jQuery collection. It is not a method, and so it can not be chained. Note: If you query $('#someID') then the collection has only one element and its length is 1. 
+`length`<br>
+The length property is the number of elements in the jQuery collection. It is not a method, and so it can not be chained. <br>
+Note: If you query $('#someID') then the collection has only one element and its length is 1. 
 
 `val()`<br> 
 The val() method returns the value of the first element in a jQuery set. It is used typically for form elements. <br>
 Example: if we have an element <input type = 'text' id = 'givenName' > then $('#givenName').val() will give us whatever has been entered in that text box.  
 
-`text()` <br>
+`text()`<br>
 This will return a string of the text content of all the matched elements. <br>
 Example: $('h3').text() will give all the h3 headlines "strung together." 
 
@@ -193,7 +197,8 @@ For example, the **length property** is the number of elements in the jQuery col
 
 We will discuss the length property when we review the DOM in Chapter 2.
 
-           
+<br>
+
 **EXAMPLES**
 
 Ideas: <br>
@@ -237,16 +242,20 @@ All expect the class, ID or tag to be inside quotation marks, or be a variable w
     var myClass = ".blueText"; 
     $(myClass)
     
-Finally, we have used the methods  <br>
-`addClass("classToAdd")`  `removeClass("classToDrop")` <br>
-`show()`  `hide()` <br>
-`css("propertyToGet")`  `css("propertyToSet", "newValue")`  <br>
-`val()` `val("newValue")` <br>
+Finally, we have used the methods 
+- `addClass("classToAdd")`
+- `removeClass("classToDrop")`
+- `show()`
+- `hide()`
+- `css("propertyToGet")`
+- `css("propertyToSet", "newValue")` 
+- `val()`
+- `val("newValue")`
 
-And seen how to chain them. We have also seen how to use <br>
-`.val()` <br>
-`.text()` <br>
-`.length` <br>
+And seen how to chain them. We have also seen how to use
+- `.val()` <br>
+- `.text()` <br>
+- `.length` <br>
 to find the relevant properties.
 
 ## Owning it
