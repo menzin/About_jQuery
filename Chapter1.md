@@ -256,6 +256,7 @@ And seen how to chain them. We have also seen how to use
 - `.val()` 
 - `.text()` 
 - `.length`
+  
 to find the relevant properties.
 
 ## Owning it
