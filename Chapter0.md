@@ -123,7 +123,7 @@ Lines 1-5 and 12-17 are just your typical html, line 6 brings in the jQuery libr
 The smallText class will get hidden as soon as the DOM is loaded – too fast for you to see it before it hides – but you can still see that it’s there in the source code.
 
 >[!WARNING]
-> you must either grab the code from the Chapter 0 folder or paste the code above into a text editor and save it as demo_0_0.html before trying to run it.** 
+> you must either grab the code from the Chapter 0 folder or paste the code above into a text editor and save it as demo_0_0.html before trying to run it. 
 
 
 ### Summary So Far 
@@ -140,7 +140,10 @@ Immediately following that we write a script which asks jQuery until the DOM of 
         $(some selectorN).someMethodN();
         });
 
-***Short review of very basic selectors***
+
+**Examples**
+
+- ***Short review of very basic selectors***
 
 * `#thisThing` selector for element with ID thisThing (There may be only one element with a given ID.)
     * Example: If you have an element with ID homepage, then $("#homePage") will return that element.
