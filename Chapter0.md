@@ -140,6 +140,7 @@ Immediately following that we write a script which asks jQuery until the DOM of 
         $(some selectorN).someMethodN();
         });
 
+<br>
 
 **Examples**
 
@@ -159,9 +160,9 @@ Immediately following that we write a script which asks jQuery until the DOM of 
 	      
 	* `'*'` __selects all elements.__
 
-
+<br>
   
-:warning: **Warning**
+:warning: **Warnings**
 - You need quotation marks around the selectors.
 	- If, however, you create a variable `var thisClass = ".hot"` or pass in an element with id of someID and create a variable `var thisElement = "#” + someID` then you can use `$(thisClass)` or `$(thisElement)`.
        
@@ -185,9 +186,9 @@ Then you can change everything which has blue text to red text by coding:
     
 Please notice what happened here:  
 
-* $(".blueText") returned a collection of all elements with the class blueText, then 
-* removeClass("blueText") removed that class and returned those elements and then 
-* addClass("redText") added the redText class to those elements.
+* `$(".blueText")` returned a collection of all elements with the class blueText, then 
+* `removeClass("blueText")` removed that class and returned those elements and then 
+* `addClass("redText")` added the redText class to those elements.
   
 This is called _chaining_ (the methods) and we will see much more of this in Chapter 1. 
 
@@ -195,7 +196,7 @@ We can refine this example so that when our user clicks a button only one specif
 
 In this example we will make the changes in appearance happen when the user clicks a button – so we won’t need to wait for the DOM to load but we will use jQuery to add and remove classes. (Look at lines 9 – 15.)   
 
-Please notice the semi-colons at the end of the lines of JavaScript. While semi-colons are often casually omitted in writing JS, it is dangerous to do so in jQuery --- your code may not get parsed in the way you hoped.
+:warning <ins>Please notice the semi-colons at the end of the lines of JavaScript.</ins> While semi-colons are often casually omitted in writing JS, it is dangerous to do so in jQuery --- your code may not get parsed in the way you hoped.
 
 Here is a complete example:  
 
@@ -239,7 +240,7 @@ In black and white the code is:
 In this example we have changed the color of the text, but you could use the same approach to change the font size, bold or unbold it, etc.
 
 >[!WARNING]
-> When you wish to change classes _ which are in conflict_ with each other, _it is good practice to remove the class you don't want_, and not to just add the new class. Failure to do this may give unpredictable result. 
+> When you wish to change classes <ins>_which are in conflict_</ins> with each other, <ins>_it is good practice to remove the class you don't want_</ins>, and not to just add the new class. Failure to do this may give unpredictable result. 
 
 For example, with classes redText and blueText as above, if you simply addClass one of them to an element with the other class you might produce code like:
 
@@ -367,10 +368,10 @@ Before we start, please recall that there are two different ways to make an elem
 - `display`: **none** will hide the element without taking up any space.
 - `visibility`: **hidden** will hide the element but still allocate space to it.
   
- The hide() and show() methods work on the **display** property. That is, when you hide () elements the space they used to take up disappears (temporarily – until you show() the elements again), but with the added benefit that when you hide() them, the original display value (inline or block) is remembered and used when you again show() them. 
+ The hide() and show() methods work on the ***display*** property. That is, when you hide () elements the space they used to take up disappears (temporarily – until you show() the elements again), but with the added benefit that when you hide() them, the original display value (inline or block) is remembered and used when you again show() them. 
  
-	The possible values for _visibility_ as _hidden_ and _visible_.
- 	The possible values or _display_ are _none_, _block_, _inline_.
+- The possible values for _visibility_ as _hidden_ and _visible_.
+- The possible values or _display_ are _none_, _block_, _inline_.
 
 In this code, we will display the error messages inline, but hide them immediately, as soon as the DOM has loaded. We will do it this way in case you had a fancy layout you wanted to maintain.
 
