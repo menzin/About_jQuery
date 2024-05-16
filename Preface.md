@@ -27,20 +27,28 @@ A detailed set of references is found at the end of this book, and more referenc
 
 ## What you should know
 In order to use this book you should be comfortable with:
+
 - **HTML**
-    You should be able to write basic HTML, including tags for images, anchors , lists, forms, buttons, divs and spans. You should also have used event handlers, such as onclick. How the DOM is represented will be reviewed in Chapter 1, but it will be helpful if you have worked with this material before. It is an advantage but not required that you understand basic issues around responsive web design  and accessibility.
+  
+    You should be able to write basic HTML, including tags for images, anchors , lists, forms, buttons, divs and spans. You should also have used event handlers, such as onclick. How the DOM is represented will be _reviewed_ in Chapter 1, but it will be helpful if you have worked with this material before. It is an advantage but not required that you understand basic issues around responsive web design  and accessibility.
 
 - **CSS**
+  
   You should be able to use basic selectors for a class, id, tag. We will not be using ultra fancy CSS, but the selectors for CSS are used through out jQuery. Using your favorite cheat sheet you should be able to set the color and font properties of the text. We will review the difference between the display and visibility properties in Chapter 1.
 
 - **Javascript**
-  You should be completely comfortable with core JavaScript. That is, you should know how to write and use loops, functions, arrays, objects (realized as associative arrays). It will be very helpful if you have written anonymous functions, although there will be a brief discussions of that in Chapter 1. You may or may not have used callbacks and you may or may not be using ES6 (or later – sometimes called ESnext). I had to decide whether or not to use ESnext in this book. My decision to forgo ESnext is based on the importance of this in jQuery, and avoiding the temptation to use arrow functions, which, of course, handle this differently from traditional functions.
+  
+  You should be completely comfortable with core JavaScript. That is, you should know how to write and use loops, functions, arrays, objects (realized as associative arrays). <ins>It will be very helpful if you have written anonymous functions, although there will be a brief discussions of that in Chapter 1.</ins>
+  You may or may not have used callbacks and you may or may not be using ES6 (or later – sometimes called ESnext).
+  I had to decide whether or not to use ESnext in this book. My decision to forgo ESnext is based on the importance of this in jQuery, and avoiding the temptation to use arrow functions, which, of course, handle this differently from traditional functions.
 
 ## How this book is organized
 - **Chapter 0 – Just Get Me Going**
+  
   This chapter shows you how to use jQuery in very simple examples, without a lot of background about what is happening behind the scenes
   
-- **Chapter 1 – What Is Happening Here** 
+- **Chapter 1 – What Is Happening Here**
+  
     Please read this short chapter, even if you have used jQuery.
 This chapter explains the basic mechanisms of jQuery and provides examples of code which is used frequently.. We discuss collections, chaining, and backing up the chain.
 
