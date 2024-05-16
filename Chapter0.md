@@ -63,15 +63,15 @@ Lines 1-5 and 12-17 are just your typical html, line 6 brings in the jQuery libr
   
 **Tell jQuery to wait until the DOM is loaded and then we’ll use the library of functions**
 
-	Often jQuery is used to manipulate the DOM, so we tell jQuery to wait for the DOM to load. <br>
-	We do this by typing:
+Often jQuery is used to manipulate the DOM, so we tell jQuery to wait for the DOM to load. <br>
+We do this by typing:
 
-         	 $(document).ready(function() {//We’ll put our specific instructions here.});
+	$(document).ready(function() {//We’ll put our specific instructions here.});
 
 
-    And then inside the { ... } we will tell jQuery what to do once the DOM has loaded. <br>
-    So we next need to see what to put inside the { }. <br>
-    As an aside, please notice that jQuery does not need to wait for all the images to load – it just needs to know the structure of the DOM. This can help speed things up.
+And then inside the { ... } we will tell jQuery what to do once the DOM has loaded. <br>
+So we next need to see what to put inside the { }. <br>
+As an aside, please notice that jQuery does not need to wait for all the images to load – it just needs to know the structure of the DOM. This can help speed things up.
 
 * **Use $() again - Put a selector inside the parentheses of $( )**
 
