@@ -486,7 +486,7 @@ We turn next to $.ajax, which is the most general function. 
 
 <br>
 
-**`$.ajax()` and `$(someSelector).ajax()`**
+***`$.ajax()` and `$(someSelector).ajax()`***
 
 The `$.ajax()` function has a simple signature:
 
@@ -547,7 +547,7 @@ A description of all the keys whose value may be specified in $.ajax() is found 
 
 <br>
 
-**`$.getScript()`** 
+***`$.getScript()`***
 
 This method is used to retrieve a script and then allow the (optional) success function to run. The syntax is 
 	
