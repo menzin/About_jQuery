@@ -11,7 +11,7 @@ There are many events built into the browser API – most notably **click**, **b
 _**An event listener**_
 
 Listens for an event to happen and then fires an **event handler**. Many people use the terms event listener and event handler as synonyms (though not always.)
-  
+ 
 We also speak interchangeably of **adding an event listener** or **registering an event handler**; both expressions mean that we have specified what happens when a particular event happens.
 
 For browser and mouse events, those events typically are associated with an action (such as a click or a mouseover) and an element where it takes places. So the event handler will specify what happens when that action happens to that element; the event handler then becomes a property/attribute of the element and the name of that property tells you the action- e.g. `someElement.onclick`  
@@ -349,12 +349,13 @@ In the example in this paragraph, (since we wrote a handler specifically for cli
     ```
    A more useful example would be:
 
-	**Owning it:** <br>
-	Write an event handler for an anchor which puts up a confirm dialog box, asking if the user wants to leave the site, and responds appropriately – i.e. prevents the default behavior if the user fails to confirm a willingness to leave the site.
+**Owning it:** <br>
 
-	<ins>Hint:</ins> It will be easier if you use a separately coded event handler as in But4 of demo_6_3_using_on.html, below, since then you will be able to get ahold of the event itself. If you need to force a way to re-direct the user to a page they have confirmed they wish to go to, https://css-tricks.com/redirect-web-page/ (about a third of the way down the page) will show you several ways to make this happen. The simplest is to set:
+Write an event handler for an anchor which puts up a confirm dialog box, asking if the user wants to leave the site, and responds appropriately – i.e. prevents the default behavior if the user fails to confirm a willingness to leave the site.
 
-  		window.location = "http:// put new url here ";
+<ins>Hint:</ins> It will be easier if you use a separately coded event handler as in But4 of demo_6_3_using_on.html, below, since then you will be able to get ahold of the event itself. If you need to force a way to re-direct the user to a page they have confirmed they wish to go to, https://css-tricks.com/redirect-web-page/ (about a third of the way down the page) will show you several ways to make this happen. The simplest is to set:
+
+  	window.location = "http:// put new url here ";
 
 ## jQuery and events 
 
@@ -617,18 +618,18 @@ where evt is any event.
 
 In addition, jQuery provides methods which return boolean variables and which allow us to test to see if these actions have taken place.
 
-Again, with evt being any event, the methods are:     
+Again, with evt being any event, the methods are:  
 - `evt.isPropagationStopped()`
 - `evt.isImmediatePropagationStopped()`
 - `evt.isDefaultPrevented()`
 
 As a reminder, these are methods on the _event_.  
 
-As noted in the earlier part of this chapter, preventDefault() is part of the event API, and jQuery makes it available and robust.  A more detailed discussion of these boolean properties and propagation methods  is beyond the scope of this book; documentation can be found at https://api.jquery.com/category/events/event-object/ ; specification of the standard behavior is at https://developer.mozilla.org/en-US/docs/Web/API/Event/stopPropagation etc. and a discussion of preventing default behavior without the use of jQuery is discussed at https://javascript.info/default-browser-action 
+As noted in the earlier part of this chapter, preventDefault() is part of the event API, and jQuery makes it available and robust. A more detailed discussion of these boolean properties and propagation methods is beyond the scope of this book; documentation can be found at https://api.jquery.com/category/events/event-object/ ; specification of the standard behavior is at https://developer.mozilla.org/en-US/docs/Web/API/Event/stopPropagation etc. and a discussion of preventing default behavior without the use of jQuery is discussed at https://javascript.info/default-browser-action 
 
-As outlined in the "Owning It" exercise above, the preventDefault() method is potentially useful in a complex event handler.  
+As outlined in the "Owning It" exercise above, the preventDefault() method is potentially useful in a complex event handler. 
 
-In fact, we also are all familiar with this general idea from submit buttons, where a false is returned (and the form is not submitted) when validation fails.   
+In fact, we also are all familiar with this general idea from submit buttons, where a false is returned (and the form is not submitted) when validation fails.  
 
 <br>
 
@@ -664,7 +665,7 @@ For example, the following are equivalent
 
 The click() method without any handler is also a shortcut for triggering a click event. For example, `$('#myID').click()` will trigger the onclick handler on `#myID`. 
 
-The other events with shortcuts include `hover`, `focus`, `blur`, `submit`, `mouseover`, `mouseout`, `mouseup`, `mousedown` and `dblclick`. Some of these shortcuts you will use so often that they will be second nature to you; others you will either look up at  https://api.jquery.com/category/events/ or use the slightly longer on('someEvent', handler) syntax. 
+The other events with shortcuts include `hover`, `focus`, `blur`, `submit`, `mouseover`, `mouseout`, `mouseup`, `mousedown` and `dblclick`. Some of these shortcuts you will use so often that they will be second nature to you; others you will either look up at https://api.jquery.com/category/events/ or use the slightly longer on('someEvent', handler) syntax. 
 
 
 
