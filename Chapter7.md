@@ -468,13 +468,14 @@ Another way to phrase this is that the following are equivalent: 
 
  	$.get('capitals.json', function(ourJSON){//process}, 'json') 
 
-It is also possible to write `$.get({object with settings})`  where one of the keys in the _object with settings_ <ins>must</ins> be url. 
+It is also possible to write `$.get({object with settings})` where one of the keys in the _object with settings_ <ins>must</ins> be url. 
 
 `$.get` is a shorthand method for `$.ajax` where the method is specified as GET. 
 
 <br>
 
-**Use of $.post()** 
+
+#### Use of $.post() 
 
 This is just like the `$.get()` function, except that the http POST method is used. 
 
@@ -484,13 +485,15 @@ With `$.post()` it is common to use the optional second parameter to specify the
 
 We turn next to $.ajax, which is the most general function. 
 
+<br>
+
 **`$.ajax()` and `$(someSelector).ajax()`**
 
 The `$.ajax()` function has a simple signature:
 
-	$.ajax(url_where_the_data_is  [ , optional object with settings] )
+	$.ajax(url_where_the_data_is [ , optional object with settings] )
 
-The secret is that all the information which the server needs is in the optional object.  As noted at the start of this chapter, there are many keys which may appear in this object, but here are the most important ones:
+The secret is that all the information which the server needs is in the optional object. As noted at the start of this chapter, there are many keys which may appear in this object, but here are the most important ones:
 
 - **method**: Possible values are "GET", "POST" and "PUT" ---- it defaults to "GET" if omitted.
 
@@ -507,17 +510,51 @@ The secret is that all the information which the server needs is in the optional
 
 A few other options which you may see mentioned, but will not need at this point, are: 
 
-- **dataType**:  As discussed in the section on $.get(), if you do not specify the dataType, jQuery will make an informed guess about the type of data in the response. This guess  is normally just what you want, and you would set the dataType only if you want to override the kind of processing which jQuery would normally do for your response code. The types you may specify are 'json', 'html', 'xml' and 'script'. 
+- **dataType**: As discussed in the section on $.get(), if you do not specify the dataType, jQuery will make an informed guess about the type of data in the response. This guess is normally just what you want, and you would set the dataType only if you want to override the kind of processing which jQuery would normally do for your response code. The types you may specify are 'json', 'html', 'xml' and 'script'. 
 
 - **accepts**: This may be used to limit the type of the response you are willing to accept. Normally you know what type of code the response will be and you don't need to set this.
 
 - **context**: This allows you to set the value of **this** to be used in your callback. 
 
+Let's start by noticing that the _done_, _failed_, and _always_ methods, which we had previously written as properties of `$.getJSON()` have now been moved into the object which is $.ajax() 's second parameter.
 
+The _method_, _username_, and _password_ keys are self-explanatory, and we have previously discussed the _dataType_ one. So, let us look at the possible kinds of values for data and how they are handled. The value for data may be a string, an object, or an array.  
 
+In the simplest case, the value for data is a string. Then jQuery will convert it to a query string and append it to the url for the GET request. Please notice that when the data is a string, the default method is a GET. 
 
+Next suppose that the value of data is an object. As https://api.jquery.com/jQuery.ajax/ explains: "The data option can contain either a query string of the form `key1=value1&key2=value2`, or an object of the form `{key1: 'value1', key2: 'value2'}`. If the latter form is used, the data is converted into a query string using `jQuery.param()` before it is sent. This processing can be circumvented by setting `processData` to `false`. "
 
+Here it is useful to note the jQuery also has a function **serialize()** which will convert to a query string all the "successful" controls in a form (i.e. the input elements and text areas, but not buttons and for types where there is a choice only the chosen elements - only the checked radio buttons and checkboxes and selected elements in a select list.) The syntax for using serialize on a form with id myForm is
 
+	var myFormSerialized = $('#myForm').serialize()
+
+Now you can pass data:myFormSerialized in your `$.ajax()` call. (That is, in the object where you set the various key-value pairs for the $.ajax() call, the value for data is myFormSerialized.) 
+
+Another method is to use FormData, which is straight JavaScript. In that case you would write: 
+
+	var myF = $('#myForm'); 
+	var myFD = new FormData(myF);
+
+Now use you pass data:myFD in your $.ajax() call. 
+
+> [!WARNING]
+> While you won't have any problems with the new FormData() constructor (as in the code above here), some older and mobile browsers do not support all the methods of FormData objects. A current table describing this is at https://developer.mozilla.org/en-US/docs/Web/API/FormData (You can find more about FormData at https://www.javascripttutorial.net/web-apis/javascript-formdata/)
+
+Finally, suppose we the data we wish to send to the server is an array. In this situation jQuery will serialize the array, but the result may require careful processing server-side. For example,  arr = [10, 20, 30] will get serialized as : arr=10&arr=20&arr=30 or arr[]=10&arr[]=20&arr[]=30.  You may find it easier to loop through your array and construct the query string prior to calling ajax. 
+
+The `$.ajax()` function may also be used to upload whole files, but that is beyond the scope of this book.
+
+A description of all the keys whose value may be specified in $.ajax() is found at https://api.jquery.com/jQuery.ajax/ or, in slightly less detail but with examples, at https://www.geeksforgeeks.org/jquery-ajax-method/?ref=rp 
+
+<br>
+
+**`$.getScript()`** 
+
+This method is used to retrieve a script and then allow the (optional) success function to run. The syntax is 
+	
+ 	$.get('url_where_script_file_is' [,success_function]);
+
+The success_function will expect parameters that hold data and the jqxhr object. Further discussion of this is beyond the scope of this book.
 
 ## Owning it 
 
