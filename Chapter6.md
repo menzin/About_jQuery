@@ -376,6 +376,8 @@ There are many advantages of using jQuery to handle events.
 
 So on to using jQuery with events!
 
+<br>
+
 _**Attaching an event handler to an event – basic**_
 
 The basic format for attaching a handler to some events is: 
@@ -443,6 +445,7 @@ To repeat, then, the on() method expects (at least) two parameters – the first
 
 The example in the next paragraph demonstrates **direct** (not delegated) event handling, and two different ways to code for delegated event handling.
 
+<br>
 
 _**Attaching an event handler designed for delegation**_
 
