@@ -103,11 +103,11 @@ If you don't do this, the handler will fire twice. (There are a lot of other exp
 > [!NOTE]
 > In this code I have included the parameter for the number of milliseconds; this makes the hide/show happen slowly so that you can see what is happening.
 
-Summary:
+**Summary:**
 
 The more modern method for coding buttons is to use the button tags. If your `<button>` is outside a form, things will go smoothly. If your `<button>` is inside a form and you do not want to submit the form, you must either specify type='button' inside the opening `<button>` tag or you must have the onclick event handler return false. 
 
-Example – and introducing the toggle() and toggleClass() methods. 
+**Example – and introducing the toggle() and toggleClass() methods.** 
 
 The toggle() function will swap the display state. That is, if the display is block or inline, then it will make the display state none, and if the display state is none, then toggle() will return it to its original (block or inline) state. You can change the speed at which this toggling happens by adding a parameter: either the number of milliseconds for the toggle or 'slow' or 'fast'. For example, the code below 
           
