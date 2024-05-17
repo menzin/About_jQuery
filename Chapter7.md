@@ -474,7 +474,6 @@ It is also possible to write `$.get({object with settings})` where one of the ke
 
 <br>
 
-
 #### Use of $.post() 
 
 This is just like the `$.get()` function, except that the http POST method is used. 
