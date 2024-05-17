@@ -450,6 +450,72 @@ Use of jQuery function `$.getScript` for retrieval of a script is touched upon a
 
 ### Sending data, including deciding between GET and POST
 
+As a reminder, in a GET the data which is sent to the server is url-encoded and then appended to the URL, while in a POST the data is in the body of the message.
+
+This makes the GET less secure: for example, the data which was appended the the request is stored in the history of the user's browser and the server's logs. Obviously, no requests which includes passwords should be made using a GET.
+
+On the other hand, a GET request may be bookmarked, and often the results are cached in the user's browser. With a POST, the data must be re-submitted. 
+
+Finally, in a GET the data, because it will be url-encoded, can be only in ASCII and is limited in length. A request of up to 2,000 characters in a GET is safe, but some browsers support longer requests.  
+
+The` $.get()` function is exactly like the `$.getJSON()` function, except that it may be used to retrieve various kinds of data. 
+
+`$.get` has an optional last parameter to specify the data type; if that parameter is omitted then jQuery will guess among the types html, xml, json, text and script; if that parameter is 'json' then your `$.get()` is the same as `$.getJSON()`. 
+
+Another way to phrase this is that the following are equivalent: 
+
+	$.getJSON('capitals.json', function(ourJSON){// process}}   
+
+ 	$.get('capitals.json', function(ourJSON){//process}, 'json') 
+
+It is also possible to write `$.get({object with settings})`  where one of the keys in the _object with settings_ <ins>must</ins> be url. 
+
+`$.get` is a shorthand method for `$.ajax` where the method is specified as GET. 
+
+<br>
+
+**Use of $.post()** 
+
+This is just like the `$.get()` function, except that the http POST method is used. 
+
+Again, this is a shorthand function for the more general `$.ajax()`. 
+
+With `$.post()` it is common to use the optional second parameter to specify the data that is being POSTed to the server, as well as any other properties for the server.
+
+We turn next to $.ajax, which is the most general function. 
+
+**`$.ajax()` and `$(someSelector).ajax()`**
+
+The `$.ajax()` function has a simple signature:
+
+	$.ajax(url_where_the_data_is  [ , optional object with settings] )
+
+The secret is that all the information which the server needs is in the optional object.  As noted at the start of this chapter, there are many keys which may appear in this object, but here are the most important ones:
+
+- **method**: Possible values are "GET", "POST" and "PUT" ---- it defaults to "GET" if omitted.
+
+- **done** (replaces **success** ): Function to call after a successful completion of retrieving the data. Typically this handles whatever it is you want to do with the data
+
+- **failed** ( replaces **error**): Function to call when the data retrieval is not successful
+
+- **always** (replaces **complete**): an optional function to be executed after done or failed has finished executing.
+
+- **data**: The data (object, string or array) you are sending to the server. Details of how the data is sent are discussed below.
+
+- **username** and **password** are the obvious things if the server requires your script to log on
+
+
+A few other options which you may see mentioned, but will not need at this point, are: 
+
+- **dataType**:  As discussed in the section on $.get(), if you do not specify the dataType, jQuery will make an informed guess about the type of data in the response. This guess  is normally just what you want, and you would set the dataType only if you want to override the kind of processing which jQuery would normally do for your response code. The types you may specify are 'json', 'html', 'xml' and 'script'. 
+
+- **accepts**: This may be used to limit the type of the response you are willing to accept. Normally you know what type of code the response will be and you don't need to set this.
+
+- **context**: This allows you to set the value of **this** to be used in your callback. 
+
+
+
+
 
 
 
