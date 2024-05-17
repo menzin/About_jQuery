@@ -349,13 +349,13 @@ In the example in this paragraph, (since we wrote a handler specifically for cli
     ```
    A more useful example would be:
 
-**Owning it:** <br>
-
-Write an event handler for an anchor which puts up a confirm dialog box, asking if the user wants to leave the site, and responds appropriately – i.e. prevents the default behavior if the user fails to confirm a willingness to leave the site.
-
-<ins>Hint:</ins> It will be easier if you use a separately coded event handler as in But4 of demo_6_3_using_on.html, below, since then you will be able to get ahold of the event itself. If you need to force a way to re-direct the user to a page they have confirmed they wish to go to, https://css-tricks.com/redirect-web-page/ (about a third of the way down the page) will show you several ways to make this happen. The simplest is to set:
-
-  	window.location = "http:// put new url here ";
+	**Owning it:** <br>
+	
+	Write an event handler for an anchor which puts up a confirm dialog box, asking if the user wants to leave the site, and responds appropriately – i.e. prevents the default behavior if the user fails to confirm a willingness to leave the site.
+	
+	<ins>Hint:</ins> It will be easier if you use a separately coded event handler as in But4 of demo_6_3_using_on.html, below, since then you will be able to get ahold of the event itself. If you need to force a way to re-direct the user to a page they have confirmed they wish to go to, https://css-tricks.com/redirect-web-page/ (about a third of the way down the page) will show you several ways to make this happen. The simplest is to set:
+	
+	  	window.location = "http:// put new url here ";
 
 ## jQuery and events 
 
