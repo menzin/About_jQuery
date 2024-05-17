@@ -665,7 +665,7 @@ For example, the following are equivalent
 
 The click() method without any handler is also a shortcut for triggering a click event. For example, `$('#myID').click()` will trigger the onclick handler on `#myID`. 
 
-The other events with shortcuts include `hover`, `focus`, `blur`, `submit`, `mouseover`, `mouseout`, `mouseup`, `mousedown` and `dblclick`. Some of these shortcuts you will use so often that they will be second nature to you; others you will either look up at https://api.jquery.com/category/events/ or use the slightly longer on('someEvent', handler) syntax. 
+The other events with shortcuts include **hover**, **focus**, **blur**, **submit**, **mouseover**, **mouseout**, **mouseup**, **mousedown** and **dblclick**. Some of these shortcuts you will use so often that they will be second nature to you; others you will either look up at https://api.jquery.com/category/events/ or use the slightly longer on('someEvent', handler) syntax. 
 
 
 
